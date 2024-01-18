@@ -1,0 +1,25 @@
+/* grids */
+.container{
+    display: grid;
+    grid-template-columns: repeat(1fr, 7);
+}
+.nav-section{
+    grid-column: 1/8;
+    height: 80px;
+}
+.nav-section>ul>li{
+    line-height: 70px ;
+    margin: 5px 40px;
+    font-weight: 700;
+    float: right;
+    list-style: none;
+    display: inline-block;
+}
+.body-section{
+    grid-column: 1/8;
+    height: 70vh;
+}
+.form-section{
+    grid-column: 1/8;
+    height: 70vh;
+}
