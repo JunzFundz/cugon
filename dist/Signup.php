@@ -3,10 +3,16 @@ session_start();
 ?>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="../src/signup.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<div class="flex justify-center items-center">
+<body>
+    
 
-    <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 ">
+<a href="../index.php" class="home-icon"><i class="fa-solid fa-house"></i>Home</a>
+<div id="signup-form" class="flex justify-center items-center">
+
+    <div id="signup-body" class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-800 ">
         <form class="space-y-6" action="../data/DSignup.php" method="post">
             <h5 class="text-xl font-medium text-gray-900 dark:text-white">Sign up to Cugon</h5>
 
@@ -44,11 +50,29 @@ session_start();
             <!-- Sumbit -->
             <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" name="signup">Sign up</button>
             <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+                Already have an account? <a href="Login.php" class="text-blue-700 hover:underline dark:text-blue-500">Log in your account</a>
             </div>
         </form>
     </div>
 
 </div>
+</body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
+<script src="../assets/sweetalert.min.js"></script>
+    <?php
+    if (isset($_SESSION['status']) && $_SESSION['status'] != '') { ?>
+
+        <script>
+            swal({
+                title: "<?php echo $_SESSION['status']; ?>",
+                icon: "<?php echo $_SESSION['status_code']; ?>",
+                button: "Ok",
+            });
+        </script>
+
+    <?php
+        unset($_SESSION['status']);
+    }
+    ?>

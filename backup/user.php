@@ -2,16 +2,9 @@
 include '../data/dBooking.php';
 ?>
 
-<!-- Boostrap -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
-<!-- datatables -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
-
-<!-- Custom style -->
 <link rel="stylesheet" href="../src/Adminhome.css">
-
 
 <title>Booking</title>
 
@@ -50,9 +43,9 @@ include '../data/dBooking.php';
     </div>
 
     <div id="content" class="rigth-panel">
-        <div class="">
+        <<div class="table-responsive shadow-sm rounded-lg">
             <?php if ($result) { ?>
-                <table id="example" class="table table-sm table-striped text-center table-text">
+                <table id="example" class="table table-sm table-striped text-center">
                     <thead class="bg-light">
                         <tr>
                             <th scope="col">Reservation Number</th>
@@ -68,20 +61,18 @@ include '../data/dBooking.php';
 
                         <?php foreach ($result as $rows) { ?>
 
-                            <tr class="">
-                                <td class=""><?= $rows['res_number']; ?></td>
-                                <td class=""><?= $rows['email']; ?></td>
-                                <td class=""><?= $rows['total']; ?></td>
-                                <td class=""><?= $rows['start']; ?></td>
-                                <td class=""><?= $rows['end']; ?></td>
-                                <td class=""><?= $rows['payment']; ?></td>
-                                <td class="">
-
+                            <tr class="bg-white border-bottom">
+                                <td class="custom-td"><?= $rows['res_number']; ?></td>
+                                <td class="custom-td"><?= $rows['email']; ?></td>
+                                <td class="custom-td"><?= $rows['total']; ?></td>
+                                <td class="custom-td"><?= $rows['start']; ?></td>
+                                <td class="custom-td"><?= $rows['end']; ?></td>
+                                <td class="custom-td"><?= $rows['payment']; ?></td>
+                                <td class="custom-td">
                                     <button data-user_id="<?= $rows['user_id']; ?>" type="button" class="btn btn-primary me-2 mb-2 viewButton">View</button>
 
-                                    <button onclick="approveReq('<?php echo $rows['res_id']; ?>')" type="button" class="btn btn-success me-2 mb-2">Approve</button>
-
-
+                                    <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" type="button" class="btn btn-success me-2 mb-2">Approve</button>
+                                    
                                     <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" type="button" class="btn btn-danger me-2 mb-2">Decline</button>
                                 </td>
                             </tr>
@@ -91,17 +82,53 @@ include '../data/dBooking.php';
                 } ?>
                     </tbody>
                 </table>
+    </div>
+
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="">
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
-        <?php include '../Admin/modal/viewRequest.php' ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-
-        <!-- Boostrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Datatables -->
-        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
-        <script src="../assets/adminView.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.viewButton').click(function() {
+                var userID = $(this).data('user_id');
+                $.ajax({
+                    url: '../data/dViews.php',
+                    type: 'post',
+                    data: {
+                        userID: userID
+                    },
+                    success: function(response) {
+                        $('.modal-body').html(response);
+                        $('#exampleModal').modal('show');
+                    },
+                    error: function() {
+                        alert('Error: Unable to load user details');
+                    }
+                });
+            });
+        });
+    </script>

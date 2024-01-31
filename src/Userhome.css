@@ -1,0 +1,87 @@
+*{
+    font-size: .875rem;
+}
+
+
+h1 {
+    color: rgb(44, 44, 44);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.h1-style {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(33, 81, 255) 2px 2px 2px;
+}
+
+.containernewdiv {
+    grid-template-columns: repeat(12, 1fr);
+    display: grid;
+}
+
+.icon-style {
+    margin-right: 10px;
+}
+
+.name-style {
+    line-height: 40px;
+    margin-right: 20px;
+    float: right;
+}
+
+.body-panel {
+    grid-column: 4/12;
+    height: auto;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.nav-section {
+    grid-column: 1/13;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+}
+.nav-section>nav{
+    height: auto;
+    width: 100%;
+}
+
+.body-panel {
+    height: auto;
+    grid-column: 2/12;
+}
+
+/* styles */
+.new-block > div{
+    margin: 3px;
+    display: inline-block;
+}
+.new-block{
+    width: 100%;
+}
+.new-checkout{
+    margin-right: -20px;
+}
+.new{
+    top: 0;
+}
+/* home */
+.image-prod{
+    object-fit: contain;
+    aspect-ratio: 3/2;
+    width: 200%;
+}
+.cart{
+    font-size: 20px;
+    opacity: 60%;
+    transition: 0.2s;
+}
+.cart:hover{
+    text-shadow: -3px 0px 18px rgba(72,179,224,1);
+    opacity: 100%;
+}
