@@ -1,78 +1,62 @@
-*{
-}
-.containerdiv{
-    grid-template-columns: repeat(1fr, 8);
+.admin-container {
+    grid-template-columns: repeat(8, 1fr);
     display: grid;
 }
-.nav{
+
+.nav {
+    color: #e4e4e4;
     grid-column: 1/9;
     height: 80px;
-    margin-bottom: 50px;
+    background-color: rgb(95, 95, 95);
 }
-.left-panel{
-    height: 80vh;
+
+.left-panel {
+    height: 95vh;
     grid-column: 1/2;
-    margin-right: 10px;
-    background-color: #e4e4e4;
+    background-color: rgb(95, 95, 95);
 }
-.rigth-panel{
-    margin-left: 20px;
-    margin-right: 20px;
-    grid-column: 2/9 !important;
+
+.right-panel {
+    overflow: hidden;
+    margin: 30px;
+    grid-column: 2/9;
 }
-.left-panel div ul li{
-    margin: 20px 0px 40px 40px;
+
+.left-panel div ul li {
+    list-style: none;
+    margin: 20px 0px 20px 40px;
 }
-#search-input{
-    margin-top: -50px;
-    display: grid;
-    place-items: center;
+
+div ul li a {
+    font-weight: 600;
+    color: rgb(216, 216, 216);
+    text-decoration: none;
 }
-nav ul li{
+
+div ul {
+    padding-left: 0;
+}
+
+nav ul li {
     display: inline-block;
-    line-height: 70px ;
+    line-height: 70px;
 }
-nav ul #profile{
+
+nav ul #profile {
     font-weight: 700;
     margin-right: 30px;
     float: right;
 }
-nav ul #profile:hover{
+
+nav ul #profile:hover {
     cursor: pointer;
 }
-nav{
-    width: 100%;
-}
-#profileOptions{
-    color: rgb(15, 41, 64);
-    margin-left: 78%;
-    border-radius: 20px;
-    z-index: 99999;
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    width: 20%;
-    height: 20%;
-}
-#profileOptions>li{
-    list-style: none;
-    margin: 5% 10%;
-}
-#logo-admin{
+
+
+
+/*! logo */
+#logo-admin {
     font-size: 2rem;
     margin-left: 40px;
     font-weight: 700;
-}
-
-.avatar-custom{
-    line-height: 70px;
-    margin-top: 15px;
-    margin-left: -40px;
-    position: absolute !important;
-}
-
-#settings-custom{
-    margin-top: auto;
-}
-table.dataTable thead th{
-    text-align: center;
 }

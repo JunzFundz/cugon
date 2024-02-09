@@ -1,32 +1,23 @@
-<link href="../node_modules/flowbite/dist/flowbite.css" rel="stylesheet" />
 
 <?php
-include '../data/dBooking.php'
+include('../data/data-booking.php');
+include('user-header.php');
 ?>
 
-<style>
-    .place-item {
-        display: grid;
-        place-items: center;
-        margin-top: 200px;
-    }
-    .hidden-input {
-        display: none;
-        visibility: hidden;
-    }
-</style>
 
-
-<form action="../data/dBooking.php" method="post">
+<form action="../data/data-booking.php" method="post">
 
     <!-- get id both user and item id -->
+
     <input  class="hidden-input"  type="hidden"   name="i_id"      value="<?php echo $i_id ?>">
     <input  class="hidden-input"  type="hidden"   name="users_id"  value="<?php echo $_SESSION['user_id'] ?>">
+    <input  class="hidden-input"  type="hidden"   name="regular_date"     value="<?php echo $regular_date ?>">
     <input  class="hidden-input"  type="hidden"   name="start"     value="<?php echo $start ?>">
     <input  class="hidden-input"  type="hidden"   name="end"       value="<?php echo $end ?>">
     <input  class="hidden-input"  type="hidden"   name="available" value="<?php echo $available ?>">
     <input  class="hidden-input"  type="hidden"   name="meal"      value="<?php echo $meal ?>">
     <input  class="hidden-input"  type="hidden"   name="payment"   value="<?php echo $payment ?>">
+    <input  class="hidden-input"  type="hidden"   name="quantity"   value="<?php echo $quantity ?>">
     <input  class="hidden-input"  type="hidden"   name="total"     value="<?php echo $totalcost ?>">
 
     <div class="place-item">
@@ -61,13 +52,9 @@ include '../data/dBooking.php'
             </ul>
             <button type="submit" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center" name="placed">Place Booking</button>
         </div>
-
+        
     </div>
 </form>
 
-<script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
-
+<?php include('user-footer.php'); ?>
 

@@ -5,7 +5,7 @@
 
 .background-style{
     width: 100%;
-    background-image: url('https://scontent.fdvo1-2.fna.fbcdn.net/v/t39.30808-6/363364689_676267071184538_4624523128866770334_n.jpg?stp=dst-jpg_p960x960&_nc_cat=106&ccb=1-7&_nc_sid=783fdb&_nc_eui2=AeFclrXvZOiAFtSquM97P6bM24lVxZZDdyDbiVXFlkN3IG-BXOA8IiqrT29gVIoCKjaWodeFzi0nBzHiB_s1CsPw&_nc_ohc=FK7QviTQ7PkAX-8CmUi&_nc_ht=scontent.fdvo1-2.fna&oh=00_AfBz77PSBdBcVWd94Bx4XNlUgtHW4bFFIrqkHpTMGo2b_w&oe=65AEEDDE');
+    background-image: url('../cover.jpg');
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;

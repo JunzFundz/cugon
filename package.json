@@ -6,6 +6,9 @@
     "tailwindcss": "^3.4.1"
   },
   "dependencies": {
-    "flowbite": "^2.2.1"
+    "bootstrap": "^5.3.2",
+    "datatables": "^1.10.18",
+    "flowbite": "^2.2.1",
+    "jquery": "^3.7.1"
   }
 }

@@ -13,10 +13,63 @@
     <title>Cugon</title>
 </head>
 
+<style>
+    .loader {
+        z-index: 9999999999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #333333;
+        transition: opacity 0.75s, visibility 0.75s;
+    }
+
+    .loader--hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .loader::after {
+        content: "";
+        width: 80px;
+        height: 80px;
+        border: 10px solid #dddddd;
+        border-top-color: #009578;
+        border-radius: 50%;
+        animation: loading 0.75s ease infinite;
+    }
+
+    @keyframes loading {
+        from {
+            transform: rotate(0turn);
+        }
+
+        to {
+            transform: rotate(1turn);
+        }
+    }
+</style>
+<script>
+    window.addEventListener("load", () => {
+        const loader = document.querySelector(".loader");
+
+        loader.classList.add("loader--hidden");
+
+        loader.addEventListener("transitionend", () => {
+            document.body.removeChild(loader);
+        });
+    });
+</script>
+
 <body>
 
+    <div class="loader"></div>
 
-    <div class="containernewdiv">
+    <div class="containernewdiv ">
 
         <img id="logo-img" src="logo.jpg" alt="">
 
@@ -31,8 +84,8 @@
                 <ul>
                     <li><a id="sign-up" href="#">Home</a></li>
                     <li><a id="sign-up" href="">Gallery</a></li>
-                    <li><a href="dist/Signup.php" id="sign-up">Sign Up</a></li>
-                    <li><a id="sign-up" href="dist/Login.php">Log in</a></li>
+                    <li><a href="dist/Signup.php" id="sign-up" target=”_blank”>Sign Up</a></li>
+                    <li><a id="sign-up" href="dist/Login.php" target=”_blank”>Log in</a></li>
                 </ul>
 
             </div>
@@ -54,7 +107,8 @@
 
         <div class="form-section">
             <header>Top on the List</header>
-            <center><div class="line-buttom"></div>
+            <center>
+                <div class="line-buttom"></div>
             </center>
         </div>
 

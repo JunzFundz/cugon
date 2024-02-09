@@ -10,19 +10,18 @@ session_start();
     <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 ">
 
         <!-- form -->
-        <form class="space-y-6" action="../data/dPortal.php" method="post">
+        <form id="login" onsubmit="return validateLogin()" class="space-y-6" action="../data/data-portal.php" method="post">
             <h5 class="text-xl font-medium text-gray-900 dark:text-white">Sign in</h5>
             <div>
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="cugon@company.com" required>
+                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
             </div>
             <div>
                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                <input type="password" name="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
             </div>
             <div class="">
                 <div class="">
-
 
                 </div>
                 <a href="#" class="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500 float-left">Lost Password?</a>
@@ -37,3 +36,14 @@ session_start();
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<script src="../assets/sweetalert.min.js"></script>
+
+    <?php if (isset($_SESSION['status']) && $_SESSION['status'] != '') { ?>
+        <script>
+            swal({
+                title: "<?php echo $_SESSION['status']; ?>",
+                icon: "<?php echo $_SESSION['status_code']; ?>",
+                button: "Ok",
+            });
+        </script>
+    <?php unset($_SESSION['status']); } ?>

@@ -1,76 +1,93 @@
-<?php
+<?php 
 session_start();
-include '../data/dItems.php';
+include('user-header.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/Userhome.css">
-    <link href="../node_modules/flowbite/dist/flowbite.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Home</title>
 </head>
 
 <body>
+    <!-- Container -->
+    <div class="user-home-container">
 
-    <div class="containernewdiv">
-
+        <!-- Navigation -->
         <div class="nav-section">
             <?php include 'Navigation.php'; ?>
         </div>
 
-        <div class="body-panel">
-            <br><br><br><br><br>
-            <!-- items block -->
-            <div class="new-block" name="viewDetail">
-                <?php foreach ($result as $row) : ?>
-                    <a href="Itemcheckout.php?i_id=<?= $row['i_id'] ?>">
-                        <div class="new">
-                            <div class="w-60 h-80 bg-gray-800 p-3 flex flex-col gap-1 rounded-br-3xl">
-                                <div class="duration-500 contrast-50 h-48 bg-gradient-to-bl from-black via-orange-900 to-indigo-600  hover:contrast-100"><img class="image-prod rounded-t-lg" name="image" src="../Admin/Rooms/<?php echo $row["i_img"]; ?>" alt="product image" /></div>
+        <!-- Body panel -->
+        <div class="user-body-panel">
+            <h1>Ratings</h1>
+            <div class="user-home-post">
+                <div class="users-content-post">
+                    <h1>Name</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur ullam ratione inventore possimus autem iure, fugit iste, cum voluptatum neque laborum mollitia quis pariatur sunt fuga nisi eaque deserunt in?</p>
+                </div>
+            </div>
+        </div>
 
-                                <div class="flex flex-col gap-4">
-                                    <div class="flex flex-row justify-between">
-                                        <div class="flex flex-col">
-                                            <span class="text-xl text-white font-bold"><?php echo $row["i_name"]; ?></span>
-                                            <p class="availability text-xs text-gray-400 ml-0"><?php echo $row["i_quantity"]; ?> Available</p>
-                                        </div>
-                                        <span class="font-bold  text-red-600">₱<?= number_format($row['i_price']); ?></span>
-                                    </div>
-                                    <a class="hover:bg-sky-700 text-white bg-sky-800 py-2 rounded-br-xl" href="Itemcheckout.php?i_id=<?= $row['i_id'] ?>">Book now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                <?php endforeach; ?>
+        <!-- Right section -->
+        <div class="user-right-section">
+            <div class="right-div bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+                    <li class="me-2">
+                        <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">About</button>
+                    </li>
+                    <li class="me-2">
+                        <button id="services-tab" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false" class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">Services</button>
+                    </li>
+                </ul>
+                <div id="defaultTabContent">
+                    <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
+                        <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Powering innovation & trust at 200,000+ companies worldwide</h2>
+                        <p class="mb-3 text-gray-500 dark:text-gray-400">Empower Developers, IT Ops, and business teams to collaborate at high velocity. Respond to changes and deliver great customer and employee service experiences fast.</p>
+                        <a href="#" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">
+                            Learn more
+                            <svg class=" w-2.5 h-2.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="services-tab">
+                        <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">We invest in the world’s potential</h2>
+                        <!-- List -->
+                        <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
+                            <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span class="leading-tight">Dynamic reports and dashboards</span>
+                            </li>
+                            <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span class="leading-tight">Templates for everyone</span>
+                            </li>
+                            <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span class="leading-tight">Development workflow</span>
+                            </li>
+                            <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                </svg>
+                                <span class="leading-tight">Limitless business automation</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
+                        <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
+
+                        </dl>
+                    </div>
+                </div>
             </div>
         </div>
 
     </div>
 
-    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
-    <script src="../assets/sweetalert.min.js"></script>
-    <?php
-    if (isset($_SESSION['status']) && $_SESSION['status'] != '') { ?>
-
-        <script>
-            swal({
-                title: "<?php echo $_SESSION['status']; ?>",
-                icon: "<?php echo $_SESSION['status_code']; ?>",
-                button: "Ok",
-            });
-        </script>
-
-    <?php
-        unset($_SESSION['status']);
-    }
-    ?>
-
-</body>
-
-</html>
+    <?php include('user-footer.php'); ?>
