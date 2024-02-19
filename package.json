@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
-  "devDependencies": {
+  "devDependencies": { 
     "tailwindcss": "^3.4.1"
   },
   "dependencies": {

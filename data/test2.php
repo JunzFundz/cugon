@@ -2,13 +2,14 @@
 
 require('../class/Booking.php');
 
-$i_id = $_GET['i_id'];
-$booking = new Booking();
-$result = $booking->getItem($i_id);
-$row = $result->fetch_assoc();
+if (isset($_GET['i_id'])) {
+    $i_id = $_GET['i_id'];
+    $booking = new Booking();
+    $result = $booking->getItem($i_id);
+    $row = $result->fetch_assoc();
+}
 
 if (isset($_POST['checkout'])) {
-    $i_id = $_POST['id'];
     $meal = $_POST['meal'];
     $users_id = $_POST['users_id'];
     $quantity = $_POST['quantity'];
@@ -31,5 +32,23 @@ if (isset($_POST['checkout'])) {
     $totalcost = number_format(($price * $days) * $quantity);
 
     $item = new Booking();
-    $row = $item->validateBooking($quantity, $available, $start,  $end);
+    $result = $item->validateBooking($quantity, $available, $start,  $end);
+}
+
+if (isset($_POST['placed'])) {
+    
+    $res_number = isset($_POST['res_number']) ? $_POST['res_number'] : rand(999999999, 10000000);
+    $i_id = $_POST['i_id'];
+    $users_id = $_POST['users_id'];
+    $regular_date = $_POST['regular_date'];
+    $start = $_POST['start'];
+    $end = $_POST['end'];
+    $quantity = $_POST['quantity'];
+    $meal = $_POST['meal'];
+    $totalcost = $_POST['total'];
+    $payment = $_POST['payment'];
+    $status = isset($_POST['status']) ? $_POST['status'] : '';
+
+    $placed = new Booking();
+    $result = $placed->placedBooking($res_number, $i_id, $users_id,$regular_date, $start, $end, $quantity, $meal, $totalcost, $payment);
 }

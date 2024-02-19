@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+*{
+    font-family: "Montserrat", sans-serif;
+}
 
 
 /*! Home */
@@ -186,9 +189,22 @@
     display: inline-block;
 }
 
-.checkout-page{
+.checkout-page {
     background-color: #ebebeb;
 }
+
+.placeItem {
+    grid-column: 1/8;
+    background-color: #d3d3d398;
+    height: 20vh;
+    margin: 30px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*! place item */
 .place-item {
     display: grid;
     place-items: center;
@@ -198,4 +214,103 @@
 .hidden-input {
     display: none;
     visibility: hidden;
+}
+
+.container-items {
+    display: flex;
+    place-items: center;
+    height: 100px;
+    margin: 50px 200px;
+    background-color: #e7e7e7;
+    border-radius: 3px;
+}
+
+
+/*! cart */
+.cart-items{
+    width: auto;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border: 1.5px solid #d8d8d8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.cart-container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 20px;
+    gap: 3rem;
+}
+.cart-items-section{
+    grid-column: 2/9;
+}
+.checkout-section{
+    grid-column: 9/12;
+}
+.total-payment{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 40px;
+    height: auto;
+    background-color: #ffffff;
+    border: 1.5px solid #d8d8d8;
+    border-radius: 3px;
+    margin: 10px;
+    z-index: 999;
+}
+#total-items-pay{
+    padding-left: 10px;
+}
+.date-section{
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+}
+.decrement-btn,
+.increment-btn {
+    border-radius: 0.2rem;
+    height: 2.2rem;
+}
+
+.input-quantity {
+    border-radius: 0;
+    height: 2.2rem;
+}
+
+#total-items-pay {
+    transition: all 0.1s ease;
+}
+
+
+
+/*! placed item */
+body {
+    background-color: #F2F2F2;
+}
+
+.placed-item-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 3rem;
+}
+
+.address-section {
+    grid-column: 2/7;
+    background-color: white;
+    border: 1px solid rgb(208, 208, 208);
+    height: auto;
+}
+
+.payments-section {
+    grid-column: 7/10;
+    background-color: white;
+    border: 1px solid rgb(208, 208, 208);
+    height: 50vh;
+}
+.new-style{
+    margin: 30px;
 }

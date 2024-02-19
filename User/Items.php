@@ -29,7 +29,7 @@ include('user-header.php');
 
                 <?php foreach ($result2 as $row) : ?>
 
-                    <a href="Itemcheckout.php?i_id=<?= $row['i_id'] ?>">
+                    <a href="get-item.php?i_id=<?= $row['i_id'] ?>">
 
                         <div class="custom-items-style w-60 h-80 bg-gray-800 p-3 flex flex-col gap-1 rounded-br-3xl newclass">
 
@@ -44,7 +44,7 @@ include('user-header.php');
                                         <p id="available" class="availability font-semibold text-xs text-green-500 ml-0"><?php echo $row["i_quantity"]; ?> Available</p>
                                     </div>
                                 </div>
-                                <a data-modal-target="default-modal" data-modal-toggle="default-modal" class="font-bold  text-red-600   hover:bg-sky-700 bg-sky-800 py-2 rounded-br-xl" href="Itemcheckout.php?i_id=<?= $row['i_id'] ?>">₱<?= number_format($row['i_price']); ?></a>
+                                <a data-modal-target="default-modal" data-modal-toggle="default-modal" class="font-bold  text-red-600   hover:bg-sky-700 bg-sky-800 py-2 rounded-br-xl" href="get-item.php?i_id=<?= $row['i_id'] ?>">₱<?= number_format($row['i_price']); ?></a>
                             </div>
                         </div>
                     </a>
@@ -61,7 +61,7 @@ include('user-header.php');
                 
                 <?php foreach ($result3 as $row) : ?>
 
-                    <a href="Itemcheckout.php?i_id=<?= $row['i_id'] ?>">
+                    <a href="get-item.php?i_id=<?= $row['i_id'] ?>">
                         <div class="custom-items-style w-60 h-80 bg-gray-800 p-3 flex flex-col gap-1 rounded-br-3xl">
                             <div class="duration-500 contrast-50 h-48 bg-gradient-to-bl from-black via-orange-900 to-indigo-600  hover:contrast-100"><img class="image-prod rounded-t-lg" name="image" src="../Admin/Items/<?php echo $row["i_img"]; ?>" alt="product image" /></div>
 
@@ -73,7 +73,7 @@ include('user-header.php');
                                     </div>
                                     <span class="font-bold  text-red-600">₱<?= number_format($row['i_price']); ?></span>
                                 </div>
-                                <a class="hover:bg-sky-700 text-white bg-sky-800 py-2 rounded-br-xl" href="Itemcheckout.php?i_id=<?= $row['i_id'] ?>">Book now</a>
+                                <a class="hover:bg-sky-700 text-white bg-sky-800 py-2 rounded-br-xl" href="get-item.php?i_id=<?= $row['i_id'] ?>">Book now</a>
                             </div>
                         </div>
                     </a>

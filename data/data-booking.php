@@ -44,22 +44,6 @@ if (isset($_POST['checkout'])) {
     $row = $item->validateBooking($quantity, $available, $start,  $end);
 }
 
-if (isset($_POST['placed'])) {
-    
-    $res_number = isset($_POST['res_number']) ? $_POST['res_number'] : rand(999999999, 10000000);
-    $i_id = $_POST['i_id'];
-    $users_id = $_POST['users_id'];
-    $regular_date = $_POST['regular_date'];
-    $start = $_POST['start'];
-    $end = $_POST['end'];
-    $quantity = $_POST['quantity'];
-    $meal = $_POST['meal'];
-    $totalcost = $_POST['total'];
-    $payment = $_POST['payment'];
-    $status = isset($_POST['status']) ? $_POST['status'] : '';
 
-    $placed = new Booking();
-    $result = $placed->placedBooking($res_number, $i_id, $users_id,$regular_date, $start, $end, $quantity, $meal, $totalcost, $payment);
-}
 
 

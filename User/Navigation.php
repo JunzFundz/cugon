@@ -2,14 +2,14 @@
     <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
         <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="../logo.jpg" class="h-8" alt="Cugon logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Welcome to Cugon Bamboo Resort</span>
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Text Here</span>
         </a>
     
         <!-- Dropdown menu -->
         <?php $user_id = $_SESSION['user_id']; ?>
 
         <div class="flex items-center space-x-6 rtl:space-x-reverse">
-        <a id="dropdownHove" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class=" cursor-pointer text-sm  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800" type="a"><i class="fa-sharp fa-solid fa-cart-shopping"></i>
+        <a id="dropdownHove" href="cart.php?user_id=<?php echo $user_id; ?>" class=" cursor-pointer text-sm  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800" type="a"><i class="fa-sharp fa-solid fa-cart-shopping"></i>
             </a>
 
             <a id="dropdownHove" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class=" cursor-pointer text-sm  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800" type="a"><?php echo $_SESSION['email']; ?><svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">

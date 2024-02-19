@@ -8,10 +8,8 @@ function validateBooking() {
     const singleDate = document.form.singleDate.value;
     const selectedOption = document.getElementById('options').value;
 
-
     // validation for dates
     switch (selectedOption) {
-
         case 'reg':
             if (singleDate === '' || singleDate === null) {
                 alert("Please specify date for regular booking");
@@ -37,33 +35,6 @@ function validateBooking() {
             }
             break;
     }
-    
-
-
-    // if (selectedOption !== 'reg' && selectedOption !== 'stay') {
-    //     alert("Please select an option");
-    //     return false;
-    // }
-
-    // if (selectedOption === 'reg') {
-
-    //     if (start === '' || start == null) {
-    //         alert("Please specify date for regular booking");
-    //         return false;
-    //     }
-
-    // }
-    // if (selectedOption === 'stay') {
-
-    //     if (start === '' || start == null || end === '' || end == null) {
-    //         alert("Please enter a valid date");
-    //         return false;
-    //     } else if (start == end) {
-    //         alert("Start and End date cannot be the same");
-    //         return false;
-    //     }
-    //     return true;
-    // }
 
     if (quantity > available) {
         alert("Sorry, there are only " + available + " available");
@@ -80,10 +51,7 @@ function validateBooking() {
         alert("Please add a payment");
         return false;
     }
-    return true; // If filled tanan
 }
-
-
 
 function validateSignup() {
     const username = document.signUp.username.value;
@@ -155,26 +123,6 @@ function validateLogin() {
     }
 }
 
-// user cancel booking request
-function cancelBook(resID) {
-    if (confirm("Are you sure you want to cancel this request?")) {
-        $.ajax({
-            url: '../data/dCancel.php',
-            type: 'post',
-            data: {
-                resID: resID
-            },
-            success: function (response) {
-                console.log(response);
-                alert('Success');
-                location.reload();
-            },
-            error: function () {
-                alert('Error: ');
-            }
-        });
-    }
-}
 
 document.addEventListener('DOMContentLoaded', function () {
     // e hide niya both singleDate and twoDates by default

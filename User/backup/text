@@ -1,0 +1,1 @@
+ name="form" onsubmit="return validateBooking()" class="space-y-6 form" method="post" action="../data/test2.php"
