@@ -2,13 +2,16 @@
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
-  "devDependencies": { 
+  "devDependencies": {
     "tailwindcss": "^3.4.1"
   },
   "dependencies": {
+    "@sweetalert2/theme-material-ui": "^5.0.16",
     "bootstrap": "^5.3.2",
+    "composer": "^4.1.0",
     "datatables": "^1.10.18",
     "flowbite": "^2.2.1",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "sweetalert2": "^11.10.6"
   }
 }

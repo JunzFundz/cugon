@@ -1,13 +1,10 @@
 <?php
 session_start();
 include('user-header.php');
+include('../data/user-checkout.php');
 include('Navigation.php');
+
 ?>
-
-<style>
-
-</style>
-
 
 <!-- container -->
 <div class="placed-item-container">
@@ -15,54 +12,46 @@ include('Navigation.php');
     <!-- address -->
     <div class="address-section rounded">
 
-        <div>
-            <form class="new-style mx-auto">
-                <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="new-address m-5">
+            <form id="informationForm" class="" action="../data/user-save-info.php" method="post">
+                <div class="grid md:grid-cols-3 md:gap-6">
                     <div class="relative z-0 w-full mb-5 group">
-                        <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                        <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Full name</label>
+                        <input type="hidden" name="userid" id="get-userid" value="<?= $users_id ?>" />
+
+                        <input type="text" name="set-name" id="set-name" class=" font-semibold block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" />
+                        <label for="" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Full name</label>
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
-                        <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                        <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mobile</label>
+                        <input type="text" name="set-email" id="set-email" class=" font-semibold block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" />
+                        <label for="" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                        <input type="number" name="set-phone" id="set-phone" class=" font-semibold block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" />
+                        <label for="" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone</label>
                     </div>
                 </div>
                 <div class="grid md:grid-cols-3 md:gap-6">
                     <div class="relative z-0 w-full mb-5 group">
-                        <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                        <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City/Municipality</label>
+                        <input type="text" name="set-city" id="set-city" class=" font-semibold block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                        <label for="" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City/Municipality</label>
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
-                        <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                        <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Barangay</label>
+                        <input type="text" name="set-brgy" id="set-brgy" class=" font-semibold block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                        <label for="" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Barangay</label>
                     </div>
                     <div class="relative z-0 w-full mb-5 group">
-                        <input type="number" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                        <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Zip</label>
+                        <input type="number" name="set-zip" id="set-zip" class=" font-semibold block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                        <label for="set-zip" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Zip</label>
                     </div>
                 </div>
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" required />
-                    <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Message</label>
-                </div>
-                <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" required />
-                    <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Message</label>
+                    <input type="text" name="set-msg" id="set-msg" class=" font-semibold block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" />
+                    <label for="set-msg" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Message</label>
                 </div>
                 <br>
 
-
-                <fieldset>
-                    <legend class="sr-only">Checkbox variants</legend>
-
-                    <div class="flex items-center mb-4">
-                        <input id="checkbox-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                        <label for="checkbox-1" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree to the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
-                    </div>
-                </fieldset>
-
                 <br>
-                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button>
+                <input type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" value="save">
             </form>
         </div>
     </div>
@@ -70,8 +59,165 @@ include('Navigation.php');
     <!-- payments -->
     <div class="payments-section rounded">
 
+        <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Item information</h5>
+            <ul role="list" class="space-y-5 my-7">
+                <li class="flex items-center">
+
+                    <input type="hidden" id="get_user_id" value="<?php echo $users_id ?>">
+                </li>
+                <?php if ($dateOptions == 'stay') { ?>
+
+                    <li class="flex items-center flex-row justify-between">
+                        <div class="flex items-center flex-row">
+                            <span class="text-xs font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">From : </span>
+                        </div>
+                        <div class="flex items-center flex-row">
+                            <span class="text-xs font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3 get_start_date" data-get_start_date="<?php echo date('M-d-y', strtotime($start)); ?>"><?php echo date('M-d-y', strtotime($start)); ?></span>
+                        </div>
+                        <div>
+                            <span class="text-xs font-normal leading-tight text-red-500 dark:text-red-400 ms-3 float-end">to</span>
+                        </div>
+                        <div>
+                            <span class="text-xs font-normal leading-tight text-black-500 dark:text-gray-400 ms-3 float-end get_end_date" data-get_end_date="<?php echo date('M-d-y', strtotime($end)); ?>"><?php echo date('M-d-y', strtotime($end)); ?></span>
+                        </div>
+                    </li>
+
+                <?php } else { ?>
+
+                    <li class="flex items-center flex-row justify-between">
+                        <div class="flex items-center flex-row">
+                            <span class="text-xs font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">From : </span>
+                        </div>
+                        <div class="flex items-center flex-row">
+                            <span class="text-xs font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3 get_reg_date" data-get_reg_date="<?php echo date('M-d-y', strtotime($regular_date)); ?>"><?php echo date('M-d-y', strtotime($regular_date)); ?></span>
+                        </div>
+                    </li>
+
+                <?php } ?>
+
+                <div class=" w-full">
+
+                    <div class="relative ">
+                        <table class="w-full text-sm text-center rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs font-medium leading-tight text-black-500 dark:text-gray-400 ms-3">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-xs font-bold leading-tight text-black-500 dark:text-gray-400 ms-3">
+                                        Items
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-xs font-bold leading-tight text-black-500 dark:text-gray-400 ms-3">
+                                        Prices
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-xs font-bold leading-tight text-black-500 dark:text-gray-400 ms-3">
+                                        Quantity
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="text-xs font-medium leading-tight text-black-500 dark:text-gray-400 ms-3 get_item_id" data-get_item_id="<?php echo $item_id ?>">
+                                        <?php echo $item_name ?>
+                                    </th>
+                                    <td class="px-6 py-4 text-xs font-medium leading-tight text-black-500 text-orange-600 ms-3 get_price" data-get_price="<?php echo number_format($price) ?>">
+                                        <?php echo number_format($price) ?>
+                                    </td>
+                                    <td class="px-6 py-4 text-xs font-medium leading-tight text-black-500 dark:text-gray-400 ms-3 get_quantity" data-get_quantity="<?php echo $quantity ?>">
+                                        x<?php echo $quantity ?>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <li class="flex items-center flex-row justify-between">
+                    <div class="flex items-center flex-row">
+                        <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        <span class="text-base font-normal leading-tight text-black-500 dark:text-gray-400 ms-3 float-end">Days</span>
+                    </div>
+
+                    <div>
+                        <span class="text-base font-normal leading-tight text-black-500 dark:text-gray-400 ms-3 float-end">x<?php echo $totaldays ?></span>
+                    </div>
+                </li>
+                <li class="flex items-center flex-row justify-between">
+                    <div class="flex items-center flex-row">
+                        <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                        </svg>
+                        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Quantinty</span>
+                    </div>
+                    <div>
+                        <span class="text-base font-normal leading-tight text-black-500 dark:text-gray-400 ms-3 float-end quantity" data-get_quantity="<?php echo $quantity ?>">x<?php echo $quantity ?></span>
+                    </div>
+                </li>
+
+                <li class="flex items-center flex-row justify-between">
+                    <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Total</span>
+                    <span class=" font-semibold leading-medium text-orange-600 dark:text-gray-400 ms-3 text-3xl total_in_days" data-total_in_days="<?php echo $totalcost ?>">₱ <?php echo $totalcost ?></span>
+                </li>
+
+                <?php
+                if ($payment == 'Gcash') { ?>
+                    <li class="flex items-center flex-row justify-between">
+                        <div class="flex items-center flex-row">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8H5m12 0c.6 0 1 .4 1 1v2.6M17 8l-4-4M5 8a1 1 0 0 0-1 1v10c0 .6.4 1 1 1h12c.6 0 1-.4 1-1v-2.6M5 8l4-4 4 4m6 4h-4a2 2 0 1 0 0 4h4c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1Z" />
+                            </svg>
+                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3 get_payment" data-get_payment="<?php echo $payment ?>">Payment</span>
+                        </div>
+
+                        <div>
+                            <img src="../GCash_logo.svg.png" alt="" class=" object-contain w-24">
+                        </div>
+                    </li>
+                <?php } else { ?>
+                    <li class="flex items-center flex-row justify-between">
+                        <div class="flex items-center flex-row">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8H5m12 0c.6 0 1 .4 1 1v2.6M17 8l-4-4M5 8a1 1 0 0 0-1 1v10c0 .6.4 1 1 1h12c.6 0 1-.4 1-1v-2.6M5 8l4-4 4 4m6 4h-4a2 2 0 1 0 0 4h4c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1Z" />
+                            </svg>
+                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3 get_payment" data-get_payment="<?php echo $payment ?>">Payment</span>
+                        </div>
+
+                        <div>
+                            <span>Over the counter</span>
+                        </div>
+                    </li>
+                <?php } ?>
+
+
+            </ul>
+            <button onclick="return submitDetails(this)" type="submit" id="placedSingleBooking" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center placedSingleBooking">Placed Booking</button>
+        </div>
     </div>
 
-</div>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: '../data/user-load-info.php',
+                method: 'POST',
+                data: {
+                    users_id: <?php echo $_SESSION['user_id']; ?>
+                },
+                dataType: 'json',
+                success: function(response) {
+                    $('#set-name').val(response.full_name);
+                    $('#set-email').val(response.email);
+                    $('#set-phone').val(response.phone);
+                    $('#set-city').val(response.city);
+                    $('#set-brgy').val(response.brgy);
+                    $('#set-zip').val(response.zip_code);
+                    $('#set-msg').val(response.message);
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        })
+    </script>
 
+</div>
 <?php include('user-footer.php') ?>

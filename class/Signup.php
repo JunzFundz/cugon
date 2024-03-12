@@ -41,7 +41,7 @@ class Signup extends Dbh
         $stmt = $this->connect()->prepare('INSERT INTO users (username, email, phone, password) VALUES (?,?,?,?)');
 
         try {
-            $stmt->bind_param('siis', $this->username, $this->email, $this->phone, $this->password);
+            $stmt->bind_param('ssis', $this->username, $this->email, $this->phone, $this->password);
             $stmt->execute();
 
             $_SESSION['status'] = "Account created you can proceed to login.";

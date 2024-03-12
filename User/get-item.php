@@ -1,13 +1,15 @@
 <?php
 session_start();
-include('../data/test2.php');
+include('../data/user-checkout.php');
 include('user-header.php');
 ?>
 
 <title>Checkout</title>
 </head>
 
-
+<div class="opacity-0 invisible" id="alert-box">
+    <span class=" text-2xl text-white text-opacity-100" id="alert-text"></span>
+</div>
 
 <body class="checkout-page">
 
@@ -20,10 +22,11 @@ include('user-header.php');
 
         <div class="checkout-body-section">
             <div class="w-full max-w-sm p-4">
-                <form id="myForm" name="form" onsubmit="return validateBooking()" method="post" action="placed-item.php">
+                <form id="myForm" name="form" onsubmit="return validateBooking(this)" method="post" action="placed-item.php?user_id=<?php echo $_SESSION['user_id']; ?>">
 
                     <!-- Product details -->
-                    <input type="hidden" value="<?php echo $row['i_id'] ?>" name="id" class="item_id">
+                    <input type="hidden" value="<?php echo $row['i_id'] ?>" name="item_id" class="item_id">
+                    <input type="hidden" value="<?php echo $row['i_name'] ?>" name="item_name" class="item_name">
                     <input type="hidden" value="<?php echo $_SESSION['user_id'] ?>" name="users_id">
                     <input type="hidden" value="<?php echo $row['i_price'] ?>" name="price">
                     <input type="hidden" value="<?php echo $row['i_quantity'] ?>" name="available">
@@ -35,7 +38,7 @@ include('user-header.php');
                     <!-- onchange -->
                     <br>
                     <label for="options" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select type of booking</label>
-                    <select id="options" onchange="changeInputs()" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <select id="options" name="dateOptions" onchange="changeInputs()" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option value="reg" selected>Regular</option>
                         <option value="stay">Stay</option>
                     </select>
@@ -48,7 +51,7 @@ include('user-header.php');
                                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>
                         </div>
-                        <input name="regular_date" id="singleDate" datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                        <input name="regular_date" id="singleDate" datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 singleDate" placeholder="Select date">
                     </div>
 
                     <!-- two dates picker -->
@@ -95,21 +98,19 @@ include('user-header.php');
                         </button>
                     </div>
 
-                    <!-- meal -->
+                    <!-- payment -->
                     <br>
-                    <label for="" class="block mb-2 text-sm font-semibold text-gray-900 dark:text-white">Select an meal</label>
-                    <select id="meal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="meal">
-                        <option selected>None</option>
-                        <option value="Breakfast">Breakfast</option>
-                        <option value="Lunch">Lunch</option>
-                        <option value="Dinner">Dinner</option>
+                    <label for="" class="block mb-2 text-sm font-semibold text-gray-900 dark:text-white">Select an payment</label>
+                    <select id="payment" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="payment">
+                        <option selected value="counter">Over the counter</option>
+                        <option value="Gcash">Gcash</option>
                     </select>
 
                     <!-- submit -->
                     <br>
                     <button id="addtoCart" type="submit" class=" text-blue-700 bg-blue-300  hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 addtoCart" name="addcart">Add to cart</button>
 
-                    <button href="" onclick="" id="checkoutItem" type="submit" class="left-0 ml-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium  text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 " name="checkout">Get</button>
+                    <button type="submit" class="left-0 ml-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium  text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 " name="get-preffered-item">Get</button>
                 </form>
             </div>
         </div>
@@ -137,14 +138,18 @@ include('user-header.php');
                         user_id: user_id,
                         item_quantity: quantity
                     },
-                    dataType: "json",
                     success: function(response) {
-                        if (response.status === "success") {
-                            alert("Item added successfully");
-                        } else {
-                            alert("Item already in cart");
-                        }
+                        var result = JSON.parse(response);
+                        var message = result ? "Item added" : "Item already added!";
+
+                        $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                        $('#alert-text').html(message);
+
+                        setTimeout(function() {
+                            $('#alert-box').removeClass('visible').addClass('invisible');
+                        }, 1500);
                     },
+
                     error: function(xhr, status, error) {
                         console.error(xhr.responseText);
                         alert("Error: " + status + " - " + error);

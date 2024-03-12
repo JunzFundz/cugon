@@ -14,15 +14,15 @@
 
 .user-home-post {
     width: 85%;
-    height: 50vh;
+    height: 80vh;
     background-color: rgb(210, 210, 210);
     border-radius: 20px;
     margin: 60px 30px 20px 100px;
 }
 
 .user-body-panel {
-    grid-column: 2/9;
-    height: auto;
+    grid-column: 2/10;
+    height: 80vh;
     overflow: scroll;
 }
 
@@ -30,7 +30,7 @@
     padding-top: 50px;
     font-size: 0.8rem;
     grid-column: 2/12;
-    height: auto;
+    height: 80vh;
 }
 
 .users-content-post {
@@ -38,21 +38,21 @@
 }
 
 .user-right-section {
-    grid-column: 9/13;
+    grid-column: 10/12;
+    height: 80vh;
 }
 
 .right-div {
     margin: 30px;
 }
-
-.user-right-section {
-    width: 100%;
-    height: 100%;
-    --color: rgba(114, 114, 114, 0.3);
-    background-color: #191a1a;
-    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
-        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
-    background-size: 55px 55px;
+.post-container{
+    border: 1.5px solid rgb(217, 217, 217); 
+    border-radius:5px; 
+    padding: 20px; 
+    margin-top:20px; 
+    margin-bottom:30px;
+    margin-right: 20px;
+    background-color: #ffffff;
 }
 
 
@@ -66,6 +66,7 @@
 .nav-section>nav {
     height: auto;
     width: 100%;
+    z-index: 9999;
 }
 
 
@@ -138,13 +139,20 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 }
-
-.trans-sidebar {
-    grid-column: 1/2;
+.button--back{
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 50%;
+    padding: 7px;
+    margin: 10px;
+    transition: 0.2s;
+}
+.button--back:hover{
+    background-color: #dfdfdf;
 }
 
 .trans-content {
-    grid-column: 2/6;
+    grid-column: 2/7;
+    height: auto;
 }
 
 
@@ -259,7 +267,6 @@
     border: 1.5px solid #d8d8d8;
     border-radius: 3px;
     margin: 10px;
-    z-index: 999;
 }
 #total-items-pay{
     padding-left: 10px;
@@ -292,6 +299,7 @@ body {
 }
 
 .placed-item-container {
+    height: auto;
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -299,18 +307,60 @@ body {
 }
 
 .address-section {
+    height: auto;
     grid-column: 2/7;
     background-color: white;
     border: 1px solid rgb(208, 208, 208);
-    height: auto;
 }
 
 .payments-section {
     grid-column: 7/10;
-    background-color: white;
-    border: 1px solid rgb(208, 208, 208);
-    height: 50vh;
+    height: auto;
 }
-.new-style{
-    margin: 30px;
+
+.new-address, .new-payment{
+    margin: 60px;
+}
+
+
+/*! alertbox */
+.custom-icon-class .swal2-icon svg {
+    width: 10px;
+    height: 10px;
+}
+.custom-alert-box{
+    width: 25rem;
+    height: 15rem;
+}
+.custom-title{
+    font-size: 15px;
+}
+
+/*! custom */
+#alert-box {
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff89;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+#alert-text{
+    background-color: rgba(0, 0, 0, 0.764);
+    padding: 50px 50px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/*! search bar */
+#simple-search{
+    width: 20rem;
 }

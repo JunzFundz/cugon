@@ -1,5 +1,145 @@
-function validateBooking() {
+function alertErrors() {
+    setTimeout(function () {
+        $('#alert-box').removeClass('visible opacity-100').addClass('invisible');
+    }, 1500);
+}
 
+function setErrorWithTimeout(element, errorMessage) {
+    element.removeClass('border border-gray-300').addClass('border-2 border-red-600');
+    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+    $('#alert-text').html(errorMessage);
+    setTimeout(function () {
+        element.removeClass('border-red-600').addClass('border-gray-300');
+    }, 3000);
+    alertErrors();
+}
+
+//!Validation sa checkout inputs 
+function onSubmission() {
+    const singleDateInput = $('#singleDateInput').val();
+    const startDate = $('#startDate').val();
+    const endDate = $('#endDate').val();
+    const dateOptions = $('#options').val();
+
+    if ($('.item-checkbox:checked').length === 0) {
+        setErrorWithTimeout($('.item-checkbox'), "No item selected");
+        return false;
+    }
+
+    switch (dateOptions) {
+        case 'reg':
+            if (!singleDateInput || singleDateInput === null || singleDateInput === '' || !isValidDate(singleDateInput)) {
+                setErrorWithTimeout($('#singleDateInput'), "Enter Date");
+                return false;
+            }
+            break;
+
+        case 'stay':
+            if (startDate === '' || startDate === null || endDate === '' || endDate === null) {
+                setErrorWithTimeout($('#startDate, #endDate'), "Enter Date");
+                return false;
+            }
+            if (startDate === endDate) {
+                setErrorWithTimeout($('#startDate, #endDate'), "Two dates cannot be the same");
+                return false;
+            }
+            break;
+
+        default:
+            if (dateOptions !== 'reg' && dateOptions !== 'stay') {
+                setErrorWithTimeout($('#startDate, #endDate'), "Two dates cannot be the same");
+                return false;
+            }
+            break;
+    }
+    return true;
+}
+
+
+function submitDetails() {
+
+    var setName = $('#set-name').val();
+    var setEmail = $('#set-email').val();
+    var setPhone = $('#set-phone').val();
+    var setCity = $('#set-city').val();
+    var setBrgy = $('#set-brgy').val();
+    var setZip = $('#set-zip').val();
+    var setMsg = $('#set-msg').val();
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const phonePattern = /^\+?(\d[\d-. ]+)?(\([\d-. ]+\))?[\d-. ]+\d$/;
+
+    switch (true) {
+        case (
+            (setName === null || setName === '') &&
+            (setEmail === null || setEmail === '') &&
+            (setPhone === null || setPhone === '') &&
+            (setCity === null || setCity === '') &&
+            (setBrgy === null || setBrgy === '') &&
+            (setZip === null || setZip === '')
+        ):
+            $('#set-name, #set-email, #set-phone, #set-city, #set-brgy, #set-zip').removeClass('border-gray-300').addClass('border-red-600');
+            $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+            $('#alert-text').html("Fields are empty!");
+
+            setTimeout(function () {
+                $('#set-name, #set-email, #set-phone, #set-city, #set-brgy, #set-zip').removeClass('border-red-600').addClass('border-gray-300');
+            }, 3000);
+
+            alertErrors();
+            return false;
+            
+        case (setName.length > 60):
+            setErrorWithTimeout($('#set-name'), "Name is too long!");
+            return false;
+
+        case (setName.length < 10):
+            setErrorWithTimeout($('#set-name'), "Name is too short!");
+            return false;
+
+        case (setEmail === null || setEmail == ''):
+            setErrorWithTimeout($('#set-email'), "Oops email is empty!");
+            return false;
+
+        case (!emailRegex.test(setEmail)):
+            setErrorWithTimeout($('#set-email'), "Oops email is incorrect format!");
+            return false;
+
+        case (setEmail.length < 5):
+            setErrorWithTimeout($('#set-email'), "Email address is too short!");
+            return false;
+
+        case (setEmail.length > 50):
+            setErrorWithTimeout($('#set-email'), "Email address is too long!");
+            return false;
+
+        case (setPhone === null || setPhone.trim() === ''):
+            setErrorWithTimeout($('#set-phone'), "Phone number field is empty!");
+            return false;
+
+        case (!phonePattern.test(setPhone)):
+            setErrorWithTimeout($('#set-phone'), "Invalid phone number format!");
+            return false;
+
+        case (setCity === null || setCity === ''):
+            setErrorWithTimeout($('#set-city'), "City field is empty!");
+            return false;
+
+        case (setBrgy === null || setBrgy === ''):
+            setErrorWithTimeout($('#set-brgy'), "Barangay field is empty!");
+            return false;
+
+        case (setZip === null || setZip.trim() === ''):
+            setErrorWithTimeout($('#set-zip'), "Barangay field is empty!");
+            return false;
+        default:
+            break;
+    }
+
+    return true;
+}
+
+function validateBooking() {
     const start = document.form.start.value;
     const end = document.form.end.value;
     const available = document.form.available.value;
@@ -8,47 +148,68 @@ function validateBooking() {
     const singleDate = document.form.singleDate.value;
     const selectedOption = document.getElementById('options').value;
 
-    // validation for dates
     switch (selectedOption) {
         case 'reg':
             if (singleDate === '' || singleDate === null) {
-                alert("Please specify date for regular booking");
+                $('.singleDate').removeClass('border-gray-300').addClass('border-red-600');
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html("Please specify date for regular");
+                alertErrors();
                 return false;
             }
             break;
-    
+
         case 'stay':
             if (start === '' || start === null || end === '' || end === null) {
-                alert("Please enter a valid date");
+                $('#start').removeClass('border-gray-300').addClass('border-red-600');
+                $('#end').removeClass('border-gray-300').addClass('border-red-600');
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html("Enter valid date");
+                alertErrors();
                 return false;
             }
             if (start === end) {
-                alert("Start and End date cannot be the same");
+                $('#startDate').removeClass('border-gray-300').addClass('border-red-600');
+                $('#endDate').removeClass('border-gray-300').addClass('border-red-600');
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html("Two dates cannot be the same");
+                alertErrors();
                 return false;
             }
             break;
-    
+
         default:
             if (selectedOption !== 'reg' && selectedOption !== 'stay') {
-                alert("Please select an option");
+                $('#endDate').removeClass('border-gray-300').addClass('border-red-600');
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html("Please select option");
+                alertErrors();
                 return false;
             }
             break;
     }
 
     if (quantity > available) {
-        alert("Sorry, there are only " + available + " available");
+        $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+        $('#alert-text').html("Sorry there are only " + available + " available");
+        alertErrors();
         return false;
     } else if (available <= 0) {
-        alert("Sorry, there are no available to this item");
+        $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+        $('#alert-text').html("Sorry there are no available left");
+        alertErrors();
         return false;
     }
     if (quantity < 1) {
-        alert("Invalid Quantity");
+        $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+        $('#alert-text').html("Invalid quantity");
+        alertErrors();
         return false;
     }
     if (payment === '' || payment == null) {
-        alert("Please add a payment");
+        $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+        $('#alert-text').html("Please select payment");
+        alertErrors();
         return false;
     }
 }
@@ -123,13 +284,10 @@ function validateLogin() {
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
-    // e hide niya both singleDate and twoDates by default
     document.getElementById('singleDate').style.display = 'none';
     document.getElementById('twoDates').style.display = 'none';
 });
-
 
 // inputs option for regular and stay
 function changeInputs() {

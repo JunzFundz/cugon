@@ -4,7 +4,6 @@ require('../class/Items.php');
 
 class AccessItems extends Items
 {
-
     public function displayAll()
     {
         return $this->allItems();
@@ -33,5 +32,9 @@ class AccessItems extends Items
     public function add($i_type, $i_name, $i_img, $i_desc, $i_price, $i_quantity)
     {
         return $this->additem($i_type, $i_name, $i_img, $i_desc, $i_price, $i_quantity);
+    }
+    public function delete($itemID)
+    {
+        return $this->deleteItem($itemID);
     }
 }

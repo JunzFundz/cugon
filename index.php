@@ -84,8 +84,8 @@
                 <ul>
                     <li><a id="sign-up" href="#">Home</a></li>
                     <li><a id="sign-up" href="">Gallery</a></li>
-                    <li><a href="dist/Signup.php" id="sign-up" target=”_blank”>Sign Up</a></li>
-                    <li><a id="sign-up" href="dist/Login.php" target=”_blank”>Log in</a></li>
+                    <li><a href="dist/signup" id="sign-up" target=”_blank”>Sign Up</a></li>
+                    <li><a id="sign-up" href="dist/login" target=”_blank”>Log in</a></li>
                 </ul>
 
             </div>
@@ -111,6 +111,8 @@
                 <div class="line-buttom"></div>
             </center>
         </div>
+
+        
 
     </div>
 

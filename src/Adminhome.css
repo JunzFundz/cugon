@@ -1,19 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Montserrat", sans-serif;
+}
+
 .admin-container {
     grid-template-columns: repeat(8, 1fr);
     display: grid;
 }
 
 .nav {
-    color: #e4e4e4;
     grid-column: 1/9;
     height: 80px;
-    background-color: rgb(95, 95, 95);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid grey;
 }
 
 .left-panel {
     height: 95vh;
     grid-column: 1/2;
-    background-color: rgb(95, 95, 95);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid grey;
 }
 
 .right-panel {
@@ -29,7 +36,7 @@
 
 div ul li a {
     font-weight: 600;
-    color: rgb(216, 216, 216);
+    color: rgb(98, 98, 98);
     text-decoration: none;
 }
 

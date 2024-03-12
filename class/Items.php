@@ -44,9 +44,10 @@ class Items extends Dbh
         if (file_exists("../Admin/Items/" . $_FILES["i_img"]["name"])) {
             $_FILES["i_img"]["name"];
 
-            $_SESSION['status'] = "File already exist";
-            $_SESSION['status_code'] = "error";
-            header('location: ../Admin/Items.php');
+            echo '<script type="text/javascript">';
+            echo 'alert("File already exist");';
+            echo 'window.location.href = "../Admin/Home.php" ';
+            echo '</script>';
         } else {
 
             $sql = "INSERT INTO items (i_type, i_name, i_img, i_desc, i_price, i_quantity) VALUES('$i_type', '$i_name', '$i_img', '$i_desc', '$i_price', '$i_quantity')";
@@ -57,13 +58,16 @@ class Items extends Dbh
 
                 move_uploaded_file($_FILES["i_img"]["tmp_name"], "../Admin/Items/" . $_FILES["i_img"]["name"]);
 
-                $_SESSION['status'] = "File uploaded";
-                $_SESSION['status_code'] = "success";
-                header('location: ../Admin/Items.php');
+                echo '<script type="text/javascript">';
+                echo 'alert("File uploaded");';
+                echo 'window.location.href = "../Admin/Home.php" ';
+                echo '</script>';
+
             } else {
-                $_SESSION['status'] = "Somethings wrong";
-                $_SESSION['status_code'] = "error";
-                header('location: ../Admin/Items.php');
+                echo '<script type="text/javascript">';
+                echo 'alert("Somethings wrong");';
+                echo 'window.location.href = "../Admin/Home.php" ';
+                echo '</script>';
             }
         }
     }
@@ -82,14 +86,6 @@ class Items extends Dbh
                 echo json_encode($data_array);
             }
         }
-
-        // if ($result && $result->num_rows > 0) {
-        //     while ($row = $result->fetch_assoc()) {
-        //         $data_array[] = $row;
-        //         header('Content-Type: application/json');
-        //         echo json_encode($data_array);
-                
-        //     }
         else {
             echo "Error! No Data Found.";
         }
@@ -142,15 +138,15 @@ class Items extends Dbh
         return $result;
     }
 
-    protected function deleteItem($i_id)
+    protected function deleteItem($itemID)
     {
-        $sql = "SELECT i_img FROM items WHERE i_id = '$i_id'";
+        $sql = "SELECT i_img FROM items WHERE i_id = '$itemID'";
         $result = $this->connect()->query($sql);
 
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $imgFileName = $row['i_img'];
-            $sqlDelete = "DELETE FROM items WHERE i_id = '$i_id'";
+            $sqlDelete = "DELETE FROM items WHERE i_id = '$itemID'";
             $resultDelete = $this->connect()->query($sqlDelete);
 
             if ($resultDelete) {
