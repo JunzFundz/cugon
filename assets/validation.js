@@ -5,7 +5,7 @@ function alertErrors() {
 }
 
 function setErrorWithTimeout(element, errorMessage) {
-    element.removeClass('border border-gray-300').addClass('border-2 border-red-600');
+    element.removeClass('border border-gray-300').addClass('border-red-600');
     $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
     $('#alert-text').html(errorMessage);
     setTimeout(function () {
@@ -130,7 +130,7 @@ function submitDetails() {
             return false;
 
         case (setZip === null || setZip.trim() === ''):
-            setErrorWithTimeout($('#set-zip'), "Barangay field is empty!");
+            setErrorWithTimeout($('#set-zip'), "Zip field is empty!");
             return false;
         default:
             break;
@@ -223,7 +223,10 @@ function validateSignup() {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     if (username === '' || username == null) {
-        alert('Username is required');
+        $('.singleDate').removeClass('border-gray-300').addClass('border-red-600');
+        $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+        $('#alert-text').html("Please specify date for regular");
+        alertErrors();
         return false;
     }
     if (!emailRegex.test(email)) {
@@ -284,12 +287,11 @@ function validateLogin() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('singleDate').style.display = 'none';
-    document.getElementById('twoDates').style.display = 'none';
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     document.getElementById('singleDate').style.display = 'none';
+//     document.getElementById('twoDates').style.display = 'none';
+// });
 
-// inputs option for regular and stay
 function changeInputs() {
     let options = document.getElementById('options');
     let twoDates = document.getElementById('twoDates');

@@ -1,66 +1,79 @@
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
-    <div class="flexitems-center mx-auto max-w-screen-xl p-4">
+<nav class="bg-white border-gray-200 dark:bg-gray-900 w-full navbar">
+    <div class="flexitems-center mx-auto max-w-screen-xl p-4 ">
         <ul class="flex flexitems-center mx-auto justify-between">
+
             <li class="">
                 <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="../logo.jpg" class="h-8" alt="Cugon logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Cugon Bamboo Resort</span>
+                    <img src="../images/logo.jpg" class="logo-img" alt="Cugon logo" />
+                    <span class="logo-text self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Cugon Bamboo Resort</span>
                 </a>
             </li>
+            <li class="flex items-center">
+                <div class="search-bar">
+                    <form class="search-bar-input flex items-center max-w-sm mx-auto">
+                        <label for="simple-search" class="sr-only">Search</label>
+                        <div class="relative w-full">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
 
-            <li class="">
-
-                <form class="flex items-center max-w-sm mx-auto">
-                    <label for="simple-search" class="sr-only">Search</label>
-                    <div class="relative w-full">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-
+                            </div>
+                            <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search item name..." required />
                         </div>
-                        <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search item name..." required />
-                    </div>
-                    <button type="submit" class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                        </svg>
-                        <span class="sr-only">Search</span>
-                    </button>
-                </form>
-
+                        <button type="submit" class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                            <span class="sr-only">Search</span>
+                        </button>
+                    </form>
+                </div>
             </li>
 
-            <li class=" float-right">
+            <li class="flex items-center">
                 <!-- Dropdown menu -->
                 <?php $user_id = $_SESSION['user_id']; ?>
 
-                <div class="flex items-center space-x-6 rtl:space-x-reverse">
-                    <div class="flex flex-row">
-                        <a id="dropdownHove" href="cart.php?user_id=<?php echo $user_id; ?>" class="cursor-pointer text-sm  text-gray-600 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800" type="a"><svg class="w-7 h-8 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd" d="M4 4c0-.6.4-1 1-1h1.5c.5 0 .9.3 1 .8L7.9 6H19a1 1 0 0 1 1 1.2l-1.3 6a1 1 0 0 1-1 .8h-8l.2 1H17a3 3 0 1 1-2.8 2h-2.4a3 3 0 1 1-4-1.8L5.7 5H5a1 1 0 0 1-1-1Z" clip-rule="evenodd" />
-                            </svg>
+                <div class="nav-menu flex items-center space-x-6 rtl:space-x-reverse">
+                    <div class="flex flex-row svg-buttons">
 
-                        </a>
-                        <a id="dropdownHove" data-modal-target="static-modal" data-modal-toggle="static-modal" href="#" class=" cursor-pointer text-sm  text-gray-600 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800 user-notification" data-user_id="<?php echo $user_id; ?>" type="a">
-                            <svg class="w-7 h-8 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17.1 12.6v-1.8A5.4 5.4 0 0 0 13 5.6V3a1 1 0 0 0-2 0v2.4a5.4 5.4 0 0 0-4 5.5v1.8c0 2.4-1.9 3-1.9 4.2 0 .6 0 1.2.5 1.2h13c.5 0 .5-.6.5-1.2 0-1.2-1.9-1.8-1.9-4.2ZM8.8 19a3.5 3.5 0 0 0 6.4 0H8.8Z" />
-                            </svg>
-
+                        <a id="cart-nav-btn" href="cart.php?user_id=<?php echo $user_id; ?>" class="cursor-pointer text-lg text-gray-600 dark:text-white hover:underline  font-medium rounded-lg px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800" type="a"><i class="fa-solid fa-cart-shopping"></i>
                         </a>
 
-                        <a id="" data-modal-target="map-modal" data-modal-toggle="map-modal" href="#" class=" cursor-pointer text-sm  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800 user-notification" type="a">
-                            <svg class="w-6 h-6 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd" d="M12 2a8 8 0 0 1 6.6 12.6l-.1.1-.6.7-5.1 6.2a1 1 0 0 1-1.6 0L6 15.3l-.3-.4-.2-.2v-.2A8 8 0 0 1 11.8 2Zm3 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" clip-rule="evenodd" />
-                            </svg>
+                        <a id="not-nav-btn" data-modal-target="static-modal" data-modal-toggle="static-modal" href="#" class=" cursor-pointer text-lg  text-gray-600 dark:text-white hover:underline font-medium rounded-lg px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800 user-notification" data-user_id="<?php echo $user_id; ?>" type="a">
+                        <i class="fa-solid fa-bell"></i>
                         </a>
 
-                        <a id="dropdownHove" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="cursor-pointer text-sm  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800" type="a"><?php echo $_SESSION['email']; ?><svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <a id="map-nav-btn" data-modal-target="map-modal" data-modal-toggle="map-modal" href="#" class=" cursor-pointer text-lg  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800 user-notification" type="a">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        </a>
+
+                        <a id="email-nav-btn" data-dropdown-toggle="email-hover" data-dropdown-trigger="hover" class="cursor-pointer text-sm  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800" type="a"><?php echo $_SESSION['email']; ?><svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                             </svg>
                         </a>
+                        <a id="prof-nav-btn" data-dropdown-toggle="prof-hover" data-dropdown-trigger="hover" class="cursor-pointer z-10 text-sm  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800" type="a">
+                        <i class="fa-solid fa-bars hover:text-orange-100 text-base"></i>
+                        </a>
                     </div>
 
+                    <div id="prof-hover" class="hover-nav hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="prof-hover">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+                            </li>
+                            <li>
+                                <a href="Transactions.php?userId=<?php echo $user_id; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Transactions</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                            </li>
+                            <li>
+                                <a href="../database/logout.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                    <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHover">
+                    <div id="email-hover" class="hover-nav hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="email-hover">
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
                             </li>
@@ -83,7 +96,7 @@
     </div>
 </nav>
 
-<nav class="bg-gray-50 dark:bg-gray-700">
+<nav class="bg-gray-50 dark:bg-gray-700 lower-nav">
     <div class="max-w-screen-xl px-4 py-3 mx-auto">
         <div class="flex items-center">
             <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">

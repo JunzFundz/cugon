@@ -33,23 +33,14 @@ require('../data/user-show-transactions.php');
                                     </svg>
                                     &nbsp;&nbsp;Back to home</a>
                             </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" style="padding-left:50px">Current Item Availed</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" style="padding-left:50px">Settings</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" style="padding-left:50px">Earnings</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
                 <br><br>
 
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <div class="tran-table-content relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="w-full text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
                                     Product name
@@ -99,7 +90,12 @@ require('../data/user-show-transactions.php');
                                         </td>
                                         <td class="px-6 py-4 text-center">
 
-                                            <button onclick="cancelBook('<?php echo $row['res_id']; ?>')" type="button" class="button--back">
+                                            <div id="tooltip-light" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
+                                                Cancel request?
+                                                <div class="tooltip-arrow" data-popper-arrow></div>
+                                            </div>
+
+                                            <button data-tooltip-target="tooltip-light" data-tooltip-style="light" onclick="cancelBook('<?php echo $row['res_id']; ?>')" type="button" class="button--back">
                                                 <svg style="color:rgb(49, 217, 37);" class="cancel w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9h13a5 5 0 0 1 0 10H7M3 9l4-4M3 9l4 4" />
                                                 </svg>
@@ -115,7 +111,7 @@ require('../data/user-show-transactions.php');
                                     </tr>
                             <?php }
                             } else {
-                                echo "<tr><td colspan='7'>No Data Found.</td></tr>";
+                                echo "<tr><td colspan='7'>No transactions exist.</td></tr><br>";
                             }
                             ?>
                         <tbody>

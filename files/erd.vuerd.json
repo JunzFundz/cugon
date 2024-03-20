@@ -3,8 +3,8 @@
     "version": "2.2.13",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -302.9103999999998,
-    "scrollLeft": -5.992699999999992,
+    "scrollTop": -259.71039835205045,
+    "scrollLeft": -400.79271506042556,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -19,7 +19,7 @@
     },
     "database": "MySQL",
     "databaseName": "",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-sql-ddl",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -144,7 +144,7 @@
           "active": false,
           "left": 787.5,
           "top": 376,
-          "zIndex": 605,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 60
         },
@@ -505,7 +505,7 @@
           "active": false,
           "left": 1423,
           "top": 151.5,
-          "zIndex": 604,
+          "zIndex": 5,
           "widthName": 60,
           "widthComment": 60
         },
@@ -613,7 +613,7 @@
           "active": false,
           "left": 1112.8162,
           "top": 990.1166,
-          "zIndex": 598,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60
         },
@@ -813,7 +813,7 @@
           "active": false,
           "left": 136.2057,
           "top": 651.6163,
-          "zIndex": 602,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1082,7 +1082,7 @@
           "active": false,
           "left": 82.5388,
           "top": 122.7829,
-          "zIndex": 603,
+          "zIndex": 4,
           "widthName": 65.5908203125,
           "widthComment": 60
         },
@@ -1259,7 +1259,7 @@
           "active": false,
           "left": 532.5,
           "top": 1020.7831,
-          "zIndex": 601,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },

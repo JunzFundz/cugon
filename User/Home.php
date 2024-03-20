@@ -2,43 +2,7 @@
 session_start();
 include('user-header.php');
 include('../data/user-load-ratings.php');
-require('../config.php');
 
-$conn = new mysqli ('localhost', 'root', 'fundador142', 'cugondb');
-
-if (isset($_GET['code'])) {
-    try {
-        $accessToken = $gclient->fetchAccessTokenWithAuthCode($_GET['code']);
-        if (!isset($accessToken['error'])) {
-            $gclient->setAccessToken($accessToken);
-            $payload = $gclient->verifyIdToken();
-
-            $email = $payload['email'];
-            $name = $payload['name'];
-            $token = $accessToken['access_token'];
-
-            $check_sql = "SELECT * FROM users WHERE email = '$email'";
-            $result = $conn->query($check_sql);
-            if ($result->num_rows > 0) {
-                $user = $result->fetch_assoc();
-                $_SESSION['email'] = $user['email'];
-                $_SESSION['user_id'] = $user['user_id'];
-            } else {
-                $insert_sql = "INSERT INTO users (username, email, full_name, token) VALUES ('$email', '$email', '$name', '$token')";
-                if ($conn->query($insert_sql) === TRUE) {
-                    $_SESSION['email'] = $email;
-                    $_SESSION['user_id'] = $conn->insert_id;
-                } else {
-                    echo "Error: " . $insert_sql . "<br>" . $conn->error;
-                }
-            }
-        } else {
-            
-        }
-    } catch (Exception $e) {
-        echo 'Caught exception: ',  $e->getMessage(), "\n";
-    }
-}
 ?>
 
 
@@ -58,11 +22,11 @@ if (isset($_GET['code'])) {
         <!-- Body panel -->
         <div class="user-body-panel">
 
-            <ul class="flex flex-row post-container">
-                <li data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="cursor-pointer"><span class=" hover:bg-gray-600 hover:text-white hover: rounded-md p-4">Add review</span></li>
-                <li class="cursor-pointer"><span class=" hover:bg-gray-600 hover:text-white hover: rounded-md p-4">Create post</span></li>
-                <li class="cursor-pointer"><span class=" hover:bg-gray-600 hover:text-white hover: rounded-md p-4">My Post</span></li>
-                <b style="float: right;"><span id="average-ratings">0.0</span>/ 5</b>
+            <ul class="flex flex-row post-section">
+                <li data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="cursor-pointer"><span class=" text-black  rounded-md p-4">Add review</span></li>
+                <li class="cursor-pointer"><span class=" text-black  rounded-md p-4">Create post</span></li>
+                <li class="cursor-pointer"><span class=" text-black  rounded-md p-4">My Post</span></li>
+                <!-- <b style="float: right;"><span id="average-ratings">0.0</span>/ 5</b> -->
             </ul>
 
             <?php foreach ($result as $rows) { ?>
@@ -73,7 +37,6 @@ if (isset($_GET['code'])) {
                         <div class="mt-4 text-gray-700 font-semibold flex flex-row text-center items-center">
                             <span class=" right-0 mr-3.5" style="margin-right: 10px;"><?= $rows['email'] ?></span>
                             <div class="col-span-2 text-center">
-
                                 <i class="fa-regular fa-star" id="submit--1" data-rating-star="1"></i>
                                 <i class="fa-regular fa-star " id="submit--2" data-rating-star="2"></i>
                                 <i class="fa-regular fa-star " id="submit--3" data-rating-star="3"></i>
@@ -81,13 +44,15 @@ if (isset($_GET['code'])) {
                                 <i class="fa-regular fa-star " id="submit--5" data-rating-star="5"></i>
                             </div>
                         </div>
-                        <div class="text-gray-700 text-xs">Date : March 20, 2024</div>
+                        <div class="text-gray-700 text-xs"><?= date_format(date_create($rows['posted_at']), 'M:d:Y h:i A') ?>
+                        </div>
                         <div class="my-4 text-gray-700 text-s italic">
                             <?= $rows['caption'] ?>
                         </div>
                     </div>
 
-                    <div id="indicators-carousel" class="relative w-full m-14" data-carousel="static">
+                    <div id="indicators-carousel" class="relative w-full m-14 z-0" data-carousel="static">
+
                         <!-- Carousel wrapper -->
                         <?php
                         $imgArray = json_decode($rows['img'], true);
@@ -95,10 +60,11 @@ if (isset($_GET['code'])) {
                         <div class="relative h-96 overflow-hidden rounded-lg md:h-96">
                             <?php foreach ($imgArray as $index => $image) : ?>
                                 <div class="hidden duration-700 ease-in-out <?php echo $index === 0 ? 'block' : ''; ?>" data-carousel-item="<?php echo $index === 0 ? 'active' : ''; ?>">
-                                    <img src="../uploads/<?php echo $image; ?>" class="absolute object-fill block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                    <img src="../uploads/<?php echo $image; ?>" class=" absolute object-fill block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                                 </div>
                             <?php endforeach; ?>
                         </div>
+
                         <!-- Slider indicators -->
                         <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
                             <?php foreach ($imgArray as $index => $image) : ?>
@@ -140,6 +106,7 @@ if (isset($_GET['code'])) {
             <div>Message</div>
 
         </div>
+
     </div>
 
     <!-- Main modal -->
@@ -159,7 +126,7 @@ if (isset($_GET['code'])) {
                         <span class="sr-only">Close modal</span>
                     </button>
                 </div>
-                
+
                 <!-- Modal body -->
                 <form class="p-4 md:p-5" enctype="multipart/form-data" method="post">
                     <div class="grid gap-4 mb-4 grid-cols-2">

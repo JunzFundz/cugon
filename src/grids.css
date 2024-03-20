@@ -9,7 +9,7 @@
 }
 .nav-section{
     grid-column: 1/8;
-    height: 150px;
+    height: auto;
 }
 .section-child>ul>li{
     line-height: 50px;

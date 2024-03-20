@@ -13,7 +13,6 @@ class Booking extends Dbh
     public function getItem($i_id)
     {
         $sql = "SELECT * FROM items WHERE i_id = '$i_id'";
-
         $result = $this->connect()->query($sql);
 
         return $result;
@@ -35,7 +34,6 @@ class Booking extends Dbh
                 GROUP BY u.email, u.phone, u.user_id";
 
         $result = $this->connect()->query($sql);
-
         return $result;
     }
 
@@ -126,15 +124,20 @@ class Booking extends Dbh
         return true;
     }
 
-    public function placedBooking($res_number, $itemId, $userId, $quantity, $price, $payment, $total_in_day, $reg_date, $start_date, $end_date, $created_at, $status)
-    {
-        $sql = "INSERT INTO res_tb (res_number, item_id, user_id, quantity, reg_date, start, end, created_at, price, total, payment, status) VALUES ('$res_number', '$itemId', '$userId', '$quantity', '$reg_date', '$start_date', '$end_date', '$created_at', '$price', '$total_in_day', '$payment', '$status')";
+    public function placedBooking($res_number, $itemId, $userId, $quantity, $price, $payment, $total_in_day, $reg_date, $start_date, $end_date, $created_at, $status, $message) {
+        
+        $stmt = $this->connect()->prepare("INSERT INTO res_tb (res_number, item_id, user_id, quantity, reg_date, start, end, created_at, price, total, payment, status, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        if ($this->connect()->query($sql) === TRUE) {
-            return 'success';
+        $stmt->bind_param("iiiissssiisss", $res_number, $itemId, $userId, $quantity, $reg_date, $start_date, $end_date, $created_at, $price, $total_in_day, $payment, $status, $message);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+    
+        if ($result === TRUE) {
+            return true;
         } else {
-            error_log("Error: " . $sql . "<br>" . $this->connect()->error);
-            return 'error';
+            error_log("Error: " . $stmt->error);
+            return false;
         }
     }
 
@@ -225,7 +228,7 @@ class Booking extends Dbh
         $result = $this->connect()->query($sql);
         return $result;
     }
-    
+
     public function removeFromCart($itemId, $userId)
     {
         $sql = "DELETE FROM cart WHERE user_id=? AND item_id=?";
@@ -238,4 +241,5 @@ class Booking extends Dbh
             return false;
         }
     }
+    
 }

@@ -13,9 +13,7 @@ if (isset($_POST['login'])) {
   if (mysqli_num_rows($result)) {
     $row = mysqli_fetch_assoc($result);
 
-
-
-    if ($row['user_id'] == 26) {
+    if ($row['user_id'] == 134) {
       $_SESSION['username'] = $username;
       $_SESSION['email'] = $email;
       header('Location: ../Admin/Home.php');

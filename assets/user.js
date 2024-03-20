@@ -89,7 +89,7 @@ $(function () {
                         $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
                         $('#alert-text').html("Information saved");
 
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $('#alert-box').removeClass('visible').addClass('invisible');
                         }, 1500);
 
@@ -110,7 +110,6 @@ $(function () {
 
         if (submitDetails()) {
 
-            
             const get_user_id = $('#get_user_id').val();
             const get_end_date = $('.get_end_date').data('get_end_date');
             const get_reg_date = $('.get_reg_date').data('get_reg_date');
@@ -120,9 +119,6 @@ $(function () {
             const total_in_days = $('.total_in_days').data('total_in_days');
             const get_payment = $('.get_payment').data('get_payment');
             const get_price = $('.get_price').data('get_price');
-
-            // Test
-            // console.log(get_user_id, get_item_id, get_quantity, get_start_date, get_end_date, get_reg_date, total_in_days, get_payment, get_price);
 
             $.ajax({
                 url: '../data/user-placed-booking.php',
@@ -149,22 +145,38 @@ $(function () {
         }
     });
 
+    //? test
+    // $('#placedSingleBookingtest').on('click', function () {
+
+    //     var totalInDays = $('.get-item-info').data('total_in_days');
+    //     var getItemId = $('.get-item-info').data('get_item_id');
+    //     var userId = $('.get-item-info').data('user_id');
+    //     var sellingPrice = $('.get-item-info').data('get_price');
+    
+    //     console.log('Total in days:', totalInDays);
+    //     console.log('Item ID:', getItemId);
+    //     console.log('User ID:', userId);
+    //     console.log('Selling price:', sellingPrice);
+    // });
+    
+
     //!place marked booking
     $('#placedBooking').on("click", function (e) {
         e.preventDefault();
 
-        const dateOptions = $('.dateOptions').val();
-        const get_payment = $('.get_payment').data('get_payment');
-        const total_in_days = $('.total_in_days').data('total_in_days');
-        const get_reg_date = $('.get_reg_date').data('get_reg_date');
-        const get_start_date = $('.get_start_date').data('get_start_date');
-        const get_end_date = $('.get_end_date').data('get_end_date');
+        if (submitDetails()) {
 
-        $('.get_primary_info').each(function () {
-            handlePrimaryInfo(get_payment, total_in_days, get_reg_date, get_start_date, get_end_date, dateOptions, this);
-        });
+            const dateOptions = $('.dateOptions').val();
+            const get_payment = $('.get_payment').data('get_payment');
+            const total_in_days = $('.total_in_days').data('total_in_days');
+            const get_reg_date = $('.get_reg_date').data('get_reg_date');
+            const get_start_date = $('.get_start_date').data('get_start_date');
+            const get_end_date = $('.get_end_date').data('get_end_date');
 
-        window.location.href = 'home.php';
+            $('.get_primary_info').each(function () {
+                handlePrimaryInfo(get_payment, total_in_days, get_reg_date, get_start_date, get_end_date, dateOptions, this);
+            });
+        }
     });
 
     function handlePrimaryInfo(get_payment, total_in_days, get_reg_date, get_start_date, get_end_date, dateOptions, element) {
@@ -189,6 +201,17 @@ $(function () {
                 'get_reg_date': get_reg_date,
                 'get_start_date': get_start_date,
                 'get_end_date': get_end_date
+            }, success: function () {
+                var result = JSON.parse(response);
+                var message = result ? "Reservation sent!" : "Failed!";
+
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html(message);
+
+                setTimeout(function () {
+                    $('#alert-box').removeClass('visible').addClass('invisible');
+                }, 1500);
+                window.location.href = 'transactions.php';
             }
         });
     }
@@ -351,7 +374,40 @@ $(function () {
             contentType: false,
             processData: false,
             success: function (response) {
-                console.log('Success:', response);
+                var result = JSON.parse(response);
+
+                if (result.success) {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(result.success);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                        window.location.href = 'home.php';
+                    }, 3000);
+                } else if (result.error) {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(result.error);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                        if (response) {
+                            window.location.href = 'home.php';
+                        }
+                    }, 3000);
+                } else {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(message);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                        if (result) {
+                            window.location.href = 'login.php';
+                        }
+                    }, 3000);
+
+                }
+
+
             },
             error: function (xhr, status, error) {
                 console.error('Error:', error);

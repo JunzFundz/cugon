@@ -76,7 +76,7 @@ include '../data/data-items.php';
 </div>
 
 <!-- Modal add Items -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="add-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -139,11 +139,29 @@ include '../data/data-items.php';
 <div class="admin-container">
 
     <div class="nav">
-        <nav>
-            <ul>
-                <li id="logo-admin">Cugon bamboo resort</li>
-                <li><a href="../database/Logout.php">Logout</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Cugon Bamboo Resort</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php echo $_SESSION['email'] ?>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                                <li><a class="dropdown-item" href="../database/Logout.php">Log out</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </div>
 
@@ -151,21 +169,30 @@ include '../data/data-items.php';
         <?php include('left-panel.php') ?>
     </div>
 
-    <div class="right-panel" style="overflow:scroll; height: 80vh;">
+    <div class="right-panel">
 
-        <?php foreach ($result as $rows) : ?>
-            <div class="card" style="width: 18rem; display: inline-block; margin:10px;">
-                <input type="hidden" class="item_id" value="<?php echo $rows['i_id'] ?>">
-                <img src="Items/<?php echo $rows['i_img'] ?>" class="card-img-top" alt="..." style="object-fit: contain; aspect-ratio: 3/2;">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $rows['i_name'] ?></h5>
-                    <p class="card-text">₱ <?php echo number_format($rows['i_price']) ?></p>
-                    <p class="card-text">x<?php echo number_format($rows['i_quantity']) ?></p>
-                    <a href="#" class="btn btn-primary editItem">Edit Item</a>
-                    <a href="#" class="btn btn-danger" onclick="deleteItem('<?php echo $rows['i_id']; ?>')">Delete</a>
-                </div>
+    <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" data-bs-toggle="modal" data-bs-target="#add-modal" href="#">Add item <i class="bi bi-plus-square"></i></a>
             </div>
-        <?php endforeach; ?>
+        </nav>
+
+        <div class="cards">
+            <?php foreach ($result as $rows) : ?>
+                <div class="card" style="width: 18rem; display: inline-block; margin:10px;">
+                    <input type="hidden" class="item_id" value="<?php echo $rows['i_id'] ?>">
+                    <img src="Items/<?php echo $rows['i_img'] ?>" class="card-img-top" alt="..." style="object-fit: contain; aspect-ratio: 3/2;">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $rows['i_name'] ?></h5>
+                        <p class="card-text">₱ <?php echo number_format($rows['i_price']) ?></p>
+                        <p class="card-text">x<?php echo number_format($rows['i_quantity']) ?></p>
+                        <a href="#" class="btn btn-primary editItem">Edit Item</a>
+                        <a href="#" class="btn btn-danger" onclick="deleteItem('<?php echo $rows['i_id']; ?>')">Delete</a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
 
     </div>
 </div>

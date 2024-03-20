@@ -29,15 +29,7 @@ class Items extends Dbh
 
         return $result3;
     }
-
-    // protected function getUserinfo($user_id)
-    // {
-    //     $sql = "SELECT * FROM users WHERE user_id = '$user_id'";
-
-    //     $userInfo = $this->connect()->query($sql);
-    //     return $userInfo;
-    // }
-
+    
     protected function additem($i_type, $i_name, $i_img, $i_desc, $i_price, $i_quantity)
     {
 
