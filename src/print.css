@@ -1,0 +1,23 @@
+k
+
+.card {
+    box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0, 0, 0, .125);
+    border-radius: 1rem;
+}
+*{
+    font-size: 12px;
+}
+.receipt-body{
+    margin: 20px auto 0 auto;
+    margin-inline: 20% !important;
+}

@@ -13,20 +13,19 @@ if (isset($_POST['check_records'])) {
                 $groupedRecords = [];
 
                 while ($rows = $result->fetch_assoc()) {
-                        $resNumbers = explode(',', $rows['res_numbers']);
-                        $itemNames = explode(',', $rows['item_names']);
-                        $itemPrices = explode(',', $rows['item_prices']);
-                        $itemQuantities = explode(',', $rows['item_quantities']);
 
-                        //determine if the start date starts today 
+                        $regDate = date_create($rows['reg_date']);
                         $date1 = date_create($rows['start']);
                         $date2 = date_create($rows['end']);
                         $interval = date_diff($date1, $date2);
 
-                        // Get the current date
                         $currentDate = date_create();
                         $startDateTime = date_create($rows['start']);
                         $dateFormatted = date('M-d-Y', strtotime($rows['start']));
+
+                        if (($date1) && ($date2)) {
+                                print "The date is" . $regDate->format('Y-m-d');
+                        }
 
                         if ($currentDate->format('Y-m-d') == $startDateTime->format('Y-m-d')) {
                                 echo "The start date is today.";
@@ -38,7 +37,6 @@ if (isset($_POST['check_records'])) {
                         $days = $interval->days;
                         $totaldays = number_format($days);
                         $timeRemaining = $totaldays * 24;
-
 ?>
 
                         <div style="margin: 20px;">
@@ -52,8 +50,16 @@ if (isset($_POST['check_records'])) {
                                                 <h6 style="font-size: small; font-weight:300;"><?= $rows['phone'] ?></h6>
                                         </div>
                                         <div class="col-sm">
-                                                <label for="" style="font-size: small; font-weight:600;">Transaction ID:</label>
-                                                <h6 style="font-size: small; font-weight:300;"><?= $rows['transaction_number'] ?></h6>
+                                                <label for="" style="font-size: small; font-weight:600;">Date</label>
+                                                <h6 style="font-size: small; font-weight:300;">
+                                                        <?php
+                                                        if ($date1 == '0000-00-00' && $date2 == '0000-00-00') {
+                                                                echo "The date is " . date_format($regDate, 'M-d-Y');
+                                                        }else{
+                                                                echo date_format($date1, 'M-d-y');
+                                                        }
+                                                        ?>
+                                                </h6>
                                         </div>
                                         <div class="col-sm">
                                                 <label for="" style="font-size: small; font-weight:600;">Total days:</label>
@@ -71,33 +77,23 @@ if (isset($_POST['check_records'])) {
                                                                 <th style="font-size: small; font-weight:600;">Total</th>
                                                         </tr>
                                                 </thead>
-                                                <?php
-                                                $totalSubtotal = 0;
-                                                for ($i = 0; $i < count($resNumbers); $i++) {
-                                                        $subtotal = $itemQuantities[$i] * $itemPrices[$i];
-                                                        $totalSubtotal += $subtotal;
-                                                ?>
-                                                        <tbody>
-                                                                <tr>
-                                                                        <td style="font-size: small; color: grey;"><?= $itemNames[$i] ?></td>
-                                                                        <td style="font-size: small; color: grey;"><?= $resNumbers[$i] ?></td>
-                                                                        <td style="font-size: small; color: grey;"><?= $itemPrices[$i] ?></td>
-                                                                        <td style="font-size: small; color: grey;"><?= $itemQuantities[$i] ?></td>
-                                                                        <td style="font-size: small; color: red;"><?= $subtotal ?></td>
-                                                                </tr>
-                                                        </tbody>
-                                                <?php } ?>
+                                                <tbody>
+                                                        <tr>
+                                                                <td style="font-size: small; color: grey;"><?= $rows['item_name'] ?></td>
+                                                                <td style="font-size: small; color: grey;"><?= $rows['res_number'] ?></td>
+                                                                <td style="font-size: small; color: grey;"><?= $rows['price'] ?></td>
+                                                                <td style="font-size: small; color: red;"><?= $rows['quantity'] ?></td>
+                                                        </tr>
+                                                </tbody>
                                         </table>
-                                        <h6 style="font-size: small; color: grey; float:right">Subtotal: ₱<?= number_format($totalSubtotal) ?></h6><br>
+                                        <!-- <h6 style="font-size: small; color: grey; float:right">Subtotal: ₱<?= number_format($totalSubtotal) ?></h6><br>
                                         <h6 style="font-size: small; color: grey; float:right">Total: ₱<?= number_format($totaldays * $totalSubtotal) ?></h6><br>
-                                        <h6 style="font-size: medium; color: red; float:right"><?= $rows['status'] ?></h6>
+                                        <h6 style="font-size: medium; color: red; float:right"><?= $rows['status'] ?></h6> -->
+
+                                        <a href="receipt.php?user_id=<?= $rows['user_id'] ?>">Receipt</a>
                                 </div>
                         </div>
                         <br>
-
-
-
-
 <?php
                 }
         } else {

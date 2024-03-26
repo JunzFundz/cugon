@@ -14,7 +14,6 @@ include('user-header.php');
 <body>
 
         <div class="checkout-container">
-
             <div class="checkout-item-img">
                 <img class="" height="598" width="400" src="../Admin/Items/<?php echo $row["i_img"]; ?>" alt="...">
                 <br>
@@ -22,7 +21,6 @@ include('user-header.php');
             </div>
 
             <div class="checkout-body-section">
-
                 <div class="w-full max-w-sm p-4 form-div-checkout">
                     <form id="myForm" name="form" onsubmit="return validateBooking(this)" method="post" action="placed-item.php?user_id=<?php echo $_SESSION['user_id']; ?>">
 

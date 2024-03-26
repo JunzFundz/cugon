@@ -3,9 +3,10 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header" style="border-bottom: none;">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Request cancel?</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body2">
                 <br>
                 
                 <input type="text" id="user_id"  name="user_id" value="" hidden/>
@@ -19,7 +20,7 @@
                     </div>
                     <br>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason" checked>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason">
                         <label class="form-check-label">
                             Insufficient Information Provided
                         </label>

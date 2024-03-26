@@ -90,21 +90,32 @@ class Transactions extends Dbh
 
     public function userRecords($userID)
     {
-        $sql = "SELECT u.email, u.phone, u.user_id, rt.start, rt.end, rt.created_at, tr.transaction_number, tr.status,
-        GROUP_CONCAT(rt.res_number) AS res_numbers,
-        GROUP_CONCAT(it.i_name) AS item_names,
-        GROUP_CONCAT(it.i_price) AS item_prices,
-        GROUP_CONCAT(rt.quantity) AS item_quantities
-                FROM users u
-                INNER JOIN res_tb rt ON rt.user_id = u.user_id 
-                INNER JOIN items it ON rt.item_id = it.i_id 
-                INNER JOIN transaction tr ON rt.user_id = tr.user_id 
-                WHERE u.user_id = '$userID' AND rt.status = 'Approved'
-                GROUP BY u.email, u.phone, u.user_id";
+        $sql = "SELECT * FROM res_tb res
+        INNER JOIN users us ON res.user_id=us.user_id
+        WHERE res.user_id='$userID' AND res.status='Approved'";
 
         $result = $this->connect()->query($sql);
         return $result;
     }
+
+    public function printReceipt($userID)
+    {
+        $sql = "SELECT us.email, us.full_name, us.phone, us.city, us.brgy, us.zip_code, us.created_at, tr.transaction_number,
+                GROUP_CONCAT(res.res_number) AS res_numbers,
+                GROUP_CONCAT(it.i_id) AS item_ids,
+                GROUP_CONCAT(it.i_price) AS item_prices,
+                GROUP_CONCAT(it.i_name) AS item_names,
+                GROUP_CONCAT(res.quantity) AS quantity
+                FROM users us
+                INNER JOIN res_tb res ON us.user_id=res.user_id
+                INNER JOIN transaction tr ON res.user_id=tr.user_id
+                INNER JOIN items it ON res.item_id= it.i_id
+                WHERE us.user_id='$userID' AND res.status='Approved'";
+    
+        $result = $this->connect()->query($sql);
+        return $result;
+    }
+    
 
     public function startIn($res_id)
     {
@@ -129,9 +140,13 @@ class Transactions extends Dbh
 
     public function userNotification($user_id)
     {
-        $sql = "SELECT * from res_tb where user_id='$user_id' AND status = 'Approved'";
+        $stmt = $this->connect()->prepare("SELECT * FROM res_tb
+        INNER JOIN users ON res_tb.user_id=users.user_id
+        WHERE users.user_id = ?");
 
-        $result = $this->connect()->query($sql);
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
         return $result;
     }
 }

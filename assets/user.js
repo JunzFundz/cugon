@@ -110,38 +110,113 @@ $(function () {
 
         if (submitDetails()) {
 
+            const get_option = $('#get_preffered_option').val();
+
             const get_user_id = $('#get_user_id').val();
+            const get_start_date = $('.get_start_date').data('get_start_date');
             const get_end_date = $('.get_end_date').data('get_end_date');
             const get_reg_date = $('.get_reg_date').data('get_reg_date');
             const get_item_id = $('.get_item_id').data('get_item_id');
+            const get_item_name = $('.get_item_name').data('get_item_name');
             const get_quantity = $('.quantity').data('get_quantity');
-            const get_start_date = $('.get_start_date').data('get_start_date');
             const total_in_days = $('.total_in_days').data('total_in_days');
             const get_payment = $('.get_payment').data('get_payment');
             const get_price = $('.get_price').data('get_price');
+            const get_msg = $('#get_msg').val();
 
-            $.ajax({
-                url: '../data/user-placed-booking.php',
-                type: "POST",
-                data: {
-                    'get-booking': true,
-                    'get_user_id': get_user_id,
-                    'get_item_id': get_item_id,
-                    'get_quantity': get_quantity,
-                    'get_price': get_price,
-                    'get_payment': get_payment,
-                    'total_in_days': total_in_days,
-                    'get_reg_date': get_reg_date,
-                    'get_start_date': get_start_date,
-                    'get_end_date': get_end_date
-                },
-                success: function (response) {
-                    window.location.href = 'home.php';
-                },
-                error: function (xhr, status, error) {
-                    document.write(xhr.responseText);
-                }
-            });
+            console.log(get_item_name);
+
+            if (get_option === 'reg') {
+                $.ajax({
+                    url: '../data/user-placed-booking.php',
+                    type: "POST",
+                    data: {
+                        'get-booking': true,
+                        'get_option': get_option,
+                        'get_user_id': get_user_id,
+                        'get_item_id': get_item_id,
+                        'get_item_name': get_item_name,
+                        'get_quantity': get_quantity,
+                        'get_price': get_price,
+                        'get_payment': get_payment,
+                        'get_msg': get_msg,
+                        'total_in_days': total_in_days,
+                        'get_reg_date': get_reg_date
+                    },
+                    success: function (response) {
+
+                        if (response.success) {
+                            $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                            $('#alert-text').html(response.success);
+
+                            setTimeout(function () {
+                                $('#alert-box').removeClass('visible').addClass('invisible');
+                                if (response.redirect) {
+                                    window.location.href = response.redirect;
+                                }
+                            }, 3000);
+                        } else {
+                            $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                            $('#alert-text').html(response.error);
+
+                            setTimeout(function () {
+                                $('#alert-box').removeClass('visible').addClass('invisible');
+                                if (response) {
+                                    window.location.href = 'home.php';
+                                }
+                            }, 3000);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        document.write(xhr.responseText);
+                    }
+                });
+            } else {
+                $.ajax({
+                    url: '../data/user-placed-booking.php',
+                    type: "POST",
+                    data: {
+                        'get-booking': true,
+                        'get_option': get_option,
+                        'get_user_id': get_user_id,
+                        'get_item_id': get_item_id,
+                        'get_item_name': get_item_name,
+                        'get_quantity': get_quantity,
+                        'get_price': get_price,
+                        'get_payment': get_payment,
+                        'get_msg': get_msg,
+                        'total_in_days': total_in_days,
+                        'get_start_date': get_start_date,
+                        'get_end_date': get_end_date
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                            $('#alert-text').html(response.success);
+
+                            setTimeout(function () {
+                                $('#alert-box').removeClass('visible').addClass('invisible');
+                                if (response.redirect) {
+                                    window.location.href = response.redirect;
+                                }
+                            }, 3000);
+                        } else {
+                            $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                            $('#alert-text').html(response.error);
+
+                            setTimeout(function () {
+                                $('#alert-box').removeClass('visible').addClass('invisible');
+                                if (response) {
+                                    window.location.href = 'home.php';
+                                }
+                            }, 3000);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        document.write(xhr.responseText);
+                    }
+                });
+            }
         }
     });
 
@@ -152,21 +227,22 @@ $(function () {
     //     var getItemId = $('.get-item-info').data('get_item_id');
     //     var userId = $('.get-item-info').data('user_id');
     //     var sellingPrice = $('.get-item-info').data('get_price');
-    
+
     //     console.log('Total in days:', totalInDays);
     //     console.log('Item ID:', getItemId);
     //     console.log('User ID:', userId);
     //     console.log('Selling price:', sellingPrice);
     // });
-    
 
-    //!place marked booking
-    $('#placedBooking').on("click", function (e) {
+
+    //!placed marked booking
+    $('#placed-mark-items').on('click', function (e) {
         e.preventDefault();
 
-        if (submitDetails()) {
+        const dateOptions = $('.dateOptions').val();
+        console.log(dateOptions);
 
-            const dateOptions = $('.dateOptions').val();
+        if (submitDetails()) {
             const get_payment = $('.get_payment').data('get_payment');
             const total_in_days = $('.total_in_days').data('total_in_days');
             const get_reg_date = $('.get_reg_date').data('get_reg_date');
@@ -174,47 +250,104 @@ $(function () {
             const get_end_date = $('.get_end_date').data('get_end_date');
 
             $('.get_primary_info').each(function () {
-                handlePrimaryInfo(get_payment, total_in_days, get_reg_date, get_start_date, get_end_date, dateOptions, this);
+                const get_item_id = $(this).attr('data-get_id');
+                const get_user_id = $(this).attr('data-get_user_id');
+                const get_quantity = $(this).attr('data-get_quantity');
+                const get_price = $(this).attr('data-get_item_price');
+                const get_name = $(this).attr('data-get_name');
+
+                if (dateOptions === 'reg') {
+                    $.ajax({
+                        url: '../data/user-placed-booking.php',
+                        type: "POST",
+                        data: {
+                            'get-booking': true,
+                            'get_option': 'reg',
+                            'get_user_id': get_user_id,
+                            'get_item_id': get_item_id,
+                            'get_quantity': get_quantity,
+                            'get_item_name': get_name,
+                            'get_price': get_price,
+                            'get_payment': get_payment,
+                            'total_in_days': total_in_days,
+                            'get_reg_date': get_reg_date
+                        },
+                        success: function (response) {
+                            if (response.success) {
+                                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                                $('#alert-text').html(response.success);
+
+                                setTimeout(function () {
+                                    $('#alert-box').removeClass('visible').addClass('invisible');
+                                    if (response.redirect) {
+                                        window.location.href = response.redirect;
+                                    }
+                                }, 3000);
+                            } else {
+                                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                                $('#alert-text').html(response.error);
+
+                                setTimeout(function () {
+                                    $('#alert-box').removeClass('visible').addClass('invisible');
+                                    if (response) {
+                                        window.location.href = 'home.php';
+                                    }
+                                }, 3000);
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            document.write(xhr.responseText);
+                        }
+                    });
+                } else {
+                    $.ajax({
+                        url: '../data/user-placed-booking.php',
+                        type: "POST",
+                        data: {
+                            'get-booking': true,
+                            'get_option': 'stay',
+                            'get_user_id': get_user_id,
+                            'get_item_id': get_item_id,
+                            'get_item_name': get_name,
+                            'get_quantity': get_quantity,
+                            'get_price': get_price,
+                            'get_payment': get_payment,
+                            'total_in_days': total_in_days,
+                            'get_start_date': get_start_date,
+                            'get_end_date': get_end_date
+                        },
+                        success: function (response) {
+                            if (response.success) {
+                                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                                $('#alert-text').html(response.success);
+
+                                setTimeout(function () {
+                                    $('#alert-box').removeClass('visible').addClass('invisible');
+                                    if (response.redirect) {
+                                        window.location.href = response.redirect;
+                                    }
+                                }, 3000);
+                            } else {
+                                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                                $('#alert-text').html(response.error);
+
+                                setTimeout(function () {
+                                    $('#alert-box').removeClass('visible').addClass('invisible');
+                                    if (response) {
+                                        window.location.href = 'home.php';
+                                    }
+                                }, 3000);
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            document.write(xhr.responseText);
+                        }
+                    });
+                }
             });
         }
     });
 
-    function handlePrimaryInfo(get_payment, total_in_days, get_reg_date, get_start_date, get_end_date, dateOptions, element) {
-        const get_item_id = $(element).attr('data-get_id');
-        const get_user_id = $(element).attr('data-get_user_id');
-        const get_quantity = $(element).attr('data-get_quantity');
-        const get_item_price = $(element).attr('data-get_item_price');
-
-        $.ajax({
-            url: '../data/user-placed-booking.php',
-            type: "POST",
-            data: {
-                'get-booking': true,
-
-                'get_user_id': get_user_id,
-                'get_item_id': get_item_id,
-                'get_quantity': get_quantity,
-                'get_item_price': get_item_price,
-
-                'get_payment': get_payment,
-                'total_in_days': total_in_days,
-                'get_reg_date': get_reg_date,
-                'get_start_date': get_start_date,
-                'get_end_date': get_end_date
-            }, success: function () {
-                var result = JSON.parse(response);
-                var message = result ? "Reservation sent!" : "Failed!";
-
-                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
-                $('#alert-text').html(message);
-
-                setTimeout(function () {
-                    $('#alert-box').removeClass('visible').addClass('invisible');
-                }, 1500);
-                window.location.href = 'transactions.php';
-            }
-        });
-    }
 
     //!notification
     $('.user-notification').on('click', function () {

@@ -17,7 +17,7 @@ include '../data/data-booking.php';
 
 <div class="admin-container">
 
-    <div class="nav">
+    <div class="nav" style="display:flex; flex-direction:row">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Cugon Bamboo Resort</a>
@@ -30,7 +30,7 @@ include '../data/data-booking.php';
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                <?php echo $_SESSION['email'] ?> 
+                                <?php echo $_SESSION['email'] ?>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" href="profile.php">Profile</a></li>
@@ -40,6 +40,21 @@ include '../data/data-booking.php';
                         </li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="nav-icons">
+                <div><a href=""><i class="bi bi-bell-fill"></i>
+                        <?php foreach ($result as $rows) { ?>
+                            <?php if ($rows["pending_count"] !== 0) { ?>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    <?php echo $rows["pending_count"]; ?>
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            <?php } ?>
+                        <?php } ?>
+
+                    </a></div>
+                <div><a href=""><i class="bi bi-chat-left-dots-fill"></i></a></div>
             </div>
         </nav>
     </div>
@@ -51,17 +66,13 @@ include '../data/data-booking.php';
     <div class="right-panel">
         <div class="content-new">
 
-
-            <?php foreach ($result as $rows) { ?>
-
-            <?php } ?>
             <?php if ($result) {
                 $num = 1;
             ?>
-                <table id="example" class="table table-sm table-striped text-center table-text">
+                <table id="myTable" class="table table-sm table-striped text-center">
                     <thead class="bg-light">
                         <tr>
-                            <th scope="col">Number</th>
+                            <th scope="col">#</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
                             <th scope="col">Date</th>
@@ -80,7 +91,7 @@ include '../data/data-booking.php';
                                 <td class=""><?= $rows['phone']; ?></td>
                                 <td class="">
                                     <?php
-                                    if ($rows['start'] === null || $rows['start'] == '' && $rows['end'] === null || $rows['end'] == '') {
+                                    if ($rows['start'] === null && $rows['end'] === null) {
                                         echo $rows['reg_date'];
                                     } else {
                                         echo $rows['start'] . " to " .  $rows['end'];
@@ -94,9 +105,9 @@ include '../data/data-booking.php';
 
                                     <button data-user_id="<?= $rows['user_id']; ?>" type="button" class="btn btn-primary me-2 mb-2 viewButton">View</button>
 
-                                    <button onclick="approveReq('<?php echo $rows['res_id']; ?>', '<?php echo $rows['user_id']; ?>', '<?php echo $rows['item_ids']; ?>', '<?php echo $rows['item_quantities']; ?>')" type="button" class="btn btn-success me-2 mb-2 get-item-id">Approve</button>
+                                    <button onclick="approveReq('<?php echo $rows['res_id']; ?>', '<?php echo $rows['user_id']; ?>', '<?php echo $rows['item_ids']; ?>', '<?php echo $rows['item_quantities']; ?>')" type="button" class="btn btn-success me-2 mb-2 get-item-id approveButton">Approve</button>
 
-                                    <button data-user_id="<?php echo $rows['user_id']; ?>" data-bs-toggle="modal" data-bs-target="#decline-request" type="button" class="btn btn-danger me-2 mb-2">Decline</button>
+                                    <button data-user_id="<?php echo $rows['user_id']; ?>" data-bs-toggle="modal" data-bs-target="#decline-request" type="button" class="btn btn-danger me-2 mb-2 declineButton">Decline</button>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -107,6 +118,7 @@ include '../data/data-booking.php';
                 </table>
         </div>
     </div>
+
     <?php
     include('modal/viewRequest.php');
     include('modal/decline-request.php');
@@ -121,3 +133,8 @@ include '../data/data-booking.php';
     <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
 
     <script src="../assets/admin.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+    </script>

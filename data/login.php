@@ -1,37 +1,46 @@
 <?php
-
 session_start();
-
+require_once('../database/Connection.php');
 if (isset($_POST['login-user'])) {
+
+    $response = array();
 
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    require('../class/Login.php');
-    header('Content-Type: application/json');
+    $conn = new Dbh();
+    $connection = $conn->connect();
 
-    $newlogin = new Login();
-    $results = $newlogin->newlogin($email, $password);
+    $stmt = $connection->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->bind_param('s', $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    $response = array();
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $stored_password = $row["password"];
+            if (password_verify($password, $stored_password)) {
+                $_SESSION['username'] = $row["username"];
+                $_SESSION['user_id'] = $row["user_id"];
+                $_SESSION['email'] = $row["email"];
 
-    if ($results) {
-        $userId = $_SESSION['user_id']; 
-        $email = $_SESSION['email']; 
+                $redirect = ($_SESSION['user_id'] === 321) ? '../Admin/Home.php' : '../User/Items.php';
 
-        $redirect = ($userId === 280) ? '../Admin/Home.php' : '../User/Items.php';
-
-        $response = [
-            'user_id' => $userId,
-            'email' => $email,
-            'redirect' => $redirect
-        ];
+                $response = [
+                    'redirect' => $redirect
+                ];
+            } else {
+                $response = [
+                    'error' => 'Incorrect Password'
+                ];
+            }
+        }
     } else {
         $response = [
-            'error' => 'Incorrect credentials or account not verified.'
+            'error' => 'Account not found'
         ];
     }
-
     echo json_encode($response);
     exit;
 }
+?>

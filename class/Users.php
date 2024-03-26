@@ -37,6 +37,14 @@ class Users extends Dbh
         return $result;
     }
 
+    public function allUsers()
+    {
+        $sql = "SELECT * FROM user ORDER BY email DESC";
+
+        $result = $this->connect()->query($sql);
+        return $result;
+    }
+
     public function addInfo($setEmail, $getUserId, $setName, $setPhone, $setCity, $setBrgy, $setZip, $created_at, $setMsg)
     {
         $sql = "INSERT INTO users (email, phone, full_name, city, brgy, zip_code, message, created_at) VALUES ('$setEmail', '$setPhone', '$setName','$setCity' ,'$setBrgy'  ,'$setZip' ,'$setMsg', '$created_at') WHERE user_id='$getUserId'";
@@ -102,7 +110,7 @@ class Users extends Dbh
 
             if ($success) {
                 $_SESSION['email'] = $email;
-                $_SESSION['user_id'] = $this->connect()->insert_id;
+                $_SESSION['user_id'] = $stmt->insert_id;
                 return true;
             } else {
                 print "Error: " . $stmt->error;

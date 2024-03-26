@@ -21,7 +21,7 @@ function validateSignup() {
     var password = $('#password').val();
 
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    const phoneRegex = /^\d{10}$/;
+    const phoneRegex = /^\d{12}$/;
 
     if (username === '' || username == null) {
         setErrorWithTimeout($('#username'), "Username is required");
@@ -94,6 +94,8 @@ function validateLogin() {
 
 
 $(function () {
+
+    //!signup
     $('#signupForm').on('submit', function (e) {
         e.preventDefault();
 
@@ -197,8 +199,8 @@ $(function () {
             console.log(email, password)
 
             $.ajax({
-                url: '../data/login.php',
-                type: 'post',
+                url: $(this).attr( 'action' ),
+                type: $(this).attr( 'method' ),
                 data: {
                     'login-user': true,
                     'email': email,

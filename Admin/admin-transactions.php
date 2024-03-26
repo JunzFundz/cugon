@@ -11,6 +11,16 @@ require('../data/admin-transactions.php');
 
 <!-- Custom style -->
 <link rel="stylesheet" href="../src/Adminhome.css">
+<style>
+    @media print {
+        .admin-container, .btn-primary, .btn-secondary{
+            display: none;
+        }
+        .modal-footer{
+            border-top: 0;
+        }
+    }
+</style>
 
 <!-- Modal -->
 <div class="modal fade" id="show-records" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -71,6 +81,7 @@ require('../data/admin-transactions.php');
 
                 <?php foreach ($result as $row) { ?>
                     <div class="card" style="width: 20rem; display:flex; margin: 20px;">
+
                         <div class="card-body">
                             <input type="hidden" name="user_id" value="<?php echo $row['user_id'] ?>">
                             <h5 class="card-title" style="font-size: medium;"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;<?= $row['email']; ?></i></h5>
@@ -78,9 +89,14 @@ require('../data/admin-transactions.php');
                             <p class="card-text" style="font-size: small; font-weight:600: color: grey;">Message: <?= $row['phone']; ?></p>
                             <p class="card-text"><?= $row['request_count']; ?> Active request</p>
                         </div>
+
                         <div style="display: flex; flex-direction:row; justify-content: space-around;">
-                            <button class="btn btn-primary get-records" style="border-radius: 0px; width: 100%; margin: 10px;" data-user-id="<?= $row['user_id'] ?>"><i class="bi bi-eye-fill"></i>&nbsp;&nbsp;View</button>
-                            <button class="btn btn-danger get-records" style="border-radius: 0px;width: 100%; margin: 10px;" data-user-id="<?= $row['user_id'] ?>"><i class="bi bi-archive-fill"></i>&nbsp;&nbsp;Archive</button>
+
+                            <button class="btn btn-primary get-records" style="border-radius: 0px; width: 100%; margin-inline: 5px; margin-block: 5px; font-size:12px; text-align:center" data-user-id="<?= $row['user_id'] ?>"><i class="bi bi-eye-fill"></i><br>&nbsp;&nbsp;View</button>
+
+                            <a href="receipt.php?user_id=<?= $row['user_id'] ?>" class="btn btn-danger" style="border-radius: 0px; width: 100%; margin-inline: 5px; margin-block: 5px; font-size:12px; text-align:center"><i class="bi bi-receipt"></i><br>&nbsp;&nbsp;Receipt</a>
+
+                            <button class="btn btn-danger" style="border-radius: 0px; width: 100%; margin-inline: 5px; margin-block: 5px; font-size:12px; text-align:center" data-user-id="<?= $row['user_id'] ?>"><i class="bi bi-archive-fill"></i><br>&nbsp;&nbsp;Archive</button>
                         </div>
 
                     </div>
@@ -94,6 +110,15 @@ require('../data/admin-transactions.php');
 
     <script>
         $(document).ready(function() {
+            
+            // $('.btn-receipt').on('click', function (){
+            //     var userID = $(this).data('user-id');
+            //     console.log(userID);
+
+
+            // })
+
+
             $(document).on('click', '.get-records', function(e) {
                 e.preventDefault();
                 var userID = $(this).data('user-id');

@@ -45,4 +45,5 @@ if (isset($_POST['update'])) {
 
     $save = new AccessItems();
     $result = $save->save($i_id, $i_name, $i_desc, $i_price, $i_type, $i_quantity, $i_img);
+    
 }

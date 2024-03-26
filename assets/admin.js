@@ -74,8 +74,7 @@ $(document).ready(function () {
     //!decline 
     $('.decline-btn').on('click', function(){
         const id = $(this).data('user_id');
-        const reason = $('input[name="flexRadioDefault"]:checked').next('label').text().trim();
-        // console.log(id, reason);
+        const reason = $('input[name="flexRadioDefault"]:checked').next('label').text();
         $.ajax({
             url: '../data/admin-decline-request.php',
             type: 'post',
@@ -83,6 +82,10 @@ $(document).ready(function () {
                 'decline_request' : true ,
                 'id': id,
                 'reason': reason
+            },
+            success: function() {
+                alert("Request Declined");
+                location.reload();
             }
         })
     })
@@ -161,9 +164,6 @@ function approveReq(resID, userID, itemIDs, itemQuantities) {
         }
     });
 }
-
-
-
 
 function deleteItem(itemID) {
     if (confirm("Confirm delete?")) {

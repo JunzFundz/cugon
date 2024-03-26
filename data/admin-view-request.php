@@ -69,7 +69,6 @@ if (isset($_POST['getUserRequest'])) {
                                                                 <th style="font-size: small; font-weight:600;">Reservation Number</th>
                                                                 <th style="font-size: small; font-weight:600;">Prices</th>
                                                                 <th style="font-size: small; font-weight:600;">Quantity</th>
-                                                                <th style="font-size: small; font-weight:600;">Total</th>
                                                         </tr>
                                                 </thead>
                                                 <?php
@@ -84,7 +83,6 @@ if (isset($_POST['getUserRequest'])) {
                                                                         <td style="font-size: small; color: grey;"><?= $resNumbers[$i] ?></td>
                                                                         <td style="font-size: small; color: grey;"><?= $itemPrices[$i] ?></td>
                                                                         <td style="font-size: small; color: grey;"><?= $itemQuantities[$i] ?></td>
-                                                                        <td style="font-size: small; color: red;"><?= $subtotal ?></td>
                                                                 </tr>
                                                         </tbody>
                                                 <?php } ?>

@@ -30,9 +30,9 @@ class Signup extends Dbh
         $this->verified       = $verified;
     }
 
-    private function checkUser()
+    public function checkUser()
     {
-        $stmt = $this->connect()->prepare('SELECT username FROM users WHERE username = ? OR email = ?;');
+        $stmt = $this->connect()->prepare('SELECT username, email FROM users WHERE username = ? OR email = ?;');
 
         $stmt->bind_param('ss', $this->username, $this->email);
         $stmt->execute();
@@ -44,7 +44,6 @@ class Signup extends Dbh
             $this->setUser();
             return true;
         }
-
         return $result;
     }
 
@@ -73,14 +72,13 @@ class Signup extends Dbh
         $mail->send();
     }
 
-    public function setUser()
+    private function setUser()
     {
 
         $stmt = $this->connect()->prepare('INSERT INTO users (username, email, phone, password, otp, created_at, token, verified) VALUES (?,?,?,?,?,?,?,?)');
-
+        
         $stmt->bind_param('ssisisss', $this->username, $this->email, $this->phone, $this->hashed, $this->otp,$this->formattedDate, $this->token, $this->verified);
         $result = $stmt->execute();
-
         return $result;
     }
 

@@ -20,7 +20,8 @@ class Booking extends Dbh
 
     public function checkData()
     {
-        $sql = "SELECT u.email, u.phone,  u.username, u.user_id, rt.reg_date, rt.start, rt.end, rt.created_at, rt.payment, rt.res_id, rt.total, 
+        $sql = "SELECT u.email, u.phone,  u.username, u.user_id, rt.reg_date, rt.start, rt.end, rt.created_at, rt.payment, rt.res_id, rt.total,
+        COUNT(*) AS pending_count, 
         GROUP_CONCAT(rt.res_number) AS res_numbers,
         GROUP_CONCAT(it.i_name) AS item_names,
         GROUP_CONCAT(it.i_price) AS item_prices,
@@ -39,21 +40,49 @@ class Booking extends Dbh
 
     public function checkNewData($userID)
     {
-        $sql = "SELECT u.email, u.phone, u.user_id, rt.start, rt.end, rt.reg_date, rt.created_at,
-        GROUP_CONCAT(rt.res_number) AS res_numbers,
-        GROUP_CONCAT(it.i_name) AS item_names,
-        GROUP_CONCAT(it.i_price) AS item_prices,
-        GROUP_CONCAT(rt.quantity) AS item_quantities,
-        GROUP_CONCAT(rt.item_id) AS item_ids,
-        GROUP_CONCAT(it.i_id) AS i_ids
-                FROM users u
-                INNER JOIN res_tb rt ON rt.user_id = u.user_id 
-                INNER JOIN items it ON rt.item_id = it.i_id 
-                WHERE u.user_id = '$userID' AND rt.status = 'Pending'
-                GROUP BY u.email, u.phone, u.user_id";
-
-        $result = $this->connect()->query($sql);
+        $stmt = $this->connect()->prepare("SELECT u.email, u.phone, u.user_id, rt.start, rt.end, rt.reg_date, rt.created_at,
+            GROUP_CONCAT(rt.res_number) AS res_numbers,
+            GROUP_CONCAT(it.i_name) AS item_names,
+            GROUP_CONCAT(it.i_price) AS item_prices,
+            GROUP_CONCAT(rt.quantity) AS item_quantities,
+            GROUP_CONCAT(rt.item_id) AS item_ids,
+            GROUP_CONCAT(it.i_id) AS i_ids
+            FROM users u
+            INNER JOIN res_tb rt ON rt.user_id = u.user_id 
+            INNER JOIN items it ON rt.item_id = it.i_id 
+            WHERE u.user_id = ? AND rt.status = 'Pending'
+            GROUP BY u.email, u.phone, u.user_id");
+        $stmt->bind_param("i", $userID);
+        $stmt->execute();
+        $result = $stmt->get_result();
         return $result;
+    }
+
+    public function autoDecline()
+    {
+        $sql = "SELECT * FROM res_tb";
+
+        $stmt = $this->connect()->query($sql);
+        $requests = $stmt->fetch_all(MYSQLI_ASSOC);
+
+        foreach ($requests as $request) {
+
+            $createdTime = new DateTime($request['created_at']);
+            $expiryTime = clone $createdTime;
+            $expiryTime->add(new DateInterval('PT1M'));
+
+            $currentTime = new DateTime();
+            if ($currentTime > $expiryTime) {
+
+                $updateQuery = "UPDATE res_tb SET status = 'Declined' WHERE res_id = ? AND user_id = ?";
+                $updateStmt = $this->connect()->prepare($updateQuery);
+                $updateStmt->bind_param('ii', $request['res_id'], $request['user_id']);
+                $updateStmt->execute();
+            
+                return $updateStmt;
+            }
+        }
+        return $requests;
     }
 
     public function approveBookReq($resID, $userID, $tranNum, $itemIDs, $itemQuantities)
@@ -100,9 +129,16 @@ class Booking extends Dbh
 
     public function declineReq($id, $reason)
     {
-        $sql = "UPDATE res_tb SET status='Declined' WHERE user_id=$id";
+        $stmt = $this->connect()->prepare("UPDATE res_tb SET status='Declined' WHERE user_id=?");
+        $stmt->bind_param("i", $id);
+        $result = $stmt->execute();
 
-        $result = $this->connect()->query($sql);
+        if ($result) {
+            $stmt = $this->connect()->prepare("UPDATE res_tb SET message= ? WHERE user_id = ?");
+            $stmt->bind_param("si", $reason, $id);
+            $success = $stmt->execute();
+            return $success;
+        }
     }
 
     public function cancelBookReq($resID)
@@ -124,16 +160,36 @@ class Booking extends Dbh
         return true;
     }
 
-    public function placedBooking($res_number, $itemId, $userId, $quantity, $price, $payment, $total_in_day, $reg_date, $start_date, $end_date, $created_at, $status, $message) {
-        
-        $stmt = $this->connect()->prepare("INSERT INTO res_tb (res_number, item_id, user_id, quantity, reg_date, start, end, created_at, price, total, payment, status, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    public function regBooking($res_number, $itemId, $item, $userId, $quantity, $price, $payment, $total_in_day, $reg_date, $created_at, $status, $message)
+    {
+        $stmt = $this->connect()->prepare("INSERT INTO res_tb (res_number, item_id, item_name, user_id, quantity, reg_date, created_at, price, total, payment, status, message) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        $stmt->bind_param("iiiissssiisss", $res_number, $itemId, $userId, $quantity, $reg_date, $start_date, $end_date, $created_at, $price, $total_in_day, $payment, $status, $message);
-        $stmt->execute();
+        $stmt->bind_param("iisiisssssss", $res_number, $itemId, $item, $userId, $quantity, $reg_date, $created_at, $price, $total_in_day, $payment, $status, $message);
+        $success = $stmt->execute();
 
-        $result = $stmt->get_result();
-    
-        if ($result === TRUE) {
+        if ($success) {
+            $removeFromCart = $this->connect()->prepare("DELETE FROM cart WHERE user_id = ? AND  item_id=?");
+            $removeFromCart->bind_param('ii', $userId, $itemId);
+            $removeFromCart->execute();
+            return true;
+        } else {
+            error_log("Error: " . $stmt->error);
+            return false;
+        }
+    }
+
+    public function stayBooking($res_number, $itemId,  $item, $userId, $quantity, $price, $payment, $total_in_day, $start_date, $end_date, $created_at, $status, $message)
+    {
+        $stmt = $this->connect()->prepare("INSERT INTO res_tb (res_number, item_id, item_name, user_id, quantity, start, end, created_at, price, total, payment, status, message ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+
+        $stmt->bind_param("iisiisssiisss", $res_number, $itemId,  $item, $userId, $quantity, $start_date, $end_date, $created_at, $price, $total_in_day, $payment, $status, $message);
+        $success = $stmt->execute();
+
+        if ($success) {
+            $removeFromCart = $this->connect()->prepare("DELETE FROM cart WHERE user_id = ? AND  item_id=?");
+            $removeFromCart->bind_param('ii', $userId, $itemId);
+            $removeFromCart->execute();
             return true;
         } else {
             error_log("Error: " . $stmt->error);
@@ -241,5 +297,4 @@ class Booking extends Dbh
             return false;
         }
     }
-    
 }

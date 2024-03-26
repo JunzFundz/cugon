@@ -2,7 +2,7 @@
 session_start();
 include('user-header.php');
 include('../data/user-load-ratings.php');
-
+include('Navigation.php');
 ?>
 
 
@@ -13,11 +13,6 @@ include('../data/user-load-ratings.php');
 
     <!-- Container -->
     <div class="user-home-container">
-
-        <!-- Navigation -->
-        <div class="nav-section">
-            <?php include 'Navigation.php'; ?>
-        </div>
 
         <!-- Body panel -->
         <div class="user-body-panel">
@@ -37,11 +32,11 @@ include('../data/user-load-ratings.php');
                         <div class="mt-4 text-gray-700 font-semibold flex flex-row text-center items-center">
                             <span class=" right-0 mr-3.5" style="margin-right: 10px;"><?= $rows['email'] ?></span>
                             <div class="col-span-2 text-center">
-                                <i class="fa-regular fa-star" id="submit--1" data-rating-star="1"></i>
-                                <i class="fa-regular fa-star " id="submit--2" data-rating-star="2"></i>
-                                <i class="fa-regular fa-star " id="submit--3" data-rating-star="3"></i>
-                                <i class="fa-regular fa-star " id="submit--4" data-rating-star="4"></i>
-                                <i class="fa-regular fa-star " id="submit--5" data-rating-star="5"></i>
+
+                                <?php for ($i = 1; $i <= 5; $i++) { ?>
+                                    <i class="fa-solid fa-star <?= $i <= $rows['rating_data'] ? 'text-yellow-300' : '' ?>" id="submit--<?= $i ?>" data-rating-star="<?= $i ?>"></i>
+                                <?php } ?>
+                                
                             </div>
                         </div>
                         <div class="text-gray-700 text-xs"><?= date_format(date_create($rows['posted_at']), 'M:d:Y h:i A') ?>

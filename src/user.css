@@ -79,6 +79,7 @@ body {
     margin-right: 20px;
     background-color: #ffffff;
     height: auto;
+    transition: ease-in-out all .3s;
 }
 
 
@@ -89,9 +90,8 @@ body {
     top: 0;
     height: auto;
     background-color: rgb(255, 255, 255);
-    z-index: 999;
+    z-index: 9;
 }
-
 #prof-nav-btn {
     display: none;
 }
@@ -99,9 +99,6 @@ body {
 .nav-section>nav {
     height: auto;
     width: 100%;
-}
-.navbar{
-    z-index: 99999;
 }
 
 
@@ -415,7 +412,7 @@ body {
 .nav{
     position: sticky;
     top: 0;
-    z-index: 9999;
+    z-index: 9;
     height: fit-content;
     grid-column: 1/11;
 }

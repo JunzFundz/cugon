@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('Navigation.php');
 include('../data/user-load-info.php');
 include('user-header.php');
 ?>
@@ -11,10 +12,6 @@ include('user-header.php');
 <body>
 
     <div class="user-home-container">
-
-        <div class="nav-section">
-            <?php include 'Navigation.php'; ?>
-        </div>
 
         <div class="body-item-panel">
             <h1 id="rooms" class=" scroll custom-h1-style mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">R</span>ooms</h1>

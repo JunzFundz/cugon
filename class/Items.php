@@ -96,7 +96,7 @@ class Items extends Dbh
 
                 echo '<script type="text/javascript">';
                 echo 'alert("File already exist");';
-                echo 'window.location.href = "../Admin/Home.php" ';
+                echo 'window.location.href = "../Admin/admin-items.php"';
                 echo '</script>';
             }
         } else {
@@ -104,7 +104,7 @@ class Items extends Dbh
             $updatedimg =  $old_img;
             echo '<script type="text/javascript">';
             echo 'alert("Successfully updated");';
-            echo 'window.location.href = "../Admin/Home.php" ';
+            echo 'window.location.href = "../Admin/admin-items.php"';
             echo '</script>';
         }
 
@@ -121,7 +121,7 @@ class Items extends Dbh
                 }
                 echo '<script type="text/javascript">';
                 echo 'alert("Successfully updated");';
-                echo 'window.location.href = "../Admin/Home.php" ';
+                echo 'location.reload()';
                 echo '</script>';
             }
         } else {

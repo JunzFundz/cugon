@@ -1,33 +1,16 @@
 <?php
 session_start();
 
-if (isset($_POST['signup'])) 
-{
-    $username  = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
-    $email     = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $phone     = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
+if (isset($_POST['signup'])) {
 
-    $password  = $_POST['password'];
-    $hashed  = password_hash($password, PASSWORD_DEFAULT);
+    $username  = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
+    $email     = $_POST['email'];
+    $phone     = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
+    $hashed  = password_hash($_POST['password'], PASSWORD_DEFAULT);
     
     $otp       = rand(1000, 9999);
     $token     = bin2hex(random_bytes(32));
     $verified    = "no";
-
-    if (!$username || !$email || !$phone || !$_POST['password']) {
-        return false;
-        exit;
-    }
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        return false;
-        exit;
-    }
-
-    if (!preg_match('/^\d{10}$/', $phone)) {
-        return false;
-        exit;
-    }
 
     date_default_timezone_set('Asia/Manila');
     $date = new DateTime();
@@ -37,15 +20,17 @@ if (isset($_POST['signup']))
 
     require('../class/Signup.php');
     $signup = new Signup($username, $email, $phone, $hashed, $otp, $formattedDate, $token, $verified);
-    $result = $signup->setUser();
+    $result = $signup->checkUser();
 
     $response = array();
 
     if ($result) {
         $response['success'] = 'Successfully registered the OTP will be sent to your email';
         $response['redirect'] = '../dist/verify.php?token=' . urlencode($token) . "&email=" . urlencode($email);
-    } else {
-        $response['error'] = 'An error occur. Please try again later!';
+    } else if ($result === false){
+        $response['error'] = 'Usename and email already taken!';
+    } else{
+        $response['error'] = 'Error occur while signingup try again later!';
     }
     echo json_encode($response);
     exit();

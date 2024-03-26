@@ -8,7 +8,7 @@ class Dbh
     private $dbName = "cugondb";
     protected $conn;
 
-    protected function connect()
+    public function connect()
     {
         $this->conn = new mysqli($this->host, $this->user, $this->pwd, $this->dbName);
 

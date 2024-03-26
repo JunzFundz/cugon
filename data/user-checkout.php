@@ -19,7 +19,7 @@ if (isset($_POST['get-preffered-item'])) {
 
     if ($dateOptions == 'reg') {
         
-        $regular_date = $_POST['regular_date'];
+        $regular_date = date("Y-m-d", strtotime($_POST['regular_date']));
         $price = $_POST['price'];
         $quantity = $_POST['quantity'];
 

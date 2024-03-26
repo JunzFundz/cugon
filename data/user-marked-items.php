@@ -2,8 +2,8 @@
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     if (isset($_POST['item_checkboxes'])) {
+
         $checkboxValues = $_POST['item_checkboxes'];
         $itemIds = $_POST['item_ids'];
         $userIds = $_POST['user_ids'];
@@ -19,10 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $price = $prices[$i];
             $quantity = $quantities[$i];
             $name = $names[$i];
-
             $subtotal += $price * $quantity;
         } 
-
 
         $dateOptions = $_POST['dateOptions'];
         $payment = $_POST['payment'];
@@ -30,11 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($dateOptions == 'reg') {
             
             $regular_date = $_POST['regular_date'];
-
             $totaldays = 1;
             $totalwithdays = number_format($subtotal * $totaldays);
         } else{
-
             $start = $_POST['start'];
             $end = $_POST['end'];
 
@@ -43,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $interval = date_diff($date1, $date2);
 
             $days = $interval->days;
-            $days * 24;
+            $days *= 24;
 
             $totaldays = number_format($days);
             $totalwithdays = number_format($subtotal * $totaldays);

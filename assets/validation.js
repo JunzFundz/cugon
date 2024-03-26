@@ -55,7 +55,6 @@ function onSubmission() {
     return true;
 }
 
-
 function submitDetails() {
 
     var setName = $('#set-name').val();
