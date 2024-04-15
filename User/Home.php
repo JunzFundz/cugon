@@ -18,14 +18,12 @@ include('Navigation.php');
         <div class="user-body-panel">
 
             <ul class="flex flex-row post-section">
-                <li data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="cursor-pointer"><span class=" text-black  rounded-md p-4">Add review</span></li>
-                <li class="cursor-pointer"><span class=" text-black  rounded-md p-4">Create post</span></li>
-                <li class="cursor-pointer"><span class=" text-black  rounded-md p-4">My Post</span></li>
+                <li data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="cursor-pointer"><span class=" text-black rounded-md p-4"><i class="fa-solid fa-photo-film"></i>&nbsp;&nbsp;&nbsp;Add review</span></li>
+                <li class="cursor-pointer"><span class=" text-black  rounded-md p-4"><i class="fa-brands fa-creative-commons-share"></i>&nbsp;&nbsp;&nbsp;My Post</span></li>
                 <!-- <b style="float: right;"><span id="average-ratings">0.0</span>/ 5</b> -->
             </ul>
 
             <?php foreach ($result as $rows) { ?>
-
                 <div class="post-container">
 
                     <div class="block mx-4 my-4">

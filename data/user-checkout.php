@@ -24,7 +24,7 @@ if (isset($_POST['get-preffered-item'])) {
         $quantity = $_POST['quantity'];
 
         $totaldays = 1;
-        $totalcost = number_format($price * $quantity);
+        $totalcost = $price * $quantity;
 
     }else if ($dateOptions == 'stay') {
 
@@ -42,6 +42,6 @@ if (isset($_POST['get-preffered-item'])) {
         $days * 24;
 
         $totaldays = number_format($days);
-        $totalcost = number_format(($price * $days) * $quantity);
+        $totalcost = ($price * $days) * $quantity;
     }
 }

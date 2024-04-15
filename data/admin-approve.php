@@ -2,12 +2,23 @@
 
 require_once('../class/Booking.php');
 
+if (isset($_POST['approve_request'])) {
 
-$resID = $_POST['resID'];
-$userID = $_POST['userID'];
-$tranNum = rand(99999, 1000000);
-$itemIDs = $_POST['itemIDs'];
-$itemQuantities = $_POST['itemQuantities'];
+    $userID = $_POST['userID'];
+    $itemID = $_POST['itemID'];
+    $item = $_POST['item_name'];
+    $resID = $_POST['resID'];
+    $resNumber = $_POST['resNumber'];
+    $total = $_POST['total'];
+    $date_booked = $_POST['date'];
+    $transaction_number = rand(99999,10000);
+    $status = 'Paid';
 
-$approve = new Booking();
-$result = $approve->approveBookReq($resID, $userID, $tranNum, $itemIDs, $itemQuantities);
+    date_default_timezone_set('Asia/Manila');
+    $date = new DateTime();
+    $date_approved = $date->format('Y:m:d h:i:s');
+
+    $approve = new Booking();
+    $result = $approve->approveReq($userID, $itemID, $item, $resID, $resNumber, $total, $date_booked, $transaction_number, $status);
+
+}

@@ -111,7 +111,7 @@ $(function () {
         if (submitDetails()) {
 
             const get_option = $('#get_preffered_option').val();
-
+            const email = $('#set-email').val();
             const get_user_id = $('#get_user_id').val();
             const get_start_date = $('.get_start_date').data('get_start_date');
             const get_end_date = $('.get_end_date').data('get_end_date');
@@ -124,7 +124,7 @@ $(function () {
             const get_price = $('.get_price').data('get_price');
             const get_msg = $('#get_msg').val();
 
-            console.log(get_item_name);
+            console.log(email);
 
             if (get_option === 'reg') {
                 $.ajax({
@@ -133,6 +133,7 @@ $(function () {
                     data: {
                         'get-booking': true,
                         'get_option': get_option,
+                        'email': email,
                         'get_user_id': get_user_id,
                         'get_item_id': get_item_id,
                         'get_item_name': get_item_name,
@@ -178,6 +179,7 @@ $(function () {
                     data: {
                         'get-booking': true,
                         'get_option': get_option,
+                        'email': email,
                         'get_user_id': get_user_id,
                         'get_item_id': get_item_id,
                         'get_item_name': get_item_name,
@@ -220,21 +222,6 @@ $(function () {
         }
     });
 
-    //? test
-    // $('#placedSingleBookingtest').on('click', function () {
-
-    //     var totalInDays = $('.get-item-info').data('total_in_days');
-    //     var getItemId = $('.get-item-info').data('get_item_id');
-    //     var userId = $('.get-item-info').data('user_id');
-    //     var sellingPrice = $('.get-item-info').data('get_price');
-
-    //     console.log('Total in days:', totalInDays);
-    //     console.log('Item ID:', getItemId);
-    //     console.log('User ID:', userId);
-    //     console.log('Selling price:', sellingPrice);
-    // });
-
-
     //!placed marked booking
     $('#placed-mark-items').on('click', function (e) {
         e.preventDefault();
@@ -243,6 +230,7 @@ $(function () {
         console.log(dateOptions);
 
         if (submitDetails()) {
+            const email = $('#set-email').val();
             const get_payment = $('.get_payment').data('get_payment');
             const total_in_days = $('.total_in_days').data('total_in_days');
             const get_reg_date = $('.get_reg_date').data('get_reg_date');
@@ -263,6 +251,7 @@ $(function () {
                         data: {
                             'get-booking': true,
                             'get_option': 'reg',
+                            'email': email,
                             'get_user_id': get_user_id,
                             'get_item_id': get_item_id,
                             'get_quantity': get_quantity,
@@ -306,6 +295,7 @@ $(function () {
                         data: {
                             'get-booking': true,
                             'get_option': 'stay',
+                            'email': email,
                             'get_user_id': get_user_id,
                             'get_item_id': get_item_id,
                             'get_item_name': get_name,
@@ -347,7 +337,6 @@ $(function () {
             });
         }
     });
-
 
     //!notification
     $('.user-notification').on('click', function () {
@@ -458,52 +447,54 @@ $(function () {
         }, 300);
     });
 
-    //! rating
-    var rating_data = 0;
-    $(document).on('mouseenter', '.star--rating', function () {
-        var rating = $(this).data('rating-star');
+    //! item rating
+    var item_rate_data = 0;
+    $(document).on('mouseenter', '.item--rating', function () {
+        var item_stars = $(this).data('item-star');
 
-        removeStar();
+        itemRemoveStar();
 
-        for (var count = 1; count <= rating; count++) {
-            $('#submit--star--rating' + count).addClass('text-yellow-300');
+        for (var count = 1; count <= item_stars; count++) {
+            $('#submit--item--rating' + count).addClass('text-yellow-300 fa-solid');
         }
     })
 
-    $(document).on('mouseleave', '.start--rating', function () {
-        removeStar();
+    $(document).on('mouseleave', '.items--rating', function () {
+        itemRemoveStar();
     })
 
-    $(document).on('click', '.star--rating', function () {
-        rating_data = $(this).data('rating-star');
+    $(document).on('click', '.item--rating', function () {
+        item_rate_data = $(this).data('item-star');
     })
+    function itemRemoveStar() {
+        for (var count = 1; count <= 5; count++) {
+            $('#submit--item--rating' + count).removeClass('text-yellow-300 fa-solid');
+        }
+    }
 
-    //!submit review
-    $('#submitYourReview').on('click', function (e) {
+    //* submit
+    $('#submit--item--rating').on('click', function (e) {
         e.preventDefault();
-        var ratingCaption = $('#rating-caption-text').val();
-        var userEmail = $(this).data('user-email');
+        var quality = $('#item--quality').val();
+        var service = $('#service--rate').val();
+        var comments = $('#comments--rate').val();
+        var user_id = $(this).data('user_id');
+        var item_id = $(this).data('item_id');
 
-        var formData = new FormData();
-
-        formData.append('ratingCaption', ratingCaption);
-        formData.append('userEmail', userEmail);
-        formData.append('ratingData', rating_data);
-
-        var totalFiles = $('#image-array')[0].files.length;
-
-        for (var i = 0; i < totalFiles; i++) {
-            var file = $('#image-array')[0].files[i];
-            formData.append('photosUpload[]', file);
-            // console.log('File', i + 1, ':', file.name);
-        }
-
-        // console.log('Rating Data:', rating_data);
+        console.log(item_rate_data, user_id, item_id);
 
         $.ajax({
             url: '../data/user-add-ratings.php',
             type: 'POST',
-            data: formData,
+            data: {
+                'submit_rate': true,
+                'item_star' : item_rate_data,
+                'quality': quality,
+                'service': service,
+                'comments': comments,
+                'user_id' : user_id,
+                'item_id' : item_id
+            },
             contentType: false,
             processData: false,
             success: function (response) {
@@ -537,10 +528,100 @@ $(function () {
                             window.location.href = 'login.php';
                         }
                     }, 3000);
-
                 }
+            },
+            error: function (xhr, status, error) {
+                console.error('Error:', error);
+            }
+        });
+    });
 
+    //! page rating
+    var rating_data = 0;
+    $(document).on('mouseenter', '.star--rating', function () {
+        var rating = $(this).data('rating-star');
 
+        removeStar();
+
+        for (var count = 1; count <= rating; count++) {
+            $('#submit--star--rating' + count).addClass('text-yellow-300');
+        }
+    })
+
+    $(document).on('mouseleave', '.start--rating', function () {
+        removeStar();
+    })
+
+    $(document).on('click', '.star--rating', function () {
+        rating_data = $(this).data('rating-star');
+    })
+
+    function removeStar() {
+        for (var count = 1; count <= 5; count++) {
+            $('#submit--star--rating' + count).removeClass('text-yellow-300');
+        }
+    }
+
+    //* submit
+    $('#submitYourReview').on('click', function (e) {
+        e.preventDefault();
+        var ratingCaption = $('#rating-caption-text').val();
+        var userEmail = $(this).data('user-email');
+
+        var formData = new FormData();
+
+        formData.append('ratingCaption', ratingCaption);
+        formData.append('userEmail', userEmail);
+        formData.append('ratingData', rating_data);
+
+        var totalFiles = $('#image-array')[0].files.length;
+
+        for (var i = 0; i < totalFiles; i++) {
+            var file = $('#image-array')[0].files[i];
+            formData.append('photosUpload[]', file);
+        }
+
+        $.ajax({
+            url: '../data/user-add-ratings.php',
+            type: 'POST',
+            data: {
+                'submit': true,
+                formData : formData
+            },
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                var result = JSON.parse(response);
+
+                if (result.success) {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(result.success);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                        window.location.href = 'home.php';
+                    }, 3000);
+                } else if (result.error) {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(result.error);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                        if (response) {
+                            window.location.href = 'home.php';
+                        }
+                    }, 3000);
+                } else {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(message);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                        if (result) {
+                            window.location.href = 'login.php';
+                        }
+                    }, 3000);
+                }
             },
             error: function (xhr, status, error) {
                 console.error('Error:', error);
@@ -549,11 +630,7 @@ $(function () {
     });
 
 });
-function removeStar() {
-    for (var count = 1; count <= 5; count++) {
-        $('#submit--star--rating' + count).removeClass('text-yellow-300');
-    }
-}
+
 
 showStarRating();
 
@@ -567,6 +644,24 @@ function showStarRating() {
             $('#average-ratings').text(data.average_rating)
         }
     })
+}
+
+function searchItem() {
+    var bar = document.getElementById('search-bar-modal');
+    if (bar.style.display === 'none' || bar.style.display === '') {
+        bar.style.display = 'block';
+        document.addEventListener('click', hideSearchItem);
+    } else {
+        bar.style.display = 'none';
+        document.removeEventListener('click', hideSearchItem);
+    }
+}
+
+function hideSearchItem(e) {
+    if (e.target !== bar) {
+        bar.style.display = 'none';
+        document.removeEventListener('click', hideSearchItem);
+    }
 }
 
 

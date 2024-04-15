@@ -116,7 +116,6 @@ class Signup extends Dbh
             return false;
         }
     }
-    
 
     public function setVerified($otp)
     {

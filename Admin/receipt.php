@@ -13,15 +13,15 @@ if (isset($_GET['user_id'])) {
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 
-
-
 <div class=" receipt-body">
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <?php
-                if ($result && $result->num_rows > 0) {
-                    while ($rows = $result->fetch_assoc()) {
+    if ($result['num_rows'] > 0) {
+        $data = $result['data'];
+
+        foreach ($data as $rows) {
                 ?>
                         <div class="card-body">
                             <div class="invoice-title">

@@ -7,6 +7,7 @@ if (isset($_POST['get-booking'])) {
 
     $res_number = rand(999999999, 10000000);
     $itemId = $_POST['get_item_id'];
+    $email = $_POST['email'];
     $item = $_POST['get_item_name'];
     $userId = $_POST['get_user_id'];
     $quantity = $_POST['get_quantity'];
@@ -27,7 +28,7 @@ if (isset($_POST['get-booking'])) {
 
         header('Content-Type: application/json');
         $getbooking = new Booking();
-        $result = $getbooking->regBooking($res_number, $itemId, $item, $userId, $quantity, $price, $payment, $total_in_day, $reg_date, $created_at, $status, $message);
+        $result = $getbooking->regBooking($res_number, $itemId, $email, $item, $userId, $quantity, $price, $payment, $total_in_day, $reg_date, $created_at, $status, $message);
 
         $response = array();
         if ($result) {
@@ -44,7 +45,7 @@ if (isset($_POST['get-booking'])) {
 
         header('Content-Type: application/json');
         $getbooking = new Booking();
-        $result = $getbooking->stayBooking($res_number, $itemId, $item, $userId, $quantity, $price, $payment, $total_in_day, $start_date, $end_date, $created_at, $status, $message);
+        $result = $getbooking->stayBooking($res_number, $itemId, $email, $item, $userId, $quantity, $price, $payment, $total_in_day, $start_date, $end_date, $created_at, $status, $message);
 
         $response = array();
         if ($result) {

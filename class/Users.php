@@ -11,6 +11,20 @@ class Users extends Dbh
 
         return $result2;
     }
+    public function foods()
+    {
+        $sql = 'SELECT * FROM items WHERE i_type="Foods"';
+
+        $result = $this->connect()->query($sql);
+        return $result;
+    }
+    public function site_ratings()
+    {
+        $sql = 'SELECT * FROM ratings';
+
+        $result = $this->connect()->query($sql);
+        return $result;
+    }
     public function cottage()
     {
         $sql = 'SELECT * FROM items WHERE i_type="Cottages"';
@@ -29,6 +43,19 @@ class Users extends Dbh
         $result = $stmt->execute();
         return $result;
     }
+
+    public function item_rating($quality, $service, $comments, $user_id, $item_id)
+    {
+        $selectStmt = $this->connect()->prepare("SELECT username FROM users WHERE user_id = ?");
+
+        $stmt = $this->connect()->prepare("INSERT INTO item_ratings (client_id, client_username, rating_data, quality, service, comments) VALUES (?, ?, ?, ?, ?, ?)");
+
+        $stmt->bind_param("ssssss", $rating_data, $userEmail, $ratingCaption, $imgJson, $formattedDate, $status);
+
+        $result = $stmt->execute();
+        return $result;
+    }
+
     public function showRatings()
     {
         $sql = "SELECT * FROM ratings ORDER BY r_id DESC";

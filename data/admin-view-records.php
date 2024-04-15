@@ -4,6 +4,7 @@ include('../class/Transactions.php');
 
 
 if (isset($_POST['check_records'])) {
+
         $userID = $_POST['userID'];
 
         $records = new Transactions();
@@ -18,19 +19,25 @@ if (isset($_POST['check_records'])) {
                         $date1 = date_create($rows['start']);
                         $date2 = date_create($rows['end']);
                         $interval = date_diff($date1, $date2);
-
                         $currentDate = date_create();
-                        $startDateTime = date_create($rows['start']);
-                        $dateFormatted = date('M-d-Y', strtotime($rows['start']));
 
-                        if (($date1) && ($date2)) {
-                                print "The date is" . $regDate->format('Y-m-d');
-                        }
+                        if ($rows['reg_date'] === '0000-00-00' || $rows['reg_date'] == '') {
 
-                        if ($currentDate->format('Y-m-d') == $startDateTime->format('Y-m-d')) {
-                                echo "The start date is today.";
+                                if ($currentDate->format('Y-m-d') == $date1->format('Y-m-d')) {
+                                        print "The start date is today and end in " . $date2->format('Y-m-d');
+                                } else if ($currentDate->format('Y-m-d') > $date2->format('Y-m-d')) {
+                                        echo"Session expired";
+                                } else {
+                                        print "It will start on " . $date1->format('M d ') . " and ends in " . $date2->format('d D, Y');
+                                }
                         } else {
-                                echo "It will start on " . $dateFormatted;
+                                if ($currentDate->format('Y-m-d') == $regDate->format('Y-m-d')) {
+                                        print "The start date is today.";
+                                } else if ($currentDate->format('Y-m-d') > $regDate->format('Y-m-d')) {
+                                        echo"Session expired";
+                                } else {
+                                        print "Will start on " . $regDate->format('M d, Y');
+                                }
                         }
 
                         // Kuhas value drekta
@@ -53,10 +60,10 @@ if (isset($_POST['check_records'])) {
                                                 <label for="" style="font-size: small; font-weight:600;">Date</label>
                                                 <h6 style="font-size: small; font-weight:300;">
                                                         <?php
-                                                        if ($date1 == '0000-00-00' && $date2 == '0000-00-00') {
-                                                                echo "The date is " . date_format($regDate, 'M-d-Y');
-                                                        }else{
-                                                                echo date_format($date1, 'M-d-y');
+                                                        if ($rows['reg_date'] === '0000-00-00' || $rows['reg_date'] == '') {
+                                                                print $date1->format('M d') . "-" . $date2->format('d, Y');
+                                                        } else {
+                                                                print $regDate->format('M d, Y');
                                                         }
                                                         ?>
                                                 </h6>
@@ -83,6 +90,7 @@ if (isset($_POST['check_records'])) {
                                                                 <td style="font-size: small; color: grey;"><?= $rows['res_number'] ?></td>
                                                                 <td style="font-size: small; color: grey;"><?= $rows['price'] ?></td>
                                                                 <td style="font-size: small; color: red;"><?= $rows['quantity'] ?></td>
+                                                                <td style="font-size: small; color: red;"><?= number_format($rows['total']) ?></td>
                                                         </tr>
                                                 </tbody>
                                         </table>

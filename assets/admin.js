@@ -1,19 +1,24 @@
-
 $(document).ready(function () {
 
     //! Click handler for viewButton
     $(document).on('click', '.viewButton', function () {
-        var userID = $(this).data('user_id');
+        const userID = $(this).data('user_id');
+        const resID = $(this).data('res_id');
+        const itemID = $(this).data('item_id');
+
+        console.log(userID, resID, itemID);
         $.ajax({
             url: '../data/admin-view-request.php',
             type: 'post',
             data: {
                 "getUserRequest": true,
-                userID: userID
+                'userID': userID,
+                'resID': resID,
+                'itemID': itemID,
             },
             success: function (response) {
                 $('.modal-body').html(response);
-                $('#exampleModal').modal('show');
+                $('#modal-request-view').modal('show');
             },
             error: function () {
                 alert('Error: Unable to load user details');
@@ -24,9 +29,11 @@ $(document).ready(function () {
     //! Click handler for editItem
     $(document).on('click', '.editItem', function (e) {
         e.preventDefault();
-        var item_id = $(this).closest('.card').find('.item_id').val();
+        var item_id = $(this).data('item_id');
+
+        console.log(item_id)
         $.ajax({
-            url: '../data/data-edit-item.php',
+            url: '../data/data-items.php',
             type: 'post',
             data: {
                 'check_view': true,
@@ -43,7 +50,6 @@ $(document).ready(function () {
                     $('#quantity').val(value['i_quantity']);
                 });
                 $('#edit-modal').modal('show');
-
             },
             error: function () {
                 alert('Error: getting data');
@@ -63,7 +69,43 @@ $(document).ready(function () {
                 'userID': userID,
             },
             success: function (response) {
-                $('#show-records').modal('show');
+                $('.modal-body').html(response);
+                $('#show-records-data').modal('show');
+            },
+            error: function () {
+                alert('Error: getting data');
+            }
+        });
+    });
+
+    // !approve btn
+    $(document).on('click', '.approval-request', function (e) {
+        e.preventDefault();
+        const userID = $(this).data('user_id');
+        const resID = $(this).data('res_id');
+        const itemID = $(this).data('item_id');
+        const item = $(this).data('item_name');
+        const resNumber = $(this).data('res_num');
+        const total = $(this).data('total_amount');
+        const date = $(this).data('date');
+
+        // console.log(userID, item, itemID, resNumber, total, date, resID)
+
+        $.ajax({
+            url: '../data/admin-approve.php',
+            type: 'post',
+            data: {
+                'approve_request': true,
+                'userID': userID,
+                'resID': resID,
+                'itemID': itemID,
+                'item_name': item,
+                'resNumber': resNumber,
+                'total': total,
+                'date': date
+            },
+            success: function (response) {
+                location.reload();
             },
             error: function () {
                 alert('Error: getting data');
@@ -72,99 +114,116 @@ $(document).ready(function () {
     });
 
     //!decline 
-    $('.decline-btn').on('click', function(){
+    $('.decline-btn').on('click', function () {
         const id = $(this).data('user_id');
         const reason = $('input[name="flexRadioDefault"]:checked').next('label').text();
+
+        console.log(id)
         $.ajax({
             url: '../data/admin-decline-request.php',
             type: 'post',
             data: {
-                'decline_request' : true ,
+                'decline_request': true,
                 'id': id,
                 'reason': reason
             },
-            success: function() {
+            success: function () {
                 alert("Request Declined");
                 location.reload();
             }
         })
     })
-});
 
+    //! in and out
+    $(document).on('click', '.time--in', function(e){
+        e.preventDefault();
 
-//! Function for approveReq
-/*function approveReq(resID, userID, itemIDs, itemQS) {
-    if (confirm("Approving this booking request?")) {
-        var itemIDsArray = itemIDs.split(',').map(Number);
-        var itemQuantitiesArray = itemQuantities.split(',').map(Number);
-        for (var i = 0; i < itemIDsArray.length; i++) {
-            var itemID = itemIDsArray[i].trim();
-            var itemQuantity = itemQS[itemID];  
+        const userId = $(this).data('user_id');
+        const tNumber = $(this).data('t_number');
+        const rNumber = $(this).data('res_number');
 
-            if (itemQuantity === undefined) {
-                console.log("Error: Item ID " + itemID + " not found in itemQS object.");
-            } else {
-                console.log("Item ID: " + itemID + ", Quantity: " + itemQuantity);
-            }
-        }
+        console.log(userId, tNumber, rNumber);
+
         $.ajax({
-            url: '../data/admin-approve.php',
+            url: '../data/admin-transactions.php',
             type: 'post',
             data: {
-                resID: resID,
-                userID: userID
-            },
-            success: function (response) {
-                console.log(response);
-                alert('Success');
-                location.reload();
-            },
-            error: function () {
-                alert('Error: ');
+                'time_in': true,
+                'user_id': userId,
+                't_number': tNumber, 
+                'r_number': rNumber
             }
-        });
-    }
-}*/
-
-//!test
-function approveReq(resID, userID, itemIDs, itemQuantities) {
-    var itemIDsArray = itemIDs.split(',').map(Number);
-    var itemQuantitiesArray = itemQuantities.split(',').map(Number);
-    var itemQS = {};
-
-    for (var i = 0; i < itemIDsArray.length; i++) {
-        itemQS[itemIDsArray[i]] = itemQuantitiesArray[i];
-    }
-    for (var i = 0; i < itemIDsArray.length; i++) {
-        var itemID = itemIDsArray[i].toString().trim();
-        var itemQuantity = itemQS[itemID];
-
-        if (itemQuantity === undefined) {
-            console.log("Error: Item ID " + itemID + " not found in itemQS object.");
-        } else {
-            console.log("Item ID: " + itemID + " Quantity: " + itemQuantity);
-        }
-    }
-    $.ajax({
-        url: '../data/admin-approve.php',
-        type: 'post',
-        data: {
-            resID: resID,
-            userID: userID,
-            itemIDs: itemIDs,
-            itemQuantities: itemQuantities
-        },
-        success: function (response) {
-            console.log(response);
-            alert('Success');
-            location.reload();
-        },
-        error: function () {
-            alert('Error: ');
-        }
+        })
     });
-}
 
+    $(document).on('click', '.time--out', function(e){
+        e.preventDefault();
+
+        const userId = $(this).data('user_id');
+        const tNumber = $(this).data('t_number');
+        const rNumber = $(this).data('res_number');
+
+        console.log(userId, tNumber, rNumber);
+
+        $.ajax({
+            url: '../data/admin-transactions.php',
+            type: 'post',
+            data: {
+                'time_out': true,
+                'user_id': userId,
+                't_number': tNumber, 
+                'r_number': rNumber
+            }
+        })
+    });
+
+    //! contents
+    $('#myTable').DataTable();
+
+    var content = sessionStorage.getItem('loadedContent');
+    if (content) {
+        $('.main').html(content);
+    }
+
+    $('#booking-requests').on('click', function () {
+        $('.main').load('requests.php', function () {
+            sessionStorage.setItem('loadedContent', $('.main').html());
+        });
+    });
+
+    $('#transactions').on('click', function () {
+        $('.main').load('transactions.php', function () {
+            sessionStorage.setItem('loadedContent', $('.main').html());
+        });
+    });
+
+    $('#items').on('click', function () {
+        $('.main').load('items.php', function () {
+            sessionStorage.setItem('loadedContent', $('.main').html());
+        });
+    });
+    
+    $('#ratings').on('click', function () {
+        $('.main').load('ratings.php', function () {
+            sessionStorage.setItem('loadedContent', $('.main').html());
+        });
+    });
+
+    $('#reports').on('click', function () {
+        $('.main').load('reports.php', function () {
+            sessionStorage.setItem('loadedContent', $('.main').html());
+        });
+    });
+
+    $('#dashboard').on('click', function (event) {
+        event.preventDefault();
+        $('.main').load('dashboard.php');
+        sessionStorage.setItem('loadedContent', $('.main').html());
+    });
+
+});
+
+// !delete item
 function deleteItem(itemID) {
     if (confirm("Confirm delete?")) {
         $.ajax({
@@ -174,7 +233,6 @@ function deleteItem(itemID) {
                 itemID: itemID
             },
             success: function (response) {
-                console.log(response);
                 alert('Success');
                 location.reload();
             },

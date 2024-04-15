@@ -24,7 +24,7 @@ if (isset($_POST['login-user'])) {
                 $_SESSION['user_id'] = $row["user_id"];
                 $_SESSION['email'] = $row["email"];
 
-                $redirect = ($_SESSION['user_id'] === 321) ? '../Admin/Home.php' : '../User/Items.php';
+                $redirect = ($_SESSION['user_id'] === 321) ? '../Admin/welcome.php' : '../User/Items.php';
 
                 $response = [
                     'redirect' => $redirect

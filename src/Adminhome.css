@@ -1,7 +1,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
-    font-family: "Montserrat", sans-serif;
+
+.left--content::-webkit-scrollbar-track {
+    width: 3px;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+.left--content::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+/* breadcrumb--custom */
+.breadcrumb--custom--style{
+
+}
+
+
+/* container--ratings */
+.container--ratings {
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+
+    .graph--ratings {
+        width: 100%;
+        background-color: #bfbfbf;
+        height: 40vh;
+        margin-bottom: 1rem;
+    }
+}
+
+table.dataTable th.dt-type-numeric,
+table.dataTable th.dt-type-date,
+table.dataTable td.dt-type-numeric,
+table.dataTable td.dt-type-date {
+    text-align: left !important;
+}
+
+/* dashboard card */
+.card--past {
+    width: 100% !important;
+    max-width: 100%;
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+    margin-bottom: 10px;
+
+    .img {
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        border-radius: 10px;
+        background: linear-gradient(#d7cfcf, #9198e5);
+    }
+
+    .card--past:hover>.img {
+        transition: 0.3s ease-in-out;
+        background: linear-gradient(#9198e5, #712020);
+    }
+
+    .textBox {
+        width: calc(100% - 90px);
+        padding-inline: 10px;
+        color: rgb(82, 82, 82);
+        font-family: 'Poppins' sans-serif;
+    }
+
+    .textContent {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .span {
+        font-size: 10px;
+    }
+
+    .h1 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .p {
+        font-size: 12px;
+        font-weight: lighter;
+    }
+}
+
+.card--past:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+@supports (scrollbar-color: blue red) {
+    * {
+        scrollbar-color: rgb(220, 220, 220) rgb(255, 255, 255);
+        scrollbar-width: thin;
+    }
+}
+
+body {
+    margin-top: 0 !important;
+    background-color: #dcdcdc !important;
 }
 
 .admin-container {
@@ -16,7 +119,7 @@
     height: auto;
     background-color: rgb(46, 46, 46);
 
-    nav{
+    nav {
         width: 100%;
         margin-inline: 3rem;
         padding-block: 20px;
@@ -40,22 +143,19 @@
         align-items: center;
         text-align: center;
     }
+
     nav .nav-icons div {
         margin-inline: 13px;
     }
-    nav .nav-icons div a{
+
+    nav .nav-icons div a {
         font-size: 20px;
         position: relative;
     }
-    nav .nav-icons div a span{
+
+    nav .nav-icons div a span {
         font-size: 9px;
     }
-}
-
-.viewButton, .approveButton, .declineButton {
-    font-weight: 700;
-    font-size: 10px;
-    border-radius: 30px;
 }
 
 .left-panel {
@@ -69,7 +169,7 @@
 .right-panel {
     overflow: hidden;
     margin: 30px;
-    grid-column: 2/9;
+    grid-column: 1/9;
 }
 
 .left-panel div ul li {
@@ -97,6 +197,92 @@ div ul {
     padding-left: 0;
 }
 
+/* welcome */
+.btn--view {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: hsla(194 100% 69% / 1);
+    --btn-bg-2: hsla(217 100% 56% / 1);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 5em;
+    cursor: pointer;
+    padding: 3px 9px;
+    min-width: 30px;
+    font-size: var(--size, 1rem);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    transition: 0.3s;
+    background-size: 280% auto;
+    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color) !important;
+    box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+}
+
+.btn--approve {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: rgb(61, 201, 124);
+    --btn-bg-2: rgb(0, 219, 91);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 5em;
+    cursor: pointer;
+    padding: 3px 9px;
+    min-width: 30px;
+    font-size: var(--size, 1rem);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    transition: 0.3s;
+    background-size: 280% auto;
+    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color) !important;
+    box-shadow: 0px 0px 20px rgba(71, 249, 255, 0.5), 0px 5px 5px -1px rgba(146, 228, 255, 0.25), inset 4px 4px 8px rgba(62, 255, 142, 0.5), inset -4px -4px 8px rgba(204, 255, 110, 0.35);
+}
+
+.btn--decline {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: rgb(255, 97, 97);
+    --btn-bg-2: rgb(255, 31, 65);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 5em;
+    cursor: pointer;
+    padding: 3px 9px;
+    min-width: 30px;
+    font-size: var(--size, 1rem);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    transition: 0.3s;
+    background-size: 280% auto;
+    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color) !important;
+    box-shadow: 0px 0px 20px rgba(236, 141, 155, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(255, 175, 246, 0.5), inset -4px -4px 8px rgba(216, 19, 200, 0.35);
+}
+
+.btn--view:hover {
+    background-position: right top;
+}
+
+.btn--approve:hover {
+    background-position: right top;
+}
+
+.btn--decline:hover {
+    background-position: right top;
+}
+
+.btn--view:is(:focus, :focus-visible, :active) {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn--view {
+        transition: linear;
+    }
+}
 
 
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('Navigation.php');
 include('user-header.php');
+include('Navigation.php');
 include('../data/user-view-cart.php');
 ?>
 
@@ -69,7 +69,6 @@ include('../data/user-view-cart.php');
 
         <?php } ?>
     </div>
-
 
     <div class="checkout-section">
 

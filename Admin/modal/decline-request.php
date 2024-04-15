@@ -52,7 +52,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" data-user_id="<?php echo $rows['user_id']; ?>" class="btn btn-danger decline-btn">Confirm</button>
+                <button type="button" data-user_id="<?= $rows['user_id']; ?>" data-res_id="<?= $rows['res_id']; ?>" data-item_id="<?= $rows['item_id']; ?>" data-res_num="<?= $rows['res_number']; ?>" data-total_amount="<?= $rows['total']; ?>" class="btn btn-danger decline-btn">Confirm</button>
             </div>
         </div>
     </div>

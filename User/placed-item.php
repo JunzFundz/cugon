@@ -153,7 +153,7 @@ include('../data/user-checkout.php');
 
                 <li class="flex items-center flex-row justify-between">
                     <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Total</span>
-                    <span class=" font-semibold leading-medium text-orange-600 dark:text-gray-400 ms-3 text-3xl total_in_days" data-total_in_days="<?php echo $totalcost ?>">₱ <?php echo $totalcost ?></span>
+                    <span class=" font-semibold leading-medium text-orange-600 dark:text-gray-400 ms-3 text-3xl total_in_days" data-total_in_days="<?php echo $totalcost ?>">₱ <?php echo number_format($totalcost) ?></span>
                 </li>
 
                 <?php

@@ -4,7 +4,7 @@ require('../database/Connection.php');
 
 class Items extends Dbh
 {
-    protected function allItems()
+    public function allItems()
     {
         $sql = 'SELECT * FROM items';
 
@@ -13,26 +13,24 @@ class Items extends Dbh
         return $result;
     }
 
-    protected function rooms()
+    public function rooms()
     {
         $sql = 'SELECT * FROM items WHERE i_type="Rooms"';
 
         $result2 = $this->connect()->query($sql);
-
         return $result2;
     }
-    protected function cottage()
+
+    public function cottage()
     {
         $sql = 'SELECT * FROM items WHERE i_type="Cottages"';
 
         $result3 = $this->connect()->query($sql);
-
         return $result3;
     }
     
-    protected function additem($i_type, $i_name, $i_img, $i_desc, $i_price, $i_quantity)
+    public function additem($i_type, $i_name, $i_img, $i_desc, $i_price, $i_quantity)
     {
-
         if (file_exists("../Admin/Items/" . $_FILES["i_img"]["name"])) {
             $_FILES["i_img"]["name"];
 
@@ -64,7 +62,7 @@ class Items extends Dbh
         }
     }
 
-    protected function editItems($i_id)
+    public function editItems($i_id)
     {
         $sql = "SELECT * FROM items WHERE i_id = '$i_id'";
         $result = $this->connect()->query($sql);
@@ -84,10 +82,8 @@ class Items extends Dbh
     }
 
 
-    protected function updateItems($i_id, $i_name, $i_desc, $i_price, $i_type, $i_quantity, $i_img)
-
+    public function updateItems($i_id, $i_name, $i_desc, $i_price, $i_type, $i_quantity, $i_img)
     {
-
         $old_img = ''; 
 
         if ($i_img != '') {
@@ -130,7 +126,7 @@ class Items extends Dbh
         return $result;
     }
 
-    protected function deleteItem($itemID)
+    public function deleteItem($itemID)
     {
         $sql = "SELECT i_img FROM items WHERE i_id = '$itemID'";
         $result = $this->connect()->query($sql);

@@ -23,3 +23,16 @@
     grid-column: 1/8;
     height: 30vh;
 }
+.featured{
+    grid-column: 1/8;
+    margin-inline: 10rem;
+    height: auto;
+}
+.footer{
+    grid-column: 1/8;
+    height: auto;
+}
+.newsection{
+    grid-column: 1/8;
+    margin-inline: 10rem;
+}

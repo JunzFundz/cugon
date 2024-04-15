@@ -1,6 +1,11 @@
 <?php
 
 require('../database/Connection.php');
+require '../vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 class Booking extends Dbh
 {
@@ -12,9 +17,34 @@ class Booking extends Dbh
 
     public function getItem($i_id)
     {
-        $sql = "SELECT * FROM items WHERE i_id = '$i_id'";
-        $result = $this->connect()->query($sql);
+        $stmt = $this->connect()->prepare("SELECT * FROM items WHERE i_id = ?");
+        $stmt->bind_param("i", $i_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
+        return $result;
+    }
+
+    public function fetchRequest()
+    {
+        $stmt = "SELECT * 
+        FROM res_tb
+        INNER JOIN users 
+        ON res_tb.user_id=users.user_id";
+
+        $statusRequest = $this->connect()->query($stmt);
+        return $statusRequest;
+    }
+
+    public function tableData()
+    {
+        $stmt = "SELECT *
+                FROM users u
+                INNER JOIN res_tb rt ON rt.user_id = u.user_id 
+                INNER JOIN items it ON rt.item_id = it.i_id 
+                WHERE rt.status = 'Pending'";
+
+        $result = $this->connect()->query($stmt);
         return $result;
     }
 
@@ -35,6 +65,20 @@ class Booking extends Dbh
                 GROUP BY u.email, u.phone, u.user_id";
 
         $result = $this->connect()->query($sql);
+        return $result;
+    }
+
+    public function viewRequest($userID, $resID, $itemID)
+    {
+        $stmt = $this->connect()->prepare("SELECT * 
+        FROM res_tb re
+        INNER JOIN users us
+        INNER JOIN items it
+        ON re.item_id=it.i_id
+        WHERE us.user_id = ? AND re.res_id = ? AND re.item_id = ?");
+        $stmt->bind_param("iii", $userID, $resID, $itemID);
+        $stmt->execute();
+        $result = $stmt->get_result();
         return $result;
     }
 
@@ -78,64 +122,40 @@ class Booking extends Dbh
                 $updateStmt = $this->connect()->prepare($updateQuery);
                 $updateStmt->bind_param('ii', $request['res_id'], $request['user_id']);
                 $updateStmt->execute();
-            
+
                 return $updateStmt;
             }
         }
         return $requests;
     }
 
-    public function approveBookReq($resID, $userID, $tranNum, $itemIDs, $itemQuantities)
+    public function approveReq($userID, $itemID, $item, $resID, $resNumber, $total, $date_booked, $transaction_number, $status)
     {
-        $updateReservationSQL = "UPDATE res_tb 
-                                SET status='Approved'
-                                WHERE user_id = $userID";
 
-        $conn = $this->connect();
+        $updateStmt = $this->connect()->prepare("UPDATE res_tb SET status='Approved' WHERE user_id = ? AND item_id = ? AND res_number = ?");
+        $updateStmt->bind_param("iii", $userID, $itemID, $resNumber);
+        $result = $updateStmt->execute();
 
-        if ($conn->query($updateReservationSQL) === TRUE) {
+        if ($result) {
+            $insertStmt = $this->connect()->prepare("INSERT INTO transactions (transaction_number, reservation_number, user_id, item_id, item_name, date_booked, date_approved, total, status, activity) VALUES (?,?,?,?,?,?,NOW(),?,?,'No show')");
+            $insertStmt->bind_param("iiiissis", $transaction_number, $resNumber, $userID, $itemID, $item, $date_booked, $total, $status);
+            $result = $insertStmt->execute();
 
-            $insertTransactionSQL = "INSERT INTO transaction (transaction_number, user_id, reg_date, start, end, created_at, total, payment, status) 
-                                    SELECT '$tranNum', user_id, reg_date, start, end, NOW() AS created_at, total, payment, 'Paid'
-                                    FROM res_tb
-                                    WHERE res_id = $resID";
-
-            if ($conn->query($insertTransactionSQL) === TRUE) {
-
-                $itemIDsArray = explode(',', $itemIDs);
-                $itemQuantitiesArray = explode(',', $itemQuantities);
-
-                for ($i = 0; $i < count($itemIDsArray); $i++) {
-                    $itemID = $itemIDsArray[$i];
-                    $itemQuantity = $itemQuantitiesArray[$i];
-
-                    $updateQuantitySQL = "UPDATE items 
-                            SET i_quantity = i_quantity - $itemQuantity
-                            WHERE i_id = $itemID";
-
-                    if ($conn->query($updateQuantitySQL) === FALSE) {
-                        echo "Error updating quantity for item ID $itemID: ";
-                    }
-                }
-                return true;
-            } else {
-                echo "Error inserting transaction: ";
-            }
+            return true;
         } else {
-            echo "Error updating reservation: ";
+            return false;
         }
-        $conn->close();
     }
 
-    public function declineReq($id, $reason)
+    public function declineReq($id, $res_id, $res_number, $reason)
     {
-        $stmt = $this->connect()->prepare("UPDATE res_tb SET status='Declined' WHERE user_id=?");
-        $stmt->bind_param("i", $id);
+        $stmt = $this->connect()->prepare("UPDATE res_tb SET status='Declined' WHERE user_id=? AND res_id=? AND res_number=?");
+        $stmt->bind_param("iii", $id, $res_id, $res_number);
         $result = $stmt->execute();
 
         if ($result) {
             $stmt = $this->connect()->prepare("UPDATE res_tb SET message= ? WHERE user_id = ?");
-            $stmt->bind_param("si", $reason, $id);
+            $stmt->bind_param("siii", $reason, $id, $res_id, $res_number);
             $success = $stmt->execute();
             return $success;
         }
@@ -160,18 +180,43 @@ class Booking extends Dbh
         return true;
     }
 
-    public function regBooking($res_number, $itemId, $item, $userId, $quantity, $price, $payment, $total_in_day, $reg_date, $created_at, $status, $message)
+    public function sendPaymentInfo($email)
+    {
+        $mail = new PHPMailer(true);
+
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->isSMTP();
+        $mail->SMTPAuth   = true;
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+
+        $mail->Username   = 'junzfundador142@gmail.com';
+        $mail->Password   = 'kpwztuxkqtchzhup';
+
+        $mail->setFrom('junzfundador142@gmail.com');
+        $mail->addAddress($email);
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Payment to your request';
+        $mail->Body    = "Hello $email,<br><br>Please send the payment to: \n\n09319158016 <br><br>Best regards,<br>The Team";
+        $mail->AltBody = "Hello ,\n\nYour OTP is: \n\nBest regards,\nThe Team";
+        $mail->send();
+    }
+
+    public function regBooking($res_number, $itemId, $email, $item, $userId, $quantity, $price, $payment, $total_in_day, $reg_date, $created_at, $status, $message)
     {
         $stmt = $this->connect()->prepare("INSERT INTO res_tb (res_number, item_id, item_name, user_id, quantity, reg_date, created_at, price, total, payment, status, message) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        $stmt->bind_param("iisiisssssss", $res_number, $itemId, $item, $userId, $quantity, $reg_date, $created_at, $price, $total_in_day, $payment, $status, $message);
+        $stmt->bind_param("iisiisssisss", $res_number, $itemId, $item, $userId, $quantity, $reg_date, $created_at, $price, $total_in_day, $payment, $status, $message);
         $success = $stmt->execute();
 
         if ($success) {
             $removeFromCart = $this->connect()->prepare("DELETE FROM cart WHERE user_id = ? AND  item_id=?");
             $removeFromCart->bind_param('ii', $userId, $itemId);
             $removeFromCart->execute();
+            $this->sendPaymentInfo($email);
             return true;
         } else {
             error_log("Error: " . $stmt->error);
@@ -179,7 +224,7 @@ class Booking extends Dbh
         }
     }
 
-    public function stayBooking($res_number, $itemId,  $item, $userId, $quantity, $price, $payment, $total_in_day, $start_date, $end_date, $created_at, $status, $message)
+    public function stayBooking($res_number, $itemId, $email, $item, $userId, $quantity, $price, $payment, $total_in_day, $start_date, $end_date, $created_at, $status, $message)
     {
         $stmt = $this->connect()->prepare("INSERT INTO res_tb (res_number, item_id, item_name, user_id, quantity, start, end, created_at, price, total, payment, status, message ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
@@ -190,6 +235,7 @@ class Booking extends Dbh
             $removeFromCart = $this->connect()->prepare("DELETE FROM cart WHERE user_id = ? AND  item_id=?");
             $removeFromCart->bind_param('ii', $userId, $itemId);
             $removeFromCart->execute();
+            $this->sendPaymentInfo($email);
             return true;
         } else {
             error_log("Error: " . $stmt->error);

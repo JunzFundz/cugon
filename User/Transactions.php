@@ -80,8 +80,15 @@ require('../data/user-show-transactions.php');
                                             <?= $row['i_type']; ?>
                                         </td>
                                         <td class="px-6 py-4">
-                                            <?= $row['start']; ?>
+                                            <?php
+                                            if ($row['reg_date'] === '0000-00-00' || $row['reg_date'] == '') {
+                                                print date_format(date_create($row['start']), 'M d') . '-' . date_format(date_create($row['end']), 'd Y');
+                                            } else {
+                                                print date_format(date_create($row['reg_date']), 'M d, Y');
+                                            } 
+                                            ?>
                                         </td>
+
                                         <td class="px-6 py-4">
                                             <?= number_format($row['i_price']); ?>
                                         </td>

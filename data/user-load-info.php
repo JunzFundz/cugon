@@ -4,6 +4,7 @@ include('../class/Users.php');
 $item = new Users();
 $result2 = $item->rooms();
 $result3 = $item->cottage();
+$result4 = $item->foods();
 
 // if (isset($_GET['user_id'])) {
 //     $users_id = $_POST['users_id'];
