@@ -1,7 +1,7 @@
 <?php
 
 require('../database/Connection.php');
-require '../vendor/autoload.php';
+require('../vendor/autoload.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -24,13 +24,68 @@ class Booking extends Dbh
 
         return $result;
     }
+    
+    public function itemRating($i_id)
+    {
+        $stmt = $this->connect()->prepare("SELECT * FROM item_ratings WHERE item_id = ?");
+        $stmt->bind_param("i", $i_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        $ratings = [];
+        while ($row = $result->fetch_assoc()) {
+            $ratings[] = $row;
+        }
+    
+        return $ratings;
+    }
+    
+
+    public function itemRatingall($i_id)
+    {
+        $stmt = $this->connect()->prepare("SELECT * FROM item_ratings WHERE item_id = ?");
+        $stmt->bind_param("i", $i_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $ratingCounts = array(
+            '1' => 0,
+            '2' => 0,
+            '3' => 0,
+            '4' => 0,
+            '5' => 0
+        );
+
+        while ($row = $result->fetch_assoc()) {
+            $rating = $row['rating_data'];
+            if (isset($ratingCounts[$rating])) {
+                $ratingCounts[$rating]++;
+            }
+        }
+
+        return array(
+            'ratings' => $result->fetch_all(MYSQLI_ASSOC),
+            'counts' => $ratingCounts
+        );
+    }
+
+
+    public function data($i_id)
+    {
+        $stmt = $this->connect()->prepare("SELECT client_username,rating_data,quality,service ,comments,date_posted, item_id, COUNT(item_id) AS total_ratings, COUNT(client_id) AS clients FROM item_ratings WHERE item_id = ?");
+        $stmt->bind_param("i", $i_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result;
+    }
 
     public function fetchRequest()
     {
         $stmt = "SELECT * 
         FROM res_tb
         INNER JOIN users 
-        ON res_tb.user_id=users.user_id";
+        ON res_tb.user_id = users.user_id";
 
         $statusRequest = $this->connect()->query($stmt);
         return $statusRequest;
@@ -129,9 +184,8 @@ class Booking extends Dbh
         return $requests;
     }
 
-    public function approveReq($userID, $itemID, $item, $resID, $resNumber, $total, $date_booked, $transaction_number, $status)
+    public function approveReq($userID, $itemID, $item, $resID, $resNumber, $total, $date_booked, $transaction_number, $status, $quantity)
     {
-
         $updateStmt = $this->connect()->prepare("UPDATE res_tb SET status='Approved' WHERE user_id = ? AND item_id = ? AND res_number = ?");
         $updateStmt->bind_param("iii", $userID, $itemID, $resNumber);
         $result = $updateStmt->execute();
@@ -141,7 +195,22 @@ class Booking extends Dbh
             $insertStmt->bind_param("iiiissis", $transaction_number, $resNumber, $userID, $itemID, $item, $date_booked, $total, $status);
             $result = $insertStmt->execute();
 
-            return true;
+            if ($result) {
+                $updateItem = $this->connect()->prepare("UPDATE items SET i_quantity = i_quantity - ? WHERE i_id = ?");
+                $updateItem->bind_param("ii", $quantity, $itemID);
+                $result = $updateItem->execute();
+
+                if ($result) {
+                    $notification = $this->connect()->prepare("INSERT INTO notifications (user_id, updates, date_posted) VALUES (?,?, NOW())");
+                    $notification->bind_param("is", $userID, $status);
+                    $result = $notification->execute();
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
@@ -157,17 +226,24 @@ class Booking extends Dbh
             $stmt = $this->connect()->prepare("UPDATE res_tb SET message= ? WHERE user_id = ?");
             $stmt->bind_param("siii", $reason, $id, $res_id, $res_number);
             $success = $stmt->execute();
-            return $success;
+
+            if ($success) {
+                $notification = $this->connect()->prepare("INSERT INTO notifications (user_id, updates, date_posted) VALUES (?,?, NOW())");
+                $notification->bind_param("is", $userID, $status);
+                $result = $notification->execute();
+                return $result;
+            }
         }
     }
 
     public function cancelBookReq($resID)
     {
-        $sql = "UPDATE res_tb 
-        SET status='Cancelled'
-        WHERE res_id =" . $resID;
+        $stmt = $this->connect()->prepare("UPDATE res_tb SET status='Cancelled' WHERE res_id = ?");
+        $stmt->bind_param("i", $resID);
 
-        $result = $this->connect()->query($sql);
+        $result = $stmt->execute();
+        $stmt->close();
+
         return $result;
     }
 
@@ -213,14 +289,17 @@ class Booking extends Dbh
         $success = $stmt->execute();
 
         if ($success) {
-            $removeFromCart = $this->connect()->prepare("DELETE FROM cart WHERE user_id = ? AND  item_id=?");
-            $removeFromCart->bind_param('ii', $userId, $itemId);
-            $removeFromCart->execute();
-            $this->sendPaymentInfo($email);
-            return true;
-        } else {
-            error_log("Error: " . $stmt->error);
-            return false;
+            $notification = $this->connect()->prepare("INSERT INTO notifications (user_id, updates, message, date_posted) VALUES (?,'Request Pending',?, NOW())");
+            $notification->bind_param("is", $userId, $message);
+            $result = $notification->execute();
+
+            if ($result) {
+                $removeFromCart = $this->connect()->prepare("DELETE FROM cart WHERE user_id = ? AND  item_id=?");
+                $removeFromCart->bind_param('ii', $userId, $itemId);
+                $removeFromCart->execute();
+                $this->sendPaymentInfo($email);
+                return true;
+            }
         }
     }
 
@@ -232,26 +311,32 @@ class Booking extends Dbh
         $success = $stmt->execute();
 
         if ($success) {
-            $removeFromCart = $this->connect()->prepare("DELETE FROM cart WHERE user_id = ? AND  item_id=?");
-            $removeFromCart->bind_param('ii', $userId, $itemId);
-            $removeFromCart->execute();
-            $this->sendPaymentInfo($email);
-            return true;
-        } else {
-            error_log("Error: " . $stmt->error);
-            return false;
+            $notification = $this->connect()->prepare("INSERT INTO notifications (user_id, updates, message, date_posted) VALUES (?,'Request Pending',?, NOW())");
+            $notification->bind_param("is", $userId, $message);
+            $result = $notification->execute();
+
+            if ($result) {
+                $removeFromCart = $this->connect()->prepare("DELETE FROM cart WHERE user_id = ? AND  item_id=?");
+                $removeFromCart->bind_param('ii', $userId, $itemId);
+                $removeFromCart->execute();
+                $this->sendPaymentInfo($email);
+                return true;
+            }
         }
     }
 
     public function usersTransaction($user_id)
     {
-        $sql = "SELECT *
+        $stmt = $this->connect()->prepare("SELECT *
             FROM res_tb
             INNER JOIN users ON res_tb.user_id = users.user_id 
             INNER JOIN items ON res_tb.item_id = items.i_id 
-            WHERE users.user_id= '$user_id' AND res_tb.status='Pending'";
+            WHERE users.user_id = ? AND res_tb.status = 'Pending'");
 
-        $result = $this->connect()->query($sql);
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
 
         if ($result && $result->num_rows > 0) {
             $transactions = array();
@@ -265,8 +350,10 @@ class Booking extends Dbh
 
                 $transactions[] = $row;
             }
+            $stmt->close();
             return $transactions;
         } else {
+            $stmt->close();
             return null;
         }
     }
@@ -322,18 +409,23 @@ class Booking extends Dbh
 
     public function viewCartItems($user_id)
     {
-        $sql = "SELECT * FROM cart 
-        INNER JOIN items ON cart.item_id = items.i_id
-        INNER JOIN users ON cart.user_id = users.user_id
-        WHERE users.user_id = '$user_id'";
+        $stmt = $this->connect()->prepare("SELECT * FROM cart 
+            INNER JOIN items ON cart.item_id = items.i_id
+            INNER JOIN users ON cart.user_id = users.user_id
+            WHERE users.user_id = ?");
 
-        $result = $this->connect()->query($sql);
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $stmt->close();
+
         return $result;
     }
 
     public function removeFromCart($itemId, $userId)
     {
-        $sql = "DELETE FROM cart WHERE user_id=? AND item_id=?";
+        $sql = "DELETE FROM cart WHERE user_id = ? AND item_id = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bind_param("ii", $userId, $itemId);
         $stmt->execute();

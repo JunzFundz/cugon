@@ -1,16 +1,15 @@
 <?php
 
 
-require('../class/Transactions.php');
+require('../class/Users.php');
 
 if (isset($_POST['show-notification'])) {
-    $user_id = $_POST['user_id'];
+    $user_id = filter_var($_POST['user_id'], FILTER_SANITIZE_NUMBER_INT);
 
-    $notif = new Transactions();
+    $notif = new Users();
     $result = $notif->userNotification($user_id);
 
     if ($result && $result->num_rows > 0) {
-
         while ($rows = $result->fetch_assoc()) { ?>
 
             <ol class="relative border-s border-gray-200 dark:border-gray-700 overflow-scroll">
@@ -18,7 +17,7 @@ if (isset($_POST['show-notification'])) {
                     <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
                     <time class="mb-1 font-normal leading-none text-gray-400 dark:text-gray-500">From: Cugon Bamboo Resort</time>
                     <h3 class="font-semibold text-gray-900 dark:text-white">Hi! <?= $rows['email'] ?></h3>
-                    <p class=" font-normal text-gray-500 dark:text-gray-400">Request is <?= $rows['status'] ?></p>
+                    <p class=" font-normal text-gray-500 dark:text-gray-400">Updates : <?= $rows['updates'] ?></p>
                     <?php
                     if (!empty($rows['message'])) {
                         echo "<p class='mb-4 font-normal text-red-500 dark:text-gray-400'>Message: {$rows['message']}</p>";
@@ -36,3 +35,4 @@ if (isset($_POST['show-notification'])) {
         echo "No notification at the moment";
     }
 }
+

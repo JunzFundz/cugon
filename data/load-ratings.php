@@ -64,3 +64,6 @@ if(isset($_POST['action']) && $_POST['action'] == 'load_ratings'){
     echo json_encode($output);
 }
 
+if(isset($_POST['percentage'])){
+    
+}

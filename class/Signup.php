@@ -76,8 +76,8 @@ class Signup extends Dbh
     {
 
         $stmt = $this->connect()->prepare('INSERT INTO users (username, email, phone, password, otp, created_at, token, verified) VALUES (?,?,?,?,?,?,?,?)');
-        
-        $stmt->bind_param('ssisisss', $this->username, $this->email, $this->phone, $this->hashed, $this->otp,$this->formattedDate, $this->token, $this->verified);
+
+        $stmt->bind_param('ssisisss', $this->username, $this->email, $this->phone, $this->hashed, $this->otp, $this->formattedDate, $this->token, $this->verified);
         $result = $stmt->execute();
         return $result;
     }
@@ -103,14 +103,14 @@ class Signup extends Dbh
         $stmt->bind_param('ss', $this->email, $this->token);
         $stmt->execute();
         $result = $stmt->get_result();
-    
+
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $this->otp = $row['otp'];
             $this->email = $row['email'];
 
             $this->sendOTP();
-    
+
             return true;
         } else {
             return false;
@@ -124,19 +124,15 @@ class Signup extends Dbh
         $check->execute();
         $checkResult = $check->get_result();
         $row = $checkResult->fetch_assoc();
-    
+
         if ($row['count'] > 0) {
             $stmt = $this->connect()->prepare('UPDATE users SET verified = "yes" WHERE otp = ?');
             $stmt->bind_param('s', $otp);
             $result = $stmt->execute();
-            
+
             return $result;
         } else {
             return false;
         }
     }
-    
-    
-    
-    
 }

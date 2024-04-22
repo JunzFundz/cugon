@@ -17,6 +17,7 @@ include('../data/user-view-cart.php');
             $totalInitial = $price * $quantity;
         ?>
             <div class="cart-items">
+                <span class="font-semibold item-name--"><?= $row['i_name'] ?></span>
                 <ul class="custom-ul">
                     <li>
                         <form id="checkoutForm" onsubmit="return onSubmission(this)" method="post" action="marked-items-checkout.php?users_id=<?php echo $_SESSION['user_id']; ?>">
@@ -34,17 +35,12 @@ include('../data/user-view-cart.php');
                         <img src="../Admin/Items/<?= $row['i_img'] ?>" alt="" height="20px" width="100px" style=" object-fit: contain; aspect-ratio: 3/2;">
                     </li>
 
-                    <li style="align-items: center; text-align: left">
-                        <span class="font-semibold"><?= $row['i_name'] ?></span><br>
-                        <span class="text-green-600 text-xs">Available: <?= $row['i_quantity'] ?></span>
+                    <li style="align-items: center; text-align: center">
+                        <span class=" text-red-600">Price: <?= number_format($row['i_price']) ?></span>
                     </li>
 
                     <li style="align-items: center; text-align: center">
-                        <span class=" text-red-600 font-semibold">Price: <?= number_format($row['i_price']) ?></span>
-                    </li>
-
-                    <li style="align-items: center; text-align: center">
-                        <span class=" text-orange-600 text-m font-semibold cursor-pointer delete--item" data-item--id="<?= $row['i_id'] ?>" data-user--id="<?= $row['user_id'] ?>">Delete</span>
+                        <span class=" text-gray-600 text-m cursor-pointer delete--item" data-item--id="<?= $row['i_id'] ?>" data-user--id="<?= $row['user_id'] ?>">Delete</span>
                     </li>
 
                     <li>
@@ -95,13 +91,13 @@ include('../data/user-view-cart.php');
                 </li>
                 <li>
                     <!-- single date -->
-                    <div class="relative max-w-sm" id="singleDate">
+                    <div class="relative" id="singleDate">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                             <svg class="w-4 h-4 text-blue-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>
                         </div>
-                        <input name="regular_date" id="singleDateInput" datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full ps-10 p-2  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white " placeholder="Select date">
+                        <input name="regular_date" id="singleDateInput" datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full ps-10 p-2  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white " placeholder="Select date">
                     </div>
 
                     <!-- two dates picker -->

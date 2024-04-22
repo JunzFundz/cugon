@@ -1,46 +1,64 @@
 <?php
 session_start();
-require_once('../database/Connection.php');
-if (isset($_POST['login-user'])) {
+require_once('../class/Login.php');
 
-    $response = array();
+if (isset($_POST['login-user'])) {
 
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $conn = new Dbh();
-    $connection = $conn->connect();
+    $login = new Login();
+    $result = $login->login($password, $email);
 
-    $stmt = $connection->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param('s', $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $stored_password = $row["password"];
-            if (password_verify($password, $stored_password)) {
-                $_SESSION['username'] = $row["username"];
-                $_SESSION['user_id'] = $row["user_id"];
-                $_SESSION['email'] = $row["email"];
-
-                $redirect = ($_SESSION['user_id'] === 321) ? '../Admin/welcome.php' : '../User/Items.php';
-
-                $response = [
-                    'redirect' => $redirect
-                ];
-            } else {
-                $response = [
-                    'error' => 'Incorrect Password'
-                ];
-            }
-        }
+    if ($result['success']) {
+        echo json_encode(['redirect' => $result['redirect']]);
+        exit;
     } else {
-        $response = [
-            'error' => 'Account not found'
-        ];
+        echo json_encode(['error' => $result['error']]);
+        exit;
     }
+}
+
+if (isset($_POST['check_email'])) {
+    $email  = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
+
+    $check = new Login();
+    $result = $check->checkEmail($email);
+
+    $response = array();
+
+    if ($result) {
+        $response['success'] = 'The link for changing password is sent to your email';
+        $response['redirect'] = '../dist/forgot-password-gateway.php';
+    } else {
+        $response['error'] = 'Account not found';
+    }
+    echo json_encode($response);
+    exit();
+}
+
+if (isset($_POST['update_password'])) {
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
+    $newPassword = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_SPECIAL_CHARS);
+    $confirmPassword = filter_input(INPUT_POST, 'cpassword', FILTER_SANITIZE_SPECIAL_CHARS);
+
+    $response = [];
+
+    if ($newPassword !== $confirmPassword) {
+        $response['error'] = 'Passwords do not match';
+    } else {
+        $newPasswordHash = password_hash($newPassword, PASSWORD_DEFAULT);
+        $change = new Login();
+        $result = $change->updatePassword($email, $newPasswordHash);
+
+        if ($result) {
+            $response['success'] = 'Password succesfully updated';
+            $response['redirect'] = '../dist/login.php';
+        } else {
+            $response['error'] = 'Error updating the password';
+        }
+    }
+
     echo json_encode($response);
     exit;
 }
-?>

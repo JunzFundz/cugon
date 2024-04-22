@@ -13,6 +13,8 @@
 <script src="../assets/validation.js"></script>
 <script src="../assets/user.js"></script>
 
+<?php include('load-modals.php') ?>
+
 <!-- sweet alert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

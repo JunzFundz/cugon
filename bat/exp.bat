@@ -1,0 +1,1 @@
+"C:\wamp64\bin\php\php7.4.33\php.exe" -f "C:\wamp64\www\cugon\data\testrun.php"

@@ -3,7 +3,7 @@
 require('../class/Items.php');
 
 $item = new Items();
-$result = $item->allItems();
+$items = $item->allItems();
 $result2 = $item->rooms();
 $result3 = $item->cottage();
 

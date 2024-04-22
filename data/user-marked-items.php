@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             $regular_date = $_POST['regular_date'];
             $totaldays = 1;
-            $totalwithdays = number_format($subtotal * $totaldays);
+            $totalwithdays = $subtotal * $totaldays;
 
         } else{
             $start = $_POST['start'];
@@ -42,8 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $days = $interval->days;
             $days * 24;
 
-            $totaldays = number_format($days);
-            $totalwithdays = number_format($subtotal * $totaldays);
+            $totaldays = $days;
+            $totalwithdays = $subtotal * $totaldays;
         }        
         return $subtotal;
     }

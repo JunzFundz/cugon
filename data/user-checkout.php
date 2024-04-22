@@ -7,6 +7,32 @@ if (isset($_GET['i_id'])) {
     $booking = new Booking();
     $result = $booking->getItem($i_id);
     $row = $result->fetch_assoc();
+
+    $data = $booking->data($i_id);
+    $client_rating = $booking->itemRating($i_id);
+
+    $ratingdata = $booking->itemRatingall($i_id);
+    $ratings = $ratingdata['ratings'];
+    $ratingCounts = $ratingdata['counts'];
+
+    function calculateAverageRating($ratingCounts) {
+        $totalRating = 0;
+        $totalReviews = 0;
+    
+        foreach ($ratingCounts as $rating => $count) {
+            $totalRating += $rating * $count;
+            $totalReviews += $count;
+        }
+    
+        if ($totalReviews == 0) {
+            return 0;
+        }
+    
+        return $totalRating / $totalReviews;
+    }
+
+    $averageRating = calculateAverageRating($ratingCounts);
+    
 }
 
 if (isset($_POST['get-preffered-item'])) {

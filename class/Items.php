@@ -7,9 +7,7 @@ class Items extends Dbh
     public function allItems()
     {
         $sql = 'SELECT * FROM items';
-
         $result = $this->connect()->query($sql);
-
         return $result;
     }
 

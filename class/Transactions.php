@@ -50,6 +50,7 @@ class Transactions extends Dbh
             return null;
         }
     }
+
     public function userAlltran($userId)
     {
         $sql = "SELECT *
@@ -116,6 +117,7 @@ class Transactions extends Dbh
 
         return $result;
     }
+
     public function printReceipt($userID)
     {
         $sql = $this->connect()->prepare("SELECT transactions.*, users.*, items.*, res_tb.quantity 
@@ -165,17 +167,20 @@ class Transactions extends Dbh
             return false;
         }
     }
-    
 
-    public function userNotification($user_id)
+    public function clientReceipt($res_id, $res_number, $user_id)
     {
-        $stmt = $this->connect()->prepare("SELECT * FROM res_tb
-        INNER JOIN users ON res_tb.user_id=users.user_id
-        WHERE users.user_id = ?");
-
-        $stmt->bind_param("i", $user_id);
+        $stmt = $this->connect()->prepare("SELECT transactions.*, users.*, items.*, res_tb.quantity, res_tb.res_number, res_tb.reg_date, res_tb.start, res_tb.end
+        FROM transactions
+        INNER JOIN users ON transactions.user_id = users.user_id
+        INNER JOIN items ON transactions.item_id = items.i_id
+        INNER JOIN res_tb ON transactions.reservation_number = res_tb.res_number
+        WHERE transactions.reservation_number=? AND transactions.user_id=? AND transactions.status='Paid'");
+        $stmt->bind_param("ii", $res_number, $user_id);
         $stmt->execute();
         $result = $stmt->get_result();
+
         return $result;
+
     }
 }

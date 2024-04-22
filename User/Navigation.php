@@ -11,9 +11,9 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
                 </svg>
             </div>
-            <input type="text" id="voice-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." required />
+            <input type="text" id="phone-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." required />
         </div>
-        <button type="submit" class="inline-flex items-center py-2 px-3 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <button type="button" class="inline-flex items-center py-2 px-3 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
             </svg>Search
@@ -21,10 +21,10 @@
     </form>
 </div>
 
+<!-- Original navigation bar -->
 <nav class="bg-white border-gray-200 dark:bg-gray-900 w-full navbar">
-    <div class="flexitems-center mx-auto max-w-screen-xl p-4 ">
+    <div class="flexitems-center mx-auto max-w-screen-xl p-4">
         <ul class="nav-top-section flex flexitems-center mx-auto justify-between">
-
             <li class="">
                 <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="../images/logo.jpg" class="logo-img" alt="Cugon logo" />
@@ -33,22 +33,24 @@
             </li>
 
             <li class="flex items-center">
-                <div class="search-bar" id="search-bar">
+                <div class="search-bar items-center flex" id="search-bar">
                     <form class="search-bar-input flex items-center max-w-sm mx-auto">
                         <label for="simple-search" class="sr-only">Search</label>
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-
                             </div>
-                            <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search item name..." required />
+                            <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search item name..." required />
                         </div>
-                        <button type="submit" class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <button type="button" class="p-2 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                             </svg>
                             <span class="sr-only">Search</span>
                         </button>
                     </form>
+                </div>
+                <div class="search-results invisible">
+                    <!-- Search results will be displayed here -->
                 </div>
             </li>
 
@@ -57,24 +59,30 @@
                 <?php $user_id = $_SESSION['user_id']; ?>
 
                 <div class="nav-menu flex items-center space-x-6 rtl:space-x-reverse">
-                    <div class="flex flex-row svg-buttons">
+                    <div class="flex flex-row svg-buttons lower-nav---" data-user_id="<?php echo $user_id; ?>">
+                        <div class="nav----">
+                            <a id="cart-nav-btn" href="cart.php?user_id=<?php echo $user_id; ?>" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="sr-only">Cart</span>
+                                <!-- badge -->
+                                <div id="cart-badge" class="cart--display invisible absolute inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full  dark:border-gray-900"></div>
+                            </a>
 
-                        <a id="cart-nav-btn" href="cart.php?user_id=<?php echo $user_id; ?>" class="cursor-pointer text-lg text-gray-600 dark:text-white hover:underline  font-medium rounded-lg px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800 cart-nav-btn" type="a"><i class="fa-solid fa-cart-shopping"></i>
-                        </a>
+                            <a id="not-nav-btn" data-modal-target="notif-modal" data-modal-toggle="notif-modal" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none user-notification" data-user_id="<?php echo $user_id; ?>">
+                                <i class="fa-solid fa-bell"></i>
+                                <span class="sr-only">Notification</span>
+                                <div id="notification-badge" class="absolute inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900"></div>
+                            </a>
 
-                        <a id="not-nav-btn" data-modal-target="notif-modal" data-modal-toggle="notif-modal" href="#" class=" cursor-pointer text-lg  text-gray-600 dark:text-white hover:underline font-medium rounded-lg px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800 user-notification not-nav-btn" data-user_id="<?php echo $user_id; ?>" type="a">
-                            <i class="fa-solid fa-bell"></i>
-                        </a>
+                            <a id="map-nav-btn" data-modal-target="map-modal" data-modal-toggle="map-modal" href="#" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none user-notification" type="a">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </a>
 
-                        <a id="map-nav-btn" data-modal-target="map-modal" data-modal-toggle="map-modal" href="#" class=" cursor-pointer text-lg  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800 user-notification map-nav-btn" type="a">
-                            <i class="fa-solid fa-map-location-dot"></i>
-                        </a>
-
-                        <a id="email-nav-btn" data-dropdown-toggle="email-hover" data-dropdown-trigger="hover" class="cursor-pointer text-sm  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800 email-nav-btn" type="a"><?php echo $_SESSION['email']; ?><svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                            </svg>
-                        </a>
-
+                            <a id="email-nav-btn" data-dropdown-toggle="email-hover" data-dropdown-trigger="hover" class="cursor-pointer text-sm  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800 email-nav-btn" type="a"><?php echo $_SESSION['email']; ?><svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg>
+                            </a>
+                        </div>
                         <a id="prof-nav-btn" data-dropdown-toggle="prof-hover" data-dropdown-trigger="hover" class="cursor-pointer z-10 text-sm  text-gray-500 dark:text-white hover:underline  font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800" type="a">
                             <i class="fa-solid fa-bars hover:text-orange-100 text-base"></i>
                         </a>
@@ -116,22 +124,23 @@
                 </div>
                 <!-- end of dropdown -->
             </li>
-
         </ul>
     </div>
 </nav>
 
+<!-- lower navbar phone -->
 <nav class="bg-gray-100 dark:bg-gray-700 lower-nav-media">
-    <div class="max-w-screen-xl px-4 py-1 mx-auto">
+    <div class="max-w-screen-xl px-4 py-1 mx-auto lower-nav---" data-user_id="<?php echo $user_id; ?>">
         <div class="flex items-center">
-            <ul class="flex flex-row font-medium mt-0 space-x-2 text-sm float-end">
+            <ul class="w-full flex flex-row font-medium mt-0 space-x-2 text-sm float-end items-center justify-between">
                 <li>
                     <a id="cart-nav-btn" href="cart.php?user_id=<?php echo $user_id; ?>" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="sr-only">Cart</span>
-                        <div class="absolute inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full  dark:border-gray-900"></div>
+                        <div id="cart-badgeii" class="absolute invisible inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full  dark:border-gray-900"></div>
                     </a>
                 </li>
+                
                 <li>
                     <a id="not-nav-btn" data-modal-target="notif-modal" data-modal-toggle="notif-modal" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none user-notification" data-user_id="<?php echo $user_id; ?>">
                         <i class="fa-solid fa-bell"></i>
@@ -139,19 +148,37 @@
                         <div class="absolute inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900"></div>
                     </a>
                 </li>
+
                 <li>
                     <a id="map-nav-btn" data-modal-target="map-modal" data-modal-toggle="map-modal" href="#" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none user-notification" type="a">
                         <i class="fa-solid fa-map-location-dot"></i>
                     </a>
                 </li>
+
+                <li>
+                    <div class="search-barii" id="search-barii">
+                        <form class="search-bar-input flex items-center max-w-sm mx-auto">
+                            <label for="simple-search" class="sr-only">Search</label>
+                            <div class="relative w-full">
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                </div>
+                                <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 invisible simple-search-ii" required />
+                            </div>
+                            <button type="button" class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 bn-show-search">
+                                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                                <span class="sr-only">Search</span>
+                            </button>
+                        </form>
+                    </div>
+                </li>
             </ul>
-            <svg onclick="searchItem()" class="w-6 h-6 text-gray-800 dark:text-white search-icon-start cursor-pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-            </svg>
         </div>
     </div>
 </nav>
 
+<!-- Original lower navbar -->
 <nav class="bg-gray-50 dark:bg-gray-700 lower-nav">
     <div class="max-w-screen-xl px-4 py-2 mx-auto">
         <div class="flex items-center">
@@ -236,3 +263,107 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#simple-search, #phone-search').on('input', function(event) {
+            let searchTerm = $(this).val();
+
+            if (searchTerm === '') {
+                $('.search-results').removeClass('invisible').addClass('visible');
+                return;
+            }
+
+            $.ajax({
+                url: '../data/user-load-info.php',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    'search': true,
+                    'searchTerm': searchTerm
+                },
+                success: function(response) {
+                    displayItems(response);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error("AJAX Error:", textStatus, errorThrown);
+                }
+            });
+        });
+
+        function displayItems(items) {
+            $('.search-results').empty().removeClass('invisible').addClass('visible');
+
+            items.forEach(item => {
+                var itemHtml = `
+            <div class='search-item'>
+                <a href="get-item.php?i_id=${item.i_id}">
+                    <h4>${item.i_name}</h4>
+                </a>
+            </div>
+        `;
+                $('.search-results').append(itemHtml);
+            });
+        }
+        $(document).on('click', function(event) {
+            if (!$(event.target).closest('#simple-search, .search-results').length) {
+                $('.search-results').removeClass('visible').addClass('invisible');
+            }
+        });
+    });
+
+    $(document).on('click', '.bn-show-search', function() {
+        $('.simple-search-ii').removeClass('invisible').addClass('visible');
+    });
+
+    function checkNotification() {
+        $.ajax({
+            url: '../data/check-items.php',
+            type: 'POST',
+            data: {
+                'notif': true,
+                'user_id': userId
+            },
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    $('#notification-badge').css('display', 'inline-flex');
+                } else {
+                    $('#notification-badge').css('display', 'none');
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("AJAX Error: ", textStatus, errorThrown);
+            }
+        });
+    }
+
+    function checkForNewItems() {
+        const userId = $('.lower-nav---').data('user_id');
+
+        $.ajax({
+            url: '../data/check-items.php',
+            type: 'POST',
+            data: {
+                'load': true,
+                'user_id': userId
+            },
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    $('#cart-badge').removeClass('invisible').addClass('visible');
+                    $('#cart-badgeii').removeClass('invisible').addClass('visible');
+                } else {
+                    $('#cart-badge').css('display', 'none');
+                    $('#cart-badgeii').css('display', 'none');
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("AJAX Error: ", textStatus, errorThrown);
+            }
+        });
+    }
+
+    checkForNewItems();
+    setInterval(checkForNewItems, 1000);
+</script>

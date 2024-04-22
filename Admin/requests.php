@@ -379,7 +379,14 @@ include('../data/data-booking.php');
                                             View
                                         </button>
 
-                                        <button class="btn--approve get-item-id approval-request" data-user_id="<?= $rows['user_id']; ?>" data-res_id="<?= $rows['res_id']; ?>" data-item_id="<?= $rows['item_id']; ?>" data-item_name="<?= $rows['item_name']; ?>" data-res_num="<?= $rows['res_number']; ?>" data-total_amount="<?= $rows['total']; ?>" data-date="<?php echo $date_booked; ?>">Approve
+                                        <button class="btn--approve get-item-id approval-request" data-user_id="<?= $rows['user_id']; ?>" 
+                                        data-res_id="<?= $rows['res_id']; ?>" 
+                                        data-item_id="<?= $rows['item_id']; ?>" 
+                                        data-item_name="<?= $rows['item_name']; ?>" 
+                                        data-res_num="<?= $rows['res_number']; ?>" 
+                                        data-total_amount="<?= $rows['total']; ?>"
+                                        data-quantity="<?= $rows['quantity']; ?>"
+                                        data-date="<?php echo $date_booked; ?>">Approve
                                         </button>
 
                                         <button class="btn--decline" data-bs-toggle="modal" data-bs-target="#decline-request" type="button" class="btn btn-sm btn-flash-border-primary declineButton" data-user_id="<?= $rows['user_id']; ?>" data-res_id="<?= $rows['res_id']; ?>" data-res_num="<?= $rows['res_number']; ?>">

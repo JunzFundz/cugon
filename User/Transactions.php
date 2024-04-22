@@ -9,207 +9,188 @@ require('../data/user-show-transactions.php');
 
 <body class="bg-gray-100">
 
+
+
+
+
     <div class="container-trans">
         <!-- Content -->
         <div class="trans-content">
-            <br><br><br>
-            <h1 class="text-2xl font-bold mb-4">Transaction</h1>
-            <div class="bg-white p-6 shadow-md rounded-md">
 
-                <div class="flex flex-row">
-                    <span class=" font-semibold block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Transactions</span>
-                    <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class=" text-zinc-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center " type="button">Options<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
+            <section class=" py-20 w-full" id="transaction--body">
+                <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700">
 
-                    <!-- Dropdown menu -->
-                    <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 w-auto">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-                            <li>
-                                <a href="home" class=" px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white flex">
-                                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4" />
-                                    </svg>
-                                    &nbsp;&nbsp;Back to home</a>
+                    <!-- component -->
+                    <nav class="text-sm sm:text-base bg-white p-4 md:p-6 lg:p-6 rounded-md">
+                        <ol class="list-none p-0 inline-flex space-x-2">
+                            <li class="flex items-center">
+                                <svg onclick="window.location.href='items.php';" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" class="cursor-pointer hover:fill-blue-500 transition-colors duration-300" fill="#4b5563"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                    <path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
+                                </svg> <span class="mx-2 font-semibold">Home</span>
                             </li>
-                        </ul>
+                        </ol>
+                    </nav>
+
+                    <div class="relative bg-clip-border mt-4 mx-4 overflow-hidden bg-white text-gray-700 rounded-none flex gap-2 flex-col md:flex-row items-start !justify-between">
+                        <div class="w-full mb-2">
+                            <p class="block antialiased font-sans text-base font-light leading-relaxed text-blue-gray-900">
+                                Transaction History
+                            </p>
+                            <p class="block antialiased font-sans text-sm  leading-normal text-inherit mt-1 !font-normal !text-gray-600">
+                                View transactions details.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <br><br>
+                    <div class="p-6 flex flex-col gap-4 ">
+                        <?php foreach ($alltran as $row) {
 
-                <div class="tran-table-content relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table class="w-full text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <thead class="text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">
-                                    Product name
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Quantity
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Category
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Days
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Price
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Status
-                                </th>
-                                <th scope="col" class="px-6 py-3 text-center">
-                                    Action
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            if ($completed !== null) { // Check if $completed is not null
-                                foreach ($completed as $row) { ?>
-                                    <tr class="dark:bg-gray-800 dark:border-gray-700">
-                                        <td class="px-6 py-4">
-                                            <?= $row['i_name']; ?>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <?= $row['quantity']; ?>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <?= $row['i_type']; ?>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <?php
-                                            if ($row['reg_date'] === '0000-00-00' || $row['reg_date'] == '') {
-                                                print date_format(date_create($row['start']), 'M d') . '-' . date_format(date_create($row['end']), 'd Y');
-                                            } else {
-                                                print date_format(date_create($row['reg_date']), 'M d, Y');
-                                            } 
-                                            ?>
-                                        </td>
+                            if ($row['status'] == 'Declined') { ?>
 
-                                        <td class="px-6 py-4">
-                                            <?= number_format($row['i_price']); ?>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <?= $row['status']; ?>
-                                        </td>
-                                        <td class="px-6 py-4 text-center">
-
-                                            <div id="tooltip-light" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
-                                                Cancel request?
-                                                <div class="tooltip-arrow" data-popper-arrow></div>
+                                <div class=" sticky top-0 flex flex-col bg-clip-border bg-white text-gray-700 rounded-lg border border-red-700 p-4">
+                                    <div class="mb-4 flex items-start justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div class="border border-gray-200 p-2.5 rounded-lg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6 text-gray-900">
+                                                    <path fill-rule="evenodd" d="M7.5 5.25a3 3 0 013-3h3a3 3 0 013 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0112 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 017.5 5.455V5.25zm7.5 0v.09a49.488 49.488 0 00-6 0v-.09a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5zm-3 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd"></path>
+                                                    <path d="M3 18.4v-2.796a4.3 4.3 0 00.713.31A26.226 26.226 0 0012 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 01-6.477-.427C4.047 21.128 3 19.852 3 18.4z"></path>
+                                                </svg>
                                             </div>
-
-                                            <button data-tooltip-target="tooltip-light" data-tooltip-style="light" onclick="cancelBook('<?php echo $row['res_id']; ?>')" type="button" class="button--back">
+                                            <div>
+                                                <p class="block antialiased font-sans text-sm  leading-normal text-blue-gray-900 mb-1 font-bold">
+                                                    Host
+                                                </p>
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit !text-gray-600 text-xs font-normal">
+                                                    Cugon Resort
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <button onclick="cancelBook('<?php echo $row['res_id']; ?>')" <?php if ($row['status'] === 'Approved' || $row['status'] === 'Cancelled' || $row['status'] === 'Declined') echo 'disabled style="cursor: not-allowed; opacity: 30%;"'; ?> type="button" class="button--back">
                                                 <svg style="color:rgb(49, 217, 37);" class="cancel w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9h13a5 5 0 0 1 0 10H7M3 9l4-4M3 9l4 4" />
                                                 </svg>
                                             </button>
 
-                                            <button onclick="cancelBook('<?php echo $row['res_id']; ?>')" <?php if ($row['status'] === 'Pending') echo 'disabled style="cursor: not-allowed; opacity: 30%;"'; ?> type="button" class="button--back">
+                                            <button disabled data-res_id="<?php echo $row['res_id']; ?>" data-user_id="<?php echo $row['user_id']; ?>" data-res_number="<?php echo $row['res_number']; ?>" type="button" class="button--back show-receipt-modal" data-modal-target="receipt-modal-show" data-modal-toggle="receipt-modal-show" style="cursor: not-allowed; opacity: 30%;">
                                                 <svg class="receipt w-6 h-6 text-blue-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8h6m-6 4h6m-6 4h6M6 3v18l2-2 2 2 2-2 2 2 2-2 2 2V3l-2 2-2-2-2 2-2-2-2 2-2-2Z" />
                                                 </svg>
                                             </button>
 
-                                        </td>
-                                    </tr>
-                            <?php }
-                            } else {
-                                echo "<tr><td colspan='7'>No transactions exist.</td></tr><br>";
-                            }
-                            ?>
-                        <tbody>
-                    </table>
+                                            <button data-res-id="<?php echo $row['res_id']; ?>" data-user-id="<?php echo $row['user_id']; ?>" type="button" class="button--back">
+                                                <svg class="archive w-6 h-6 text-orange-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M10 12v1h4v-1m4 7H6a1 1 0 0 1-1-1V9h14v9a1 1 0 0 1-1 1ZM4 5h16c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1H4a1 1 0 0 1-1-1V6c0-.6.4-1 1-1Z" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <div class="flex gap-1">
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit mb-1 text-xs !font-medium !text-gray-600">
+                                                    Item<!-- -->: <?= $row['i_name']; ?>
+                                                </p>
+                                            </div>
+                                            <div class="flex gap-1">
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit mb-1 text-xs !font-medium !text-gray-600">
+                                                    Price<!-- -->: <?= $row['i_price']; ?>
+                                                </p>
+                                            </div>
+                                            <div class="flex gap-1">
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit mb-1 text-xs !font-medium !text-gray-600">
+                                                    Quantity<!-- -->: <?= $row['quantity']; ?>
+                                                </p>
+                                            </div>
+                                            <div class="flex gap-1">
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit mb-1 text-xs !font-medium !text-gray-600">
+                                                    Reservation Number: <?= $row['res_number']; ?>
+                                                </p>
+                                            </div>
+                                            <div class="flex gap-1">
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit mb-1 text-xs !font-medium !text-gray-600">
+                                                    Status: <?= $row['status']; ?>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <?php } else { ?>
+
+                                <div class="relative flex flex-col bg-clip-border bg-white text-gray-700 rounded-lg border border-gray-300 p-4">
+                                    <div class="mb-4 flex items-start justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div class="border border-gray-200 p-2.5 rounded-lg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6 text-gray-900">
+                                                    <path fill-rule="evenodd" d="M7.5 5.25a3 3 0 013-3h3a3 3 0 013 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0112 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 017.5 5.455V5.25zm7.5 0v.09a49.488 49.488 0 00-6 0v-.09a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5zm-3 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd"></path>
+                                                    <path d="M3 18.4v-2.796a4.3 4.3 0 00.713.31A26.226 26.226 0 0012 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 01-6.477-.427C4.047 21.128 3 19.852 3 18.4z"></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <p class="block antialiased font-sans text-sm  leading-normal text-blue-gray-900 mb-1 font-bold">
+                                                    Host
+                                                </p>
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit !text-gray-600 text-xs font-normal">
+                                                    Cugon Resort
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <button onclick="cancelBook('<?php echo $row['res_id']; ?>')" <?php if ($row['status'] === 'Approved' || $row['status'] === 'Cancelled' || $row['status'] === 'Declined') echo 'disabled style="cursor: not-allowed; opacity: 30%;"'; ?> type="button" class="button--back">
+                                                <svg style="color:rgb(49, 217, 37);" class="cancel w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9h13a5 5 0 0 1 0 10H7M3 9l4-4M3 9l4 4" />
+                                                </svg>
+                                            </button>
+
+                                            <button data-res_id="<?php echo $row['res_id']; ?>" data-user_id="<?php echo $row['user_id']; ?>" data-res_number="<?php echo $row['res_number']; ?>" type="button" class="button--back show-receipt-modal" data-modal-target="receipt-modal-show" data-modal-toggle="receipt-modal-show">
+                                                <svg class="receipt w-6 h-6 text-blue-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8h6m-6 4h6m-6 4h6M6 3v18l2-2 2 2 2-2 2 2 2-2 2 2V3l-2 2-2-2-2 2-2-2-2 2-2-2Z" />
+                                                </svg>
+                                            </button>
+
+                                            <button data-res-id="<?php echo $row['res_id']; ?>" data-user-id="<?php echo $row['user_id']; ?>" type="button" class="button--back">
+                                                <svg class="archive w-6 h-6 text-orange-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M10 12v1h4v-1m4 7H6a1 1 0 0 1-1-1V9h14v9a1 1 0 0 1-1 1ZM4 5h16c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1H4a1 1 0 0 1-1-1V6c0-.6.4-1 1-1Z" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <div class="flex gap-1">
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit mb-1 text-xs !font-medium !text-gray-600">
+                                                    Item<!-- -->: <?= $row['i_name']; ?>
+                                                </p>
+                                            </div>
+                                            <div class="flex gap-1">
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit mb-1 text-xs !font-medium !text-gray-600">
+                                                    Price<!-- -->: <?= $row['i_price']; ?>
+                                                </p>
+                                            </div>
+                                            <div class="flex gap-1">
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit mb-1 text-xs !font-medium !text-gray-600">
+                                                    Quantity<!-- -->: <?= $row['quantity']; ?>
+                                                </p>
+                                            </div>
+                                            <div class="flex gap-1">
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit mb-1 text-xs !font-medium !text-gray-600">
+                                                    Reservation Number: <?= $row['res_number']; ?>
+                                                </p>
+                                            </div>
+                                            <div class="flex gap-1">
+                                                <p class="block antialiased font-sans leading-relaxed text-inherit mb-1 text-xs !font-medium !text-gray-600">
+                                                    Status: <?= $row['status']; ?>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        <?php }
+                        } ?>
+                    </div>
                 </div>
-                <br><br>
-
-                <span class=" font-semibold block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Past transactions</span>
-                <br>
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg border-slate-500">
-                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">
-                                    Product name
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Quantity
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Category
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Days
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Price
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Status
-                                </th>
-                                <th scope="col" class="px-6 py-3 text-center">
-                                    Action
-                                </th>
-                            </tr>
-                        </thead>
-                        <div>
-                            <tbody>
-                                <?php
-                                if ($alltran !== null) { // Check if $result is not null
-                                    foreach ($alltran as $row) { ?>
-                                        <tr class="dark:bg-gray-800 dark:border-gray-700">
-                                            <td class="px-6 py-4">
-                                                <?= $row['i_name']; ?>
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                <?= $row['quantity']; ?>
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                <?= $row['i_type']; ?>
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                <?= $row['start']; ?>
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                <?= number_format($row['i_price']); ?>
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                <?= $row['status']; ?>
-                                            </td>
-                                            <td class="px-6 py-4 text-center">
-
-                                                <button onclick="cancelBook('<?php echo $row['res_id']; ?>')" <?php if ($row['status'] === 'Approved' || $row['status'] === 'Cancelled' || $row['status'] === 'Declined') echo 'disabled style="cursor: not-allowed; opacity: 30%;"'; ?> type="button" class="button--back">
-                                                    <svg style="color:rgb(49, 217, 37);" class="cancel w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9h13a5 5 0 0 1 0 10H7M3 9l4-4M3 9l4 4" />
-                                                    </svg>
-                                                </button>
-
-                                                <button data-res-id="<?php echo $row['res_id']; ?>" data-user-id="<?php echo $row['user_id']; ?>" type="button" class="button--back">
-                                                    <svg class="receipt w-6 h-6 text-blue-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8h6m-6 4h6m-6 4h6M6 3v18l2-2 2 2 2-2 2 2 2-2 2 2V3l-2 2-2-2-2 2-2-2-2 2-2-2Z" />
-                                                    </svg>
-                                                </button>
-
-                                                <button data-res-id="<?php echo $row['res_id']; ?>" data-user-id="<?php echo $row['user_id']; ?>" type="button" class="button--back">
-                                                    <svg class="archive w-6 h-6 text-orange-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M10 12v1h4v-1m4 7H6a1 1 0 0 1-1-1V9h14v9a1 1 0 0 1-1 1ZM4 5h16c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1H4a1 1 0 0 1-1-1V6c0-.6.4-1 1-1Z" />
-                                                    </svg>
-                                                </button>
-
-                                            </td>
-                                        </tr>
-                                <?php }
-                                } else {
-                                    echo "<tr><td colspan='7'>No Data Found.</td></tr>";
-                                }
-                                ?>
-                            <tbody>
-                    </table>
-                </div>
-            </div>
+            </section>
 
         </div>
 

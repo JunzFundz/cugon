@@ -174,7 +174,7 @@ include('../data/user-marked-items.php');
 
                 <li class="flex items-center flex-row justify-between">
                     <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3 get_secondary_info total_in_days" data-total_in_days="<?php echo $totalwithdays; ?>">Total</span>
-                    <span id="checkedItemIDsString" class="font-semibold leading-medium text-orange-600 dark:text-gray-400 ms-3 text-3xl">₱ <?php echo $totalwithdays; ?></span>
+                    <span id="checkedItemIDsString" class="font-semibold leading-medium text-orange-600 dark:text-gray-400 ms-3 text-3xl">₱ <?php echo number_format($totalwithdays); ?></span>
                 </li>
 
                 <?php

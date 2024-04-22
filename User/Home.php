@@ -23,67 +23,75 @@ include('Navigation.php');
                 <!-- <b style="float: right;"><span id="average-ratings">0.0</span>/ 5</b> -->
             </ul>
 
-            <?php foreach ($result as $rows) { ?>
-                <div class="post-container">
+            <?php if (!is_null($result) && (is_array($result) || is_object($result))) {
+                foreach ($result as $rows) { ?>
+                    <div class="post-container">
 
-                    <div class="block mx-4 my-4">
-                        <div class="mt-4 text-gray-700 font-semibold flex flex-row text-center items-center">
-                            <span class=" right-0 mr-3.5" style="margin-right: 10px;"><?= $rows['email'] ?></span>
-                            <div class="col-span-2 text-center">
+                        <div class="block mx-4 my-4">
+                            <div class="mt-4 text-gray-700 font-semibold flex flex-row text-center items-center">
+                                <span class=" right-0 mr-3.5" style="margin-right: 10px;"><?= $rows['email'] ?></span>
+                                <div class="col-span-2 text-center">
 
-                                <?php for ($i = 1; $i <= 5; $i++) { ?>
-                                    <i class="fa-solid fa-star <?= $i <= $rows['rating_data'] ? 'text-yellow-300' : '' ?>" id="submit--<?= $i ?>" data-rating-star="<?= $i ?>"></i>
-                                <?php } ?>
-                                
+                                    <?php for ($i = 1; $i <= 5; $i++) { ?>
+                                        <i class="fa-regular fa-star <?= $i <= $rows['rating_data'] ? 'text-yellow-300 fa-solid' : '' ?>" id="submit--<?= $i ?>" data-rating-star="<?= $i ?>"></i>
+                                    <?php } ?>
+
+                                </div>
+                            </div>
+                            <div class="text-gray-700 text-xs"><?= date_format(date_create($rows['posted_at']), 'M:d:Y h:i A') ?>
+                            </div>
+                            <div class="my-4 text-gray-700 text-s italic">
+                                <?= $rows['caption'] ?: null ?>
                             </div>
                         </div>
-                        <div class="text-gray-700 text-xs"><?= date_format(date_create($rows['posted_at']), 'M:d:Y h:i A') ?>
-                        </div>
-                        <div class="my-4 text-gray-700 text-s italic">
-                            <?= $rows['caption'] ?>
+
+                        <div id="indicators-carousel" class="relative w-full m-14 z-0" data-carousel="static">
+
+                            <!-- Carousel wrapper -->
+                            <?php
+                            if (is_string($rows['img']) && is_array(json_decode($rows['img'], true))) {
+                                $imgArray = json_decode($rows['img'], true);
+                            
+                            ?>
+                            <div class="relative h-96 overflow-hidden rounded-lg md:h-96">
+                                <?php foreach ($imgArray as $index => $image) : ?>
+                                    <div class="hidden duration-700 ease-in-out <?php echo $index === 0 ? 'block' : ''; ?>" data-carousel-item="<?php echo $index === 0 ? 'active' : ''; ?>">
+                                        <img src="../uploads/<?php echo $image; ?>" class=" absolute object-fill block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+
+                            <!-- Slider indicators -->
+                            <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                                <?php foreach ($imgArray as $index => $image) : ?>
+                                    <button type="button" class="w-3 h-3 rounded-full <?php echo $index === 0 ? 'bg-gray-500' : 'bg-gray-200'; ?>" aria-current="<?php echo $index === 0 ? 'true' : 'false'; ?>" aria-label="Slide <?php echo $index + 1; ?>" data-carousel-slide-to="<?php echo $index; ?>"></button>
+                                <?php endforeach; ?>
+                            </div>
+
+                            <!-- Slider controls -->
+                            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                    </svg>
+                                    <span class="sr-only">Previous</span>
+                                </span>
+                            </button>
+                            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <span class="sr-only">Next</span>
+                                </span>
+                            </button>
+                        <?php } else {
+                                $imgArray = null;
+                            } ?>
                         </div>
                     </div>
-
-                    <div id="indicators-carousel" class="relative w-full m-14 z-0" data-carousel="static">
-
-                        <!-- Carousel wrapper -->
-                        <?php
-                        $imgArray = json_decode($rows['img'], true);
-                        ?>
-                        <div class="relative h-96 overflow-hidden rounded-lg md:h-96">
-                            <?php foreach ($imgArray as $index => $image) : ?>
-                                <div class="hidden duration-700 ease-in-out <?php echo $index === 0 ? 'block' : ''; ?>" data-carousel-item="<?php echo $index === 0 ? 'active' : ''; ?>">
-                                    <img src="../uploads/<?php echo $image; ?>" class=" absolute object-fill block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-
-                        <!-- Slider indicators -->
-                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            <?php foreach ($imgArray as $index => $image) : ?>
-                                <button type="button" class="w-3 h-3 rounded-full <?php echo $index === 0 ? 'bg-gray-500' : 'bg-gray-200'; ?>" aria-current="<?php echo $index === 0 ? 'true' : 'false'; ?>" aria-label="Slide <?php echo $index + 1; ?>" data-carousel-slide-to="<?php echo $index; ?>"></button>
-                            <?php endforeach; ?>
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            <?php } ?>
+            <?php }
+            } ?>
 
         </div>
 

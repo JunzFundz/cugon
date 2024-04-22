@@ -6,6 +6,23 @@ $result2 = $item->rooms();
 $result3 = $item->cottage();
 $result4 = $item->foods();
 
+
+if (isset($_POST['search'])) {
+    $searchTerm = trim($_POST['searchTerm']);
+    $searchTerm = htmlspecialchars($searchTerm, ENT_QUOTES, 'UTF-8');
+
+    $itemsObj = new Users(); // Corrected the class name to Items
+    $result = $itemsObj->search($searchTerm);
+
+    $items = array();
+    while ($row = $result->fetch_assoc()) {
+        $items[] = $row;
+    }
+    echo json_encode($items);
+}
+
+
+
 // if (isset($_GET['user_id'])) {
 //     $users_id = $_POST['users_id'];
     

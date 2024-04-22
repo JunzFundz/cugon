@@ -1,0 +1,1880 @@
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:10:11 UTC] PHP Stack trace:
+[20-Apr-2024 01:10:11 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:10:11 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:10:11 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:10:11 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (to):  in C:\wamp64\www\cugon\vendor\phpmailer\phpmailer\src\PHPMailer.php:1101
+Stack trace:
+#0 C:\wamp64\www\cugon\vendor\phpmailer\phpmailer\src\PHPMailer.php(1021): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('to', NULL, '')
+#1 C:\wamp64\www\cugon\class\Expiration.php(68): PHPMailer\PHPMailer\PHPMailer->addAddress(NULL)
+#2 C:\wamp64\www\cugon\class\Expiration.php(50): Expiration->sendPaymentInfo(NULL)
+#3 C:\wamp64\www\cugon\class\Expiration.php(38): Expiration->updateStatusToExpired('694', NULL)
+#4 C:\wamp64\www\cugon\class\Expiration.php(15): Expiration->booking()
+#5 C:\wamp64\www\cugon\data\testrun.php(6): Expiration->run()
+#6 {main}
+  thrown in C:\wamp64\www\cugon\vendor\phpmailer\phpmailer\src\PHPMailer.php on line 1101
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:14 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:14 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:14 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:14 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:14 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:15 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:15 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:15 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:15 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:15 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:16 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:16 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:16 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:16 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:16 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:17 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:17 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:17 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:17 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:17 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:18 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:18 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:18 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:18 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:18 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:19 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:19 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:19 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:19 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:19 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:20 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:20 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:20 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:20 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:20 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:21 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:21 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:21 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:21 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:21 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:22 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:22 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:22 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:22 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:22 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:23 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:23 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:23 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:23 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:23 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:24 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:24 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:24 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:24 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:24 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:25 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:25 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:25 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:25 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:25 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:26 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:26 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:26 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:26 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:26 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:27 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:27 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:27 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:27 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:27 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:28 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:28 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:28 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:28 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:28 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:29 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:29 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:29 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:29 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:29 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:30 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:30 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:30 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:30 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:30 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:31 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:31 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:31 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:31 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:32 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:32 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:32 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:32 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:32 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:33 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:33 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:33 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:33 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:33 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:34 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:34 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:34 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:34 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:34 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:35 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:35 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:35 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:35 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:35 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:36 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:36 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:36 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:36 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:36 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:37 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:37 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:37 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:37 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:37 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:38 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:38 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:38 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:38 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:38 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:39 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:39 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:39 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:39 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:39 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:40 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:40 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:40 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:40 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:40 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:40 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:40 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:40 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:40 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:40 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:40 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:40 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:40 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:40 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:40 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:40 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:40 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:40 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:40 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:40 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:40 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:40 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:40 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:40 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:40 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:40 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:40 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:40 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:40 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:40 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:40 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:40 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:40 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:40 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:40 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:40 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:40 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:40 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:40 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:40 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:40 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:40 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:40 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:40 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:40 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15
+[20-Apr-2024 01:12:40 UTC] PHP Warning:  Undefined array key "email" in C:\wamp64\www\cugon\class\Expiration.php on line 34
+[20-Apr-2024 01:12:40 UTC] PHP Stack trace:
+[20-Apr-2024 01:12:40 UTC] PHP   1. {main}() C:\wamp64\www\cugon\data\testrun.php:0
+[20-Apr-2024 01:12:40 UTC] PHP   2. Expiration->run() C:\wamp64\www\cugon\data\testrun.php:6
+[20-Apr-2024 01:12:40 UTC] PHP   3. Expiration->booking() C:\wamp64\www\cugon\class\Expiration.php:15

@@ -24,7 +24,7 @@ include '../data/data-items.php';
 </nav>
 
 <div class="cards" style="height: 90dvh; overflow:scroll">
-    <?php foreach ($result as $rows) : ?>
+    <?php foreach ($items as $rows) : ?>
 
         <div class="card" style="width: 18rem; display: inline-block; margin:10px;">
             <div class="card-items">
@@ -37,20 +37,11 @@ include '../data/data-items.php';
                     </p>
                     <div>
                         <button class="btn btn-primary editItem" type="button" id="editItem" data-item_id="<?php echo $rows['i_id'] ?>">Update</button>
+                        
                         <button class="btn btn-link" style="color: red;" type="button" onclick="deleteItem('<?php echo $rows['i_id']; ?>')">Delete</button>
                     </div>
                 </div>
             </div>
-
-            <!-- <input type="hidden" class="item_id" value="<?php echo $rows['i_id'] ?>">
-            <img src="Items/<?php echo $rows['i_img'] ?>" class="card-img-top" alt="..." >
-            <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text">₱ <?php echo number_format($rows['i_price']) ?></p>
-                <p class="card-text">x<?php echo number_format($rows['i_quantity']) ?></p>
-                <a href="#" class="btn btn-primary editItem" id="editItem" data-item_id="<?php echo $rows['i_id'] ?>">Edit Item</a>
-                <a href="#" class="btn btn-danger" onclick="deleteItem('<?php echo $rows['i_id']; ?>')">Delete</a>
-            </div> -->
         </div>
     <?php endforeach; ?>
 </div>

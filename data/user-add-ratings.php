@@ -3,20 +3,21 @@
 require('../class/Users.php');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    
+    $ratingCaption = filter_input(INPUT_POST, 'ratingCaption', FILTER_SANITIZE_FULL_SPECIAL_CHARS ) ?: null;
+    $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+    $ratingData = filter_input(INPUT_POST, 'ratingData', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 
-    if (isset($_POST['submit'])) {
-        $ratingCaption = $_POST['ratingCaption'];
-        $userEmail = $_POST['userEmail'];
-        $ratingData = $_POST['ratingData'];
-        $status = 'Pending';
+    $status = 'Pending';
 
-        date_default_timezone_set('Asia/Manila');
-        $date = new DateTime();
-        $formattedDate = $date->format('Y:m:d H:i:s');
+    date_default_timezone_set('Asia/Manila');
+    $date = new DateTime();
+    $formattedDate = $date->format('Y:m:d H:i:s');
 
-        $uploadDirectory = '../uploads/';
-        $fileNames = array();
+    $uploadDirectory = isset($_POST['uploadDirectory']) ? $_POST['uploadDirectory'] : '../uploads/';
+    $fileNames = array();
 
+    if (!empty($_FILES['photosUpload']['size'][0])) {
         foreach ($_FILES['photosUpload']['tmp_name'] as $key => $tmp_name) {
 
             $fileName = $_FILES['photosUpload']['name'][$key];
@@ -28,34 +29,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 return 'error' . $fileName;
             }
         }
-
-        $imgJson = json_encode($fileNames);
-
-        $rating = new Users();
-        $result = $rating->addRating($ratingData, $userEmail, $ratingCaption, $imgJson, $formattedDate, $status);
-
-        if ($result) {
-            $response = array(
-                'success' => 'Successfully added rating!'
-            );
-        } else {
-            $response = array(
-                'error' => 'An error occur while adding the rating. Please try again later!'
-            );
-        }
-        echo json_encode($response);
-        exit();
+    } else {
+        $fileNames = null;
     }
 
-    if(isset($_POST['submit_rate'])){
+    $imgJson = json_encode($fileNames);
 
-        $quality = $_POST['quality'];
-        $service = $_POST['service'];
-        $comments = $_POST['comments'];
-        $user_id = $_POST['user_id'];
-        $item_id = $_POST['item_id'];
+    $rating = new Users();
+    $result = $rating->addRating($ratingData, $userEmail, $ratingCaption, $imgJson, $formattedDate, $status);
 
-        $item_rating = new Users();
-        $result = $item_rating->item_rating($quality, $service, $comments, $user_id, $item_id);
+    if ($result) {
+        $response = array(
+            'success' => 'Successfully added rating!'
+        );
+    } else {
+        $response = array(
+            'error' => 'An error occur while adding the rating. Please try again later!'
+        );
     }
+    echo json_encode($response);
+    exit();
 }
+

@@ -5,6 +5,49 @@ body {
     background-color: #f5f5f5 !important;
 }
 
+@supports (scrollbar-color: blue red) {
+    * {
+        scrollbar-color: rgb(220, 220, 220) rgb(255, 255, 255);
+        scrollbar-width: thin;
+    }
+}
+
+/* search */
+.search-results {
+    width: 20rem;
+    padding: 1rem;
+    position: fixed;
+    transform: translate(-0%, 8rem);
+    height: auto;
+    color: #474747;
+    background: rgba(255, 255, 255, 0.74);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border: 1px solid rgba(255, 255, 255, 0.73);
+    overflow: auto;
+}
+
+.search-item {
+    padding-block: 1rem;
+    padding-inline: 0.5rem;
+    font-weight: 600;
+}
+
+.search-item:hover {
+    background-color: rgba(128, 128, 128, 0.101);
+}
+
+/* notification */
+.modal-notif-cos {
+    padding: 3rem !important;
+
+    .notif-modal-body {
+        height: 50vh;
+        overflow: scroll;
+    }
+}
 
 /*! Home */
 .logo-img {
@@ -16,35 +59,44 @@ body {
     display: none;
 }
 
-#search-bar-modal{
+/* .rate-data-item {
+    background-image: linear-gradient(to right top, #009dcd, #4367d3, #14c9d9, #00bf72, #a8eb12);
+    filter: blur(30px);
+    opacity: 0.1;
+} */
+
+#search-bar-modal {
     display: none;
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
     height: 100vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.44);
 
-    form{
-        width: 80%;
+    form {
+        width: 60%;
         margin-top: 5rem;
     }
-    .cancel-btn-nav i{
+
+    .cancel-btn-nav i {
         float: right;
         font-size: 1.5rem;
         margin-right: 30px;
         margin-top: 30px;
     }
 }
-.navbar{
+
+.navbar {
     position: sticky;
     top: 0;
     z-index: 1;
     transition: all .2s ease-in-out;
 }
+
 #email-nav-btn {
     display: '';
 }
-.lower-nav{
+
+.lower-nav {
     color: #383838 !important;
     background-color: #eaeaeacd;
 }
@@ -55,8 +107,11 @@ body {
 
 .lower-nav-media {
     display: none;
-    
-    a div{
+}
+
+.lower-nav--- {
+
+    a div {
         top: 4px;
         inset-inline-end: 3px;
     }
@@ -88,9 +143,11 @@ body {
     grid-column: 2/12;
     height: auto;
 }
-.test-div{
+
+.test-div {
     grid-column: 2/12;
 }
+
 .post-section {
     border: 1.5px solid rgb(217, 217, 217);
     border-radius: 5px;
@@ -118,8 +175,8 @@ body {
     border: 1.5px solid rgb(217, 217, 217);
     border-radius: 5px;
     padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     margin-right: 20px;
     background-color: #ffffff;
     height: auto;
@@ -145,7 +202,9 @@ body {
     height: auto;
     width: 100%;
 }
-
+#transaction--body{
+    margin: 2rem auto 0 auto;
+}
 
 /*! Items */
 .custom-h1-style {
@@ -158,11 +217,9 @@ body {
 }
 
 .new-block>div {
-    display: flex;
-    margin: 10px;
+    margin: 5px;
     display: inline-block;
 }
-
 .new-checkout {
     margin-right: -20px;
 }
@@ -275,9 +332,8 @@ body {
     display: grid;
     gap: 2rem;
     font-size: .875rem;
-    margin: 50px auto 0 auto;
-    margin-inline: auto;
-    width: 80%;
+    margin: 30px auto 0 auto;
+    width: 100%;
     height: auto;
     border: 0.1rem solid rgb(207, 207, 207);
     border-radius: 8px;
@@ -333,6 +389,15 @@ body {
     justify-content: space-between;
 }
 
+.master-container {
+    margin-inline: 11rem;
+}
+
+.items-comments {
+    margin-inline: 11rem;
+    margin-block: 10px;
+    width: 60%
+}
 
 /*! place item */
 .place-item {
@@ -366,6 +431,12 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+
+    .item-name--{
+        padding-left: 0.8rem;
+        padding-block: 0.8rem;
+        border-bottom: 2px solid rgb(226, 226, 226);
+    }
 }
 
 .custom-ul {
@@ -392,15 +463,16 @@ body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     margin: 20px;
-    gap: 3rem;
+    padding-inline: 13rem;
+    gap: 2rem;
 }
 
 .cart-items-section {
-    grid-column: 2/9;
+    grid-column: 1/9;
 }
 
 .checkout-section {
-    grid-column: 9/12;
+    grid-column: 9/13;
 }
 
 .total-payment {
@@ -412,7 +484,6 @@ body {
     background-color: #ffffff;
     border: 1.5px solid #d8d8d8;
     border-radius: 3px;
-    margin: 10px;
     font-size: 16px;
 }
 

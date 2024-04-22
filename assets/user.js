@@ -472,7 +472,7 @@ $(function () {
         }
     }
 
-    //* submit
+    //! submit
     $('#submit--item--rating').on('click', function (e) {
         e.preventDefault();
         var quality = $('#item--quality').val();
@@ -484,33 +484,31 @@ $(function () {
         console.log(item_rate_data, user_id, item_id);
 
         $.ajax({
-            url: '../data/user-add-ratings.php',
+            url: '../data/item-rating.php',
             type: 'POST',
             data: {
                 'submit_rate': true,
-                'item_star' : item_rate_data,
+                'item_star': item_rate_data,
                 'quality': quality,
                 'service': service,
                 'comments': comments,
-                'user_id' : user_id,
-                'item_id' : item_id
+                'user_id': user_id,
+                'item_id': item_id
             },
-            contentType: false,
-            processData: false,
             success: function (response) {
-                var result = JSON.parse(response);
+                var results = JSON.parse(response);
 
-                if (result.success) {
+                if (results.success) {
                     $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
-                    $('#alert-text').html(result.success);
+                    $('#alert-text').html(results.success);
 
                     setTimeout(function () {
                         $('#alert-box').removeClass('visible').addClass('invisible');
                         window.location.href = 'home.php';
                     }, 3000);
-                } else if (result.error) {
+                } else if (results.error) {
                     $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
-                    $('#alert-text').html(result.error);
+                    $('#alert-text').html(results.error);
 
                     setTimeout(function () {
                         $('#alert-box').removeClass('visible').addClass('invisible');
@@ -524,7 +522,7 @@ $(function () {
 
                     setTimeout(function () {
                         $('#alert-box').removeClass('visible').addClass('invisible');
-                        if (result) {
+                        if (results) {
                             window.location.href = 'login.php';
                         }
                     }, 3000);
@@ -584,10 +582,7 @@ $(function () {
         $.ajax({
             url: '../data/user-add-ratings.php',
             type: 'POST',
-            data: {
-                'submit': true,
-                formData : formData
-            },
+            data: formData,
             contentType: false,
             processData: false,
             success: function (response) {
@@ -629,8 +624,35 @@ $(function () {
         });
     });
 
-});
+    //!receipt
+    $(document).on('click', '.show-receipt-modal', function (e) {
+        e.preventDefault();
+        const res_id = $(this).data('res_id');
+        const user_id = $(this).data('user_id');
+        const res_number = $(this).data('res_number');
+        console.log(res_id, user_id);
 
+        $.ajax({
+            url: '../data/user-show-receipt.php',
+            type: 'post', // Parse the response as JSON
+            data: {
+                'show_receipt': true,
+                'res_id': res_id,
+                'user_id': user_id,
+                'res_number': res_number
+            },
+            success: function(response) {
+                console.log('Successfully retrieved receipt details');
+    
+                $('#receipt-modal-body').html(response);
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error:', error);
+            }
+        });
+    })
+
+});
 
 showStarRating();
 

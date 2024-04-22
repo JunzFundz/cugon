@@ -94,7 +94,6 @@ function validateLogin() {
 
 
 $(function () {
-
     //!signup
     $('#signupForm').on('submit', function (e) {
         e.preventDefault();
@@ -115,25 +114,25 @@ $(function () {
                     'phone': phone,
                     'password': password
                 },
-                    success: function (response) {
-                        if (response.success) {
-                            $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
-                            $('#alert-text').html(response.success);
-                            setTimeout(function () {
-                                $('#alert-box').removeClass('visible').addClass('invisible');
-                                if (response.redirect) {
-                                    window.location.href = response.redirect;
-                                }
-                            }, 3000);
+                success: function (response) {
+                    if (response.success) {
+                        $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                        $('#alert-text').html(response.success);
+                        setTimeout(function () {
+                            $('#alert-box').removeClass('visible').addClass('invisible');
+                            if (response.redirect) {
+                                window.location.href = response.redirect;
+                            }
+                        }, 3000);
 
-                        } else {    
-                            $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
-                            $('#alert-text').html(response.error);
-                            setTimeout(function () {
-                                $('#alert-box').removeClass('visible').addClass('invisible');
-                            }, 3000);
-                        }
-                    },
+                    } else {
+                        $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                        $('#alert-text').html(response.error);
+                        setTimeout(function () {
+                            $('#alert-box').removeClass('visible').addClass('invisible');
+                        }, 3000);
+                    }
+                },
 
                 error: function (xhr, status, error) {
                     $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
@@ -146,13 +145,13 @@ $(function () {
             });
         }
     })
-    
+
     //! verify
-    $('#verify-account').on('click', function(e) {
+    $('#verify-account').on('click', function (e) {
         e.preventDefault();
-    
         const otp = $('#verification-code').val()
         // console.log(code)
+
         $.ajax({
             url: '../data/confirm-account.php',
             type: 'post',
@@ -163,7 +162,7 @@ $(function () {
                 'otp': otp
             },
             dataType: 'json',
-            success: function(response) {
+            success: function (response) {
                 if (response.success) {
                     $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
                     $('#alert-text').html(response.success);
@@ -173,8 +172,8 @@ $(function () {
                             window.location.href = response.redirect;
                         }
                     }, 1500);
-    
-                } else {    
+
+                } else {
                     $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
                     $('#alert-text').html(response.error);
                     setTimeout(function () {
@@ -182,7 +181,7 @@ $(function () {
                     }, 3000);
                 }
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
                 console.error('An error occurred:', error);
             }
         });
@@ -199,27 +198,27 @@ $(function () {
             console.log(email, password)
 
             $.ajax({
-                url: $(this).attr( 'action' ),
-                type: $(this).attr( 'method' ),
+                url: $(this).attr('action'),
+                type: $(this).attr('method'),
                 data: {
                     'login-user': true,
                     'email': email,
                     'password': password
                 },
                 dataType: 'json',
-                success: function(response) {
+                success: function (response) {
                     if (response.redirect) {
                         window.location.href = response.redirect;
                     } else {
                         $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
                         $('#alert-text').html(response.error);
-                        
-                        setTimeout(function() {
+
+                        setTimeout(function () {
                             $('#alert-box').removeClass('visible').addClass('invisible');
                         }, 1500);
                     }
                 },
-                
+
                 error: function (xhr, status, error) {
                     $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
                     $('#alert-text').html('An error occurred. ' + status + ' Please try again later.');
@@ -227,9 +226,101 @@ $(function () {
                         $('#alert-box').removeClass('visible').addClass('invisible');
                     }, 3000);
                 }
-                
+
             });
         }
+    });
+
+    $('.continue-email').on('click', function (e) {
+        e.preventDefault();
+        const email = $('#email2').val();
+
+        console.log(email)
+
+        $.ajax({
+            url: '../data/login.php',
+            type: 'POST',
+            data: {
+                'check_email': true,
+                'email': email
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(response.success);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                        if (response.redirect) {
+                            window.location.href = response.redirect;
+                        }
+                    }, 3000);
+                } else {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(response.error);
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                    }, 1500);
+                }
+            },
+            error: function (xhr, status, error) {
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html('An error occurred. ' + status + ' Please try again later.');
+                setTimeout(function () {
+                    $('#alert-box').removeClass('visible').addClass('invisible');
+                }, 3000);
+            }
+        })
+    })
+
+    $('#change-password-form').on('submit', function (e) {
+        e.preventDefault();
+
+            const pass = $('#pass').val();
+            const cpassword = $('#cpassword').val();
+            const email = $('#emailc').val();
+
+            console.log(pass, cpassword, email)
+
+            $.ajax({
+                url: $(this).attr('action'),
+                type: $(this).attr('method'),
+                data: {
+                    'update_password': true,
+                    'email': email,
+                    'pass' : pass,
+                    'cpassword': cpassword
+                },
+                dataType: 'json',
+                success: function (response) {
+                    if (response.success) {
+                        $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                        $('#alert-text').html(response.success);
+    
+                        setTimeout(function () {
+                            $('#alert-box').removeClass('visible').addClass('invisible');
+                            if (response.redirect) {
+                                window.location.href = response.redirect;
+                            }
+                        }, 3000);
+                    } else {
+                        $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                        $('#alert-text').html(response.error);
+                        setTimeout(function () {
+                            $('#alert-box').removeClass('visible').addClass('invisible');
+                        }, 1500);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html('An error occurred. ' + status + ' Please try again later.');
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                    }, 3000);
+                }
+
+            });
     });
 
 });

@@ -88,8 +88,9 @@ $(document).ready(function () {
         const resNumber = $(this).data('res_num');
         const total = $(this).data('total_amount');
         const date = $(this).data('date');
+        const quantity = $(this).data('quantity');
 
-        // console.log(userID, item, itemID, resNumber, total, date, resID)
+        // console.log(quantity)
 
         $.ajax({
             url: '../data/admin-approve.php',
@@ -101,6 +102,7 @@ $(document).ready(function () {
                 'itemID': itemID,
                 'item_name': item,
                 'resNumber': resNumber,
+                'quantity': quantity,
                 'total': total,
                 'date': date
             },
