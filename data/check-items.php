@@ -1,9 +1,9 @@
 <?php
-require('../database/Connection.php');
+require_once('../database/Connection.php');
 
 if (isset($_POST['load'])) {
     $databaseConnection = new Dbh(); // Create an instance of the class
-    $user_id = $_POST['user_id'];
+    $user_id = filter_var($_POST['user_id'], FILTER_SANITIZE_NUMBER_INT);
 
     if (!$user_id) {
         echo json_encode(['error' => 'Invalid user ID']);
@@ -26,7 +26,7 @@ if (isset($_POST['load'])) {
 
 if (isset($_POST['notif'])) {
     $databaseConnection = new Dbh();
-    $user_id = $_POST['user_id'];
+    $user_id = filter_var($_POST['user_id'], FILTER_SANITIZE_NUMBER_INT);
 
     if (!$user_id) {
         echo json_encode(['error' => 'Invalid user ID']);

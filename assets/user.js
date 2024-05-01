@@ -17,6 +17,20 @@ function changeInputs() {
     }
 }
 
+//! loader
+document.addEventListener("DOMContentLoaded", function () {
+    // Show the loader
+    document.querySelector('.loading--screen').classList.remove('invisible');
+    document.querySelector('.loading--screen').classList.add('visible');
+});
+
+window.addEventListener("load", function () {
+    // Hide the loader
+    document.querySelector('.loading--screen').classList.remove('visible');
+    document.querySelector('.loading--screen').classList.add('invisible');
+});
+
+
 //! show more items
 function toggleItems() {
     var remainingItems = document.getElementById('remainingItems');
@@ -31,28 +45,134 @@ function toggleItems() {
     }
 }
 
-//! user cancel booking request
-function cancelBook(resID) {
-    if (confirm("Are you sure you want to cancel this request?")) {
+$(function () {
+
+    //! user cancel booking request
+    $('.confirm-cancel').on('click', function () {
+        const res_id = $('#res_id').val();
         $.ajax({
-            url: '../data/user-cancel.php',
+            url: '../data/handle-booking.php',
             type: 'post',
             data: {
-                resID: resID
+                'confirm_cancel': true,
+                'res_id': res_id
             },
+            dataType: 'json',
             success: function (response) {
-                console.log(response);
-                alert('Success');
-                location.reload();
+                if (response.success) {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(response.success);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                        location.reload();
+                    }, 1500);
+                } else {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(response.success);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                    }, 1500);
+                }
             },
             error: function () {
                 alert('Error: ');
             }
         });
-    }
-}
+    })
 
-$(function () {
+    //!order
+    $('.order-btn--').on('click', function (e) {
+        e.preventDefault();
+        const user_id = $(this).data('user_id');
+        const price = $(this).data('price');
+        const food_name = $(this).data('food_name');
+
+        console.log(user_id, price, food_name);
+
+        $.ajax({
+            url: '../data/user-order.php',
+            method: "POST",
+            data: {
+                'get_order': true,
+                'user_id': user_id,
+                'price': price,
+                'food_name': food_name
+            },
+            dataType: 'json',
+            success: function (response) {
+                $('#user_id').val(response.user_id)
+                $('#price').val(response.price)
+                $('#food_name').val(response.food_name)
+            },
+            error: function (xhr) {
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html(xhr);
+
+                setTimeout(function () {
+                    $('#alert-box').removeClass('visible').addClass('invisible');
+                }, 1500);
+            }
+        })
+    });
+
+    $('.confirm-order--').on('click', function (e) {
+        e.preventDefault();
+        const user_id = $('#user_id').val();
+        const price = $('#price').val();
+        const food_name = $('#food_name').val();
+        const user_name = $('#user_name').val();
+        const user_number = $('#user_number').val();
+        const serves = $('#serves').val();
+        const room = $('#room').val();
+        const msg = $('#msg').val();
+
+        console.log(user_id, price, food_name);
+
+        $.ajax({
+            url: '../data/user-order.php',
+            method: "POST",
+            data: {
+                'place_order': true,
+                'user_id': user_id,
+                'price': price,
+                'food_name': food_name,
+                'user_name' : user_name,
+                'user_number' : user_number,
+                'serves' : serves,
+                'room' : room,
+                'msg' : msg
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(response.success);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                        location.reload();
+                    }, 1500);
+                } else {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(response.success);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                    }, 1500);
+                }
+            },
+            error: function (xhr) {
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html(xhr);
+
+                setTimeout(function () {
+                    $('#alert-box').removeClass('visible').addClass('invisible');
+                }, 1500);
+            }
+        })
+    });
 
     //!save info
     $(document).on('submit', '#informationForm', function (e) {
@@ -124,9 +244,10 @@ $(function () {
             const get_price = $('.get_price').data('get_price');
             const get_msg = $('#get_msg').val();
 
-            console.log(email);
+            $('.loading--screen').removeClass('invisible').addClass('visible');
 
             if (get_option === 'reg') {
+
                 $.ajax({
                     url: '../data/user-placed-booking.php',
                     type: "POST",
@@ -144,7 +265,10 @@ $(function () {
                         'total_in_days': total_in_days,
                         'get_reg_date': get_reg_date
                     },
+                    dataType: 'json',
                     success: function (response) {
+
+                        $('.loading--screen').removeClass('visible').addClass('invisible');
 
                         if (response.success) {
                             $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
@@ -162,9 +286,6 @@ $(function () {
 
                             setTimeout(function () {
                                 $('#alert-box').removeClass('visible').addClass('invisible');
-                                if (response) {
-                                    window.location.href = 'home.php';
-                                }
                             }, 3000);
                         }
                     },
@@ -191,7 +312,11 @@ $(function () {
                         'get_start_date': get_start_date,
                         'get_end_date': get_end_date
                     },
+                    dataType: 'json',
                     success: function (response) {
+
+                        $('.loading--screen').removeClass('visible').addClass('invisible');
+
                         if (response.success) {
                             $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
                             $('#alert-text').html(response.success);
@@ -208,9 +333,6 @@ $(function () {
 
                             setTimeout(function () {
                                 $('#alert-box').removeClass('visible').addClass('invisible');
-                                if (response) {
-                                    window.location.href = 'home.php';
-                                }
                             }, 3000);
                         }
                     },
@@ -244,6 +366,8 @@ $(function () {
                 const get_price = $(this).attr('data-get_item_price');
                 const get_name = $(this).attr('data-get_name');
 
+                $('.loading--screen').removeClass('invisible').addClass('visible');
+
                 if (dateOptions === 'reg') {
                     $.ajax({
                         url: '../data/user-placed-booking.php',
@@ -261,7 +385,10 @@ $(function () {
                             'total_in_days': total_in_days,
                             'get_reg_date': get_reg_date
                         },
+                        dataType: 'json',
                         success: function (response) {
+
+                            $('.loading--screen').removeClass('visible').addClass('invisible');
                             if (response.success) {
                                 $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
                                 $('#alert-text').html(response.success);
@@ -278,9 +405,6 @@ $(function () {
 
                                 setTimeout(function () {
                                     $('#alert-box').removeClass('visible').addClass('invisible');
-                                    if (response) {
-                                        window.location.href = 'home.php';
-                                    }
                                 }, 3000);
                             }
                         },
@@ -306,7 +430,11 @@ $(function () {
                             'get_start_date': get_start_date,
                             'get_end_date': get_end_date
                         },
+                        dataType: 'json',
                         success: function (response) {
+
+                            $('.loading--screen').removeClass('visible').addClass('invisible');
+
                             if (response.success) {
                                 $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
                                 $('#alert-text').html(response.success);
@@ -349,7 +477,7 @@ $(function () {
                 'show-notification': true,
                 user_id: user_id
             }, success: function (response) {
-                $('.notif-modal-body').html(response);
+                $('.notif-body').html(response);
                 $('.notif-modal').modal('show');
             }
         })
@@ -372,7 +500,7 @@ $(function () {
     });
 
     //! decrement-btn
-    $('.decrement-btn').click(function () {
+    $('.decrement-btn').on('click', function () {
         const itemID = $(this).data('item-id');
         const userID = $(this).data('user-id');
 
@@ -390,7 +518,7 @@ $(function () {
     });
 
     //! increment-btn
-    $('.increment-btn').click(function () {
+    $('.increment-btn').on('click', function () {
         const itemID = $(this).data('item-id');
         const userID = $(this).data('user-id');
         $.ajax({
@@ -472,16 +600,17 @@ $(function () {
         }
     }
 
-    //! submit
-    $('#submit--item--rating').on('click', function (e) {
+    //! submit review
+    $(document).on('click', '#submit--item--rating', function (e) {
         e.preventDefault();
         var quality = $('#item--quality').val();
         var service = $('#service--rate').val();
         var comments = $('#comments--rate').val();
-        var user_id = $(this).data('user_id');
-        var item_id = $(this).data('item_id');
+        var user_id = $('#user_id').val();
+        var res_id = $('#res_id').val();
+        var item_id = $('#item_id').val();
 
-        console.log(item_rate_data, user_id, item_id);
+        console.log(user_id, res_id, item_id);
 
         $.ajax({
             url: '../data/item-rating.php',
@@ -493,7 +622,8 @@ $(function () {
                 'service': service,
                 'comments': comments,
                 'user_id': user_id,
-                'item_id': item_id
+                'item_id': item_id,
+                'res_id': res_id
             },
             success: function (response) {
                 var results = JSON.parse(response);
@@ -641,17 +771,121 @@ $(function () {
                 'user_id': user_id,
                 'res_number': res_number
             },
-            success: function(response) {
-                console.log('Successfully retrieved receipt details');
-    
+            success: function (response) {
+
                 $('#receipt-modal-body').html(response);
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
                 console.error('AJAX Error:', error);
             }
         });
     })
 
+    $('#change--pass--form').on('submit', function (e) {
+        e.preventDefault();
+
+        const old_pass = $('#old_pass').val();
+        const id = $('#uid').val();
+        const new_pass = $('#new_pass').val();
+        const re_pass = $('#re_pass').val();
+
+        console.log(old_pass, new_pass, re_pass)
+
+        $.ajax({
+            url: $(this).attr('action'),
+            type: $(this).attr('method'),
+            data: {
+                'save--auth': true,
+                'user_id': id,
+                'old_pass': old_pass,
+                'new_pass': new_pass,
+                're_pass': re_pass
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(response.success);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                        location.reload();
+                    }, 3000);
+                } else {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(response.error);
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                    }, 1500);
+                }
+            },
+            error: function (xhr, status, error) {
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html('An error occurred. ' + status + ' Please try again later.');
+                setTimeout(function () {
+                    $('#alert-box').removeClass('visible').addClass('invisible');
+                }, 3000);
+            }
+
+        });
+    });
+
+    //! update 
+    $('#change--info--form').on('submit', function (e) {
+        e.preventDefault();
+
+        const uid = $('#uid').val();
+        const name = $('#set-name').val();
+        const email = $('#set-email').val();
+        const phone = $('#set-phone').val();
+        const city = $('#set-city').val();
+        const brgy = $('#set-brgy').val();
+        const zip = $('#set-zip').val();
+        const user = $('#set-user').val();
+
+        console.log(uid, name, email, phone, city, brgy, zip, user)
+
+        $.ajax({
+            url: $(this).attr('action'),
+            type: $(this).attr('method'),
+            data: {
+                'update--': true,
+                'user_id': uid,
+                'full_name': name,
+                'email': email,
+                'phone': phone,
+                'city': city,
+                'brgy': brgy,
+                'zip': zip,
+                'user': user
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(response.success);
+
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                        location.reload();
+                    }, 3000);
+                } else {
+                    $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                    $('#alert-text').html(response.error);
+                    setTimeout(function () {
+                        $('#alert-box').removeClass('visible').addClass('invisible');
+                    }, 1500);
+                }
+            },
+            error: function (xhr, status, error) {
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html('An error occurred. ' + status + ' Please try again later.');
+                setTimeout(function () {
+                    $('#alert-box').removeClass('visible').addClass('invisible');
+                }, 3000);
+            }
+        });
+    });
 });
 
 showStarRating();

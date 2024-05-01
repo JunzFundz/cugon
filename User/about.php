@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (strlen($_SESSION['user_id'] == 0)) {
+    header('location: ../database/logout.php');
+} else {
 include('user-header.php');
 include('navigation.php');
 include('../data/user-checkout.php');
@@ -76,3 +79,4 @@ include('../data/user-checkout.php');
 include('user-footer.php');
 include('load-modals.php');
 ?>
+    <?php } ?>

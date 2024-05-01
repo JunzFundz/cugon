@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    if(session_destroy()){
-        header("location: ../index");
-    }
+session_start();
+session_unset();
+session_destroy();
+header("location: ../dist/login.php");
 ?>

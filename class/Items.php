@@ -1,64 +1,69 @@
 <?php
 
-require('../database/Connection.php');
+require_once('../database/Connection.php');
 
-class Items extends Dbh
+interface ItemsInterface
+{
+    public function allItems();
+    public function rooms();
+    public function cottage();
+    public function additem($i_type, $i_name, $i_img, $i_desc, $i_price, $i_quantity);
+    public function editItems($i_id);
+    public function updateItems($i_id, $i_name, $i_desc, $i_price, $i_type, $i_quantity, $i_img);
+    public function deleteItem($itemID);
+}
+
+class Items extends Dbh implements ItemsInterface
 {
     public function allItems()
     {
-        $sql = 'SELECT * FROM items';
-        $result = $this->connect()->query($sql);
+        $result = $this->connect()->query('SELECT * FROM items');
         return $result;
     }
 
     public function rooms()
     {
-        $sql = 'SELECT * FROM items WHERE i_type="Rooms"';
+        $result2 = $this->connect()->query('SELECT * FROM items WHERE i_type="Rooms"');
 
-        $result2 = $this->connect()->query($sql);
         return $result2;
     }
 
     public function cottage()
     {
-        $sql = 'SELECT * FROM items WHERE i_type="Cottages"';
-
-        $result3 = $this->connect()->query($sql);
+        $result3 = $this->connect()->query('SELECT * FROM items WHERE i_type="Cottages"');
         return $result3;
     }
-    
-    public function additem($i_type, $i_name, $i_img, $i_desc, $i_price, $i_quantity)
+
+    public function addItem($i_type, $i_name, $i_img, $i_desc, $i_price, $i_quantity)
     {
-        if (file_exists("../Admin/Items/" . $_FILES["i_img"]["name"])) {
-            $_FILES["i_img"]["name"];
+        $file_name = $_FILES["i_img"]["name"];
+        $file_tmp_name = $_FILES["i_img"]["tmp_name"];
 
-            echo '<script type="text/javascript">';
-            echo 'alert("File already exist");';
-            echo 'window.location.href = "../Admin/Home.php" ';
-            echo '</script>';
-        } else {
+        if (file_exists("../Admin/Items/" . $file_name)) {
 
-            $sql = "INSERT INTO items (i_type, i_name, i_img, i_desc, i_price, i_quantity) VALUES('$i_type', '$i_name', '$i_img', '$i_desc', '$i_price', '$i_quantity')";
-
-            $result = $this->connect()->query($sql);
-
-            if ($result) {
-
-                move_uploaded_file($_FILES["i_img"]["tmp_name"], "../Admin/Items/" . $_FILES["i_img"]["name"]);
-
-                echo '<script type="text/javascript">';
-                echo 'alert("File uploaded");';
-                echo 'window.location.href = "../Admin/Home.php" ';
-                echo '</script>';
-
-            } else {
-                echo '<script type="text/javascript">';
-                echo 'alert("Somethings wrong");';
-                echo 'window.location.href = "../Admin/Home.php" ';
-                echo '</script>';
-            }
+            $response = array(
+                'error' => 'File already exists.'
+            );
         }
+
+        $stmt = $this->connect()->prepare("INSERT INTO items (i_type, i_name, i_img, i_desc, i_price, i_quantity) VALUES(?,?,?,?,?,?)");
+        $stmt->bind_param("ssssss", $i_type, $i_name, $file_name, $i_desc, $i_price, $i_quantity);
+
+        if ($stmt->execute()) {
+            move_uploaded_file($file_tmp_name, "../Admin/Items/" . $file_name);
+
+            $response = array(
+                'success' => 'File Uploaded.'
+            );
+        } else {
+            $response = array(
+                'error' => 'Something went wrong.'
+            );
+        }
+        echo json_encode($response);
+        exit();
     }
+
 
     public function editItems($i_id)
     {
@@ -67,26 +72,24 @@ class Items extends Dbh
 
         $data_array = [];
 
-        if(mysqli_num_rows($result)>0){
-            foreach($result as $row){
+        if (mysqli_num_rows($result) > 0) {
+            foreach ($result as $row) {
                 array_push($data_array, $row);
                 header('Content-Type: application/json');
                 echo json_encode($data_array);
             }
-        }
-        else {
+        } else {
             echo "Error! No Data Found.";
         }
     }
 
-
     public function updateItems($i_id, $i_name, $i_desc, $i_price, $i_type, $i_quantity, $i_img)
     {
-        $old_img = ''; 
+        $old_img = '';
 
         if ($i_img != '') {
             $updatedimg =  $i_img;
-            if(file_exists("../Admin/Items/" . $_FILES['i_img']['name'])){
+            if (file_exists("../Admin/Items/" . $_FILES['i_img']['name'])) {
 
                 echo '<script type="text/javascript">';
                 echo 'alert("File already exist");';
@@ -126,16 +129,22 @@ class Items extends Dbh
 
     public function deleteItem($itemID)
     {
-        $sql = "SELECT i_img FROM items WHERE i_id = '$itemID'";
-        $result = $this->connect()->query($sql);
+        $sql = "SELECT i_img FROM items WHERE i_id =?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bind_param("i", $itemID);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $imgFileName = $row['i_img'];
-            $sqlDelete = "DELETE FROM items WHERE i_id = '$itemID'";
-            $resultDelete = $this->connect()->query($sqlDelete);
 
-            if ($resultDelete) {
+            $sqlDelete = "DELETE FROM items WHERE i_id =?";
+            $stmtDelete = $this->connect()->prepare($sqlDelete);
+            $stmtDelete->bind_param("i", $itemID);
+            $stmtDelete->execute();
+
+            if ($stmtDelete->affected_rows > 0) {
                 $imgFilePath = "../Admin/Items/" . $imgFileName;
                 if (file_exists($imgFilePath)) {
                     unlink($imgFilePath);

@@ -1,13 +1,40 @@
 <?php
 
-require('../database/Connection.php');
-require('../vendor/autoload.php');
+require_once('../database/Connection.php');
+require_once('../vendor/autoload.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-class Booking extends Dbh
+interface BookingInterface
+{
+    public function __construct();
+    public function getItem($i_id);
+    public function itemRating($i_id);
+    public function itemRatingall($i_id);
+    public function data($i_id);
+    public function fetchRequest();
+    public function tableData();
+    public function checkData();
+    public function viewRequest($userID, $resID, $itemID);
+    public function checkNewData($userID);
+    public function approveReq($userID, $itemID, $item, $resID, $resNumber, $total, $date_booked, $transaction_number, $status, $quantity);
+    public function declineReq($id, $res_id, $res_number, $reason);
+    public function cancelBookReq($res_id);
+    public function validateBooking($quantity, $available);
+    public function sendPaymentInfo($email);
+    public function regBooking($res_number, $itemId, $email, $item, $userId, $quantity, $price, $payment, $total_in_day, $reg_date, $created_at, $status, $message);
+    public function stayBooking($res_number, $itemId, $email, $item, $userId, $quantity, $price, $payment, $total_in_day, $start_date, $end_date, $created_at, $status, $message);
+    public function usersTransaction($user_id);
+    public function adminViewTran();
+    public function startIn($res_id);
+    public function addtoCart($item_id, $user_id, $quantity);
+    public function viewCartItems($user_id);
+    public function removeFromCart($itemId, $userId);
+}
+
+class Booking extends Dbh implements BookingInterface
 {
     public function __construct()
     {
@@ -24,22 +51,21 @@ class Booking extends Dbh
 
         return $result;
     }
-    
+
     public function itemRating($i_id)
     {
         $stmt = $this->connect()->prepare("SELECT * FROM item_ratings WHERE item_id = ?");
         $stmt->bind_param("i", $i_id);
         $stmt->execute();
         $result = $stmt->get_result();
-    
+
         $ratings = [];
         while ($row = $result->fetch_assoc()) {
             $ratings[] = $row;
         }
-    
+
         return $ratings;
     }
-    
 
     public function itemRatingall($i_id)
     {
@@ -68,7 +94,6 @@ class Booking extends Dbh
             'counts' => $ratingCounts
         );
     }
-
 
     public function data($i_id)
     {
@@ -131,6 +156,7 @@ class Booking extends Dbh
         INNER JOIN items it
         ON re.item_id=it.i_id
         WHERE us.user_id = ? AND re.res_id = ? AND re.item_id = ?");
+        
         $stmt->bind_param("iii", $userID, $resID, $itemID);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -155,33 +181,6 @@ class Booking extends Dbh
         $stmt->execute();
         $result = $stmt->get_result();
         return $result;
-    }
-
-    public function autoDecline()
-    {
-        $sql = "SELECT * FROM res_tb";
-
-        $stmt = $this->connect()->query($sql);
-        $requests = $stmt->fetch_all(MYSQLI_ASSOC);
-
-        foreach ($requests as $request) {
-
-            $createdTime = new DateTime($request['created_at']);
-            $expiryTime = clone $createdTime;
-            $expiryTime->add(new DateInterval('PT1M'));
-
-            $currentTime = new DateTime();
-            if ($currentTime > $expiryTime) {
-
-                $updateQuery = "UPDATE res_tb SET status = 'Declined' WHERE res_id = ? AND user_id = ?";
-                $updateStmt = $this->connect()->prepare($updateQuery);
-                $updateStmt->bind_param('ii', $request['res_id'], $request['user_id']);
-                $updateStmt->execute();
-
-                return $updateStmt;
-            }
-        }
-        return $requests;
     }
 
     public function approveReq($userID, $itemID, $item, $resID, $resNumber, $total, $date_booked, $transaction_number, $status, $quantity)
@@ -216,30 +215,25 @@ class Booking extends Dbh
         }
     }
 
-    public function declineReq($id, $res_id, $res_number, $reason)
+    public function declineReq($user_id, $res_id, $res_num, $reason)
     {
         $stmt = $this->connect()->prepare("UPDATE res_tb SET status='Declined' WHERE user_id=? AND res_id=? AND res_number=?");
-        $stmt->bind_param("iii", $id, $res_id, $res_number);
-        $result = $stmt->execute();
-
-        if ($result) {
-            $stmt = $this->connect()->prepare("UPDATE res_tb SET message= ? WHERE user_id = ?");
-            $stmt->bind_param("siii", $reason, $id, $res_id, $res_number);
-            $success = $stmt->execute();
-
-            if ($success) {
-                $notification = $this->connect()->prepare("INSERT INTO notifications (user_id, updates, date_posted) VALUES (?,?, NOW())");
-                $notification->bind_param("is", $userID, $status);
-                $result = $notification->execute();
-                return $result;
-            }
+        $stmt->bind_param("iii", $user_id, $res_id, $res_num);
+    
+        if ($stmt->execute()) {
+            $notification = $this->connect()->prepare("INSERT INTO notifications (user_id, updates, message, date_posted) VALUES (?,'Declined', ?, NOW())");
+            $notification->bind_param("is", $user_id, $reason);
+            $result = $notification->execute();
+            return $result;
+        } else {
+            return false;
         }
     }
 
-    public function cancelBookReq($resID)
+    public function cancelBookReq($res_id)
     {
         $stmt = $this->connect()->prepare("UPDATE res_tb SET status='Cancelled' WHERE res_id = ?");
-        $stmt->bind_param("i", $resID);
+        $stmt->bind_param("i", $res_id);
 
         $result = $stmt->execute();
         $stmt->close();
@@ -297,8 +291,12 @@ class Booking extends Dbh
                 $removeFromCart = $this->connect()->prepare("DELETE FROM cart WHERE user_id = ? AND  item_id=?");
                 $removeFromCart->bind_param('ii', $userId, $itemId);
                 $removeFromCart->execute();
-                $this->sendPaymentInfo($email);
-                return true;
+                if ($payment == 'counter') {
+                    return true;
+                } else {
+                    $this->sendPaymentInfo($email);
+                    return true;
+                }
             }
         }
     }
@@ -319,8 +317,13 @@ class Booking extends Dbh
                 $removeFromCart = $this->connect()->prepare("DELETE FROM cart WHERE user_id = ? AND  item_id=?");
                 $removeFromCart->bind_param('ii', $userId, $itemId);
                 $removeFromCart->execute();
-                $this->sendPaymentInfo($email);
-                return true;
+
+                if ($payment == 'counter') {
+                    return true;
+                } else {
+                    $this->sendPaymentInfo($email);
+                    return true;
+                }
             }
         }
     }

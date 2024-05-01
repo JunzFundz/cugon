@@ -22,16 +22,16 @@ if (isset($_POST['search'])) {
 }
 
 
+if (isset($_GET['user_id']) && isset($_GET['email'])) {
+    $user_id = filter_var($_GET['user_id'], FILTER_SANITIZE_NUMBER_INT);
+    $email = filter_var($_GET['email'], FILTER_SANITIZE_EMAIL);
 
-// if (isset($_GET['user_id'])) {
-//     $users_id = $_POST['users_id'];
-    
-//     header('Content-Type: application/json');
-//     $loadInfo = new Users();
-//     $user_info  = $loadInfo->getUserInfo($users_id);
-
-//     echo json_encode($user_info);
-// }
+    $loadInfo = new Users();
+    $user_info  = $loadInfo->load_user_info($user_id, $email);
+    $res  = $loadInfo->load_user_reservation($user_id);
+    $item  = $loadInfo->load_user_itemrating($user_id);
+    $notif = $loadInfo->userNotification($user_id);
+}
 
 if (isset($_GET['code'])) {
     require('../config.php');

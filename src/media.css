@@ -1,7 +1,10 @@
 @media screen and (max-width: 475px) {
-    :root {
-        --headings-h: 1.5rem;
-        --desc-h: 10px;
+    :root{
+        --padding-inline: 0.3rem;
+    }
+    
+    #item--main{
+        padding-inline: var(--padding-inline); 
     }
 
     .cart-container {
@@ -277,13 +280,6 @@
         }
     }
 
-    #alert-text {
-        font-size: 0.7em;
-        padding: 30px 30px;
-        border-radius: 3px;
-        font-weight: 500;
-    }
-
     /*! placed item */
     .placed-item-container {
         height: auto;
@@ -302,9 +298,7 @@
 
     .payments-section {
         grid-column: 1/11;
-        margin-inline: 20px;
-        background-color: white;
-        border: 1px solid rgb(208, 208, 208);
+        width: 100%;
     }
 
     .payment-box {
@@ -421,6 +415,11 @@
     :root {
         --headings-h: 1.5rem;
         --desc-h: 0.9rem;
+        --padding-inline: 1rem;
+
+    }
+    #item--main{
+        padding-inline: var(--padding-inline); 
     }
 
     .cart-items ul li {

@@ -7,41 +7,42 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body2">
-                <br>
                 
-                <input type="text" id="user_id"  name="user_id" value="" hidden/>
+                <input type="text" id="user_id"  name="" value="" hidden/>
+                <input type="text" id="res_id"  name="" value="" hidden/>
+                <input type="text" id="res_num"  name="" value="" hidden/>
 
-                <div style="margin: 30px;">
+                <div style="margin: 20px;">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason1" value="Not Applicable">
                         <label class="form-check-label">
                             Not Applicable
                         </label>
                     </div>
                     <br>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason2" value="Insufficient Information Provided">
                         <label class="form-check-label">
                             Insufficient Information Provided
                         </label>
                     </div>
                     <br>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason3" value="Request Does Not Meet Requirements">
                         <label class="form-check-label">
                             Request Does Not Meet Requirements
                         </label>
                     </div>
                     <br>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason4" value="Request Already Processed">
                         <label class="form-check-label">
                             Request Already Processed
                         </label>
                     </div>
                     <br>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reason5" value="Other (Please Specify)">
                         <label class="form-check-label">
                             Other (Please Specify)
                         </label>
@@ -52,7 +53,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" data-user_id="<?= $rows['user_id']; ?>" data-res_id="<?= $rows['res_id']; ?>" data-item_id="<?= $rows['item_id']; ?>" data-res_num="<?= $rows['res_number']; ?>" data-total_amount="<?= $rows['total']; ?>" class="btn btn-danger decline-btn">Confirm</button>
+                <button type="button"  class="btn btn-danger decline-btn">Confirm</button>
             </div>
         </div>
     </div>

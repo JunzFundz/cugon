@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (strlen($_SESSION['user_id'] == 0)) {
+    header('location: ../database/logout.php');
+} else {
 include('user-header.php');
 include('Navigation.php');
 include('../data/user-view-cart.php');
@@ -20,7 +23,7 @@ include('../data/user-view-cart.php');
                 <span class="font-semibold item-name--"><?= $row['i_name'] ?></span>
                 <ul class="custom-ul">
                     <li>
-                        <form id="checkoutForm" onsubmit="return onSubmission(this)" method="post" action="marked-items-checkout.php?users_id=<?php echo $_SESSION['user_id']; ?>">
+                        <form id="checkoutForm" onsubmit="return onSubmission(event)" method="post" action="marked-items-checkout.php?users_id=<?php echo $_SESSION['user_id']; ?>">
 
                             <input id="default-checkbox" name="item_checkboxes[]" type="checkbox" class="item-checkbox w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" value="<?= $row['item_id']; ?>" data-initial="<?= $totalInitial ?>" data-item-id="<?= $row['item_id']; ?>" data-user_id="<?= $row['user_id']; ?>" data-s_price="<?= $row['i_price']; ?>">
 
@@ -81,6 +84,7 @@ include('../data/user-view-cart.php');
                     <span class="font-semibold">Subtotal : </span>
                     <p id="total-items-pay" class="text-red-600 font-medium">0</p>
                 </li>
+                
                 <li id="dateOptionChange">
                     <!-- onchange -->
                     <label for="options" class="block mb-2 text-sm font-semibold text-gray-900 dark:text-white">Select type of booking</label>
@@ -137,13 +141,14 @@ include('../data/user-view-cart.php');
 
                     <input type="submit" id="checkoutButton" class="pay-button checkoutButton w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" name="checkoutData" value="Checkout">
                 </li>
+
             </ul>
 
         </div>
 
     </div>
     </form>
-</div>
-<?php
+</div>    
+<?php } 
 include('user-footer.php');
 ?>

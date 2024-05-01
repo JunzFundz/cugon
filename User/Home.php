@@ -1,16 +1,15 @@
 <?php
 session_start();
+
 include('user-header.php');
 include('../data/user-load-ratings.php');
 include('Navigation.php');
 ?>
 
-
 <title>Home</title>
 </head>
 
 <body>
-
     <!-- Container -->
     <div class="user-home-container">
 
@@ -19,7 +18,6 @@ include('Navigation.php');
 
             <ul class="flex flex-row post-section">
                 <li data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="cursor-pointer"><span class=" text-black rounded-md p-4"><i class="fa-solid fa-photo-film"></i>&nbsp;&nbsp;&nbsp;Add review</span></li>
-                <li class="cursor-pointer"><span class=" text-black  rounded-md p-4"><i class="fa-brands fa-creative-commons-share"></i>&nbsp;&nbsp;&nbsp;My Post</span></li>
                 <!-- <b style="float: right;"><span id="average-ratings">0.0</span>/ 5</b> -->
             </ul>
 
@@ -51,41 +49,41 @@ include('Navigation.php');
                             <?php
                             if (is_string($rows['img']) && is_array(json_decode($rows['img'], true))) {
                                 $imgArray = json_decode($rows['img'], true);
-                            
+
                             ?>
-                            <div class="relative h-96 overflow-hidden rounded-lg md:h-96">
-                                <?php foreach ($imgArray as $index => $image) : ?>
-                                    <div class="hidden duration-700 ease-in-out <?php echo $index === 0 ? 'block' : ''; ?>" data-carousel-item="<?php echo $index === 0 ? 'active' : ''; ?>">
-                                        <img src="../uploads/<?php echo $image; ?>" class=" absolute object-fill block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
+                                <div class="relative h-96 overflow-hidden rounded-lg md:h-96">
+                                    <?php foreach ($imgArray as $index => $image) : ?>
+                                        <div class="hidden duration-700 ease-in-out <?php echo $index === 0 ? 'block' : ''; ?>" data-carousel-item="<?php echo $index === 0 ? 'active' : ''; ?>">
+                                            <img src="../uploads/<?php echo $image; ?>" class=" absolute object-fill block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
 
-                            <!-- Slider indicators -->
-                            <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                                <?php foreach ($imgArray as $index => $image) : ?>
-                                    <button type="button" class="w-3 h-3 rounded-full <?php echo $index === 0 ? 'bg-gray-500' : 'bg-gray-200'; ?>" aria-current="<?php echo $index === 0 ? 'true' : 'false'; ?>" aria-label="Slide <?php echo $index + 1; ?>" data-carousel-slide-to="<?php echo $index; ?>"></button>
-                                <?php endforeach; ?>
-                            </div>
+                                <!-- Slider indicators -->
+                                <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                                    <?php foreach ($imgArray as $index => $image) : ?>
+                                        <button type="button" class="w-3 h-3 rounded-full <?php echo $index === 0 ? 'bg-gray-500' : 'bg-gray-200'; ?>" aria-current="<?php echo $index === 0 ? 'true' : 'false'; ?>" aria-label="Slide <?php echo $index + 1; ?>" data-carousel-slide-to="<?php echo $index; ?>"></button>
+                                    <?php endforeach; ?>
+                                </div>
 
-                            <!-- Slider controls -->
-                            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
-                                    </svg>
-                                    <span class="sr-only">Previous</span>
-                                </span>
-                            </button>
-                            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                                    </svg>
-                                    <span class="sr-only">Next</span>
-                                </span>
-                            </button>
-                        <?php } else {
+                                <!-- Slider controls -->
+                                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                        </svg>
+                                        <span class="sr-only">Previous</span>
+                                    </span>
+                                </button>
+                                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                        </svg>
+                                        <span class="sr-only">Next</span>
+                                    </span>
+                                </button>
+                            <?php } else {
                                 $imgArray = null;
                             } ?>
                         </div>
@@ -96,15 +94,25 @@ include('Navigation.php');
         </div>
 
         <!-- Right section -->
-        <div class="user-right-section block pt-4">
+        <div class="user-right-section">
 
-            <div class="">
-                <p class="ml-5 rtl:ml-0 max-w-lg font-semibold leading-relaxed text-gray-900 dark:text-white">The Al-powered app will help you improve yourself by analysing your everyday life.</p>
-            </div><br>
-
-            <div>From: </div><br>
-
-            <div>Message</div>
+            <section class="bg-white dark:bg-gray-900">
+                <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+                    <div class="mr-auto place-self-center lg:col-span-7">
+                        <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Order foods in our restaurant!</h1>
+                        <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Enjoy the delicious foods in Cugon.</p>
+                        <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                            Get started
+                            <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="restaurant" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                            Visit
+                        </a>
+                    </div>
+                </div>
+            </section>
 
         </div>
 

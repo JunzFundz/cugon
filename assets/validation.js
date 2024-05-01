@@ -26,10 +26,20 @@ function onSubmission() {
         return false;
     }
 
+    const currentNewDate = new Date();
+
+    // console.log(currentNewDate);
+
     switch (dateOptions) {
         case 'reg':
-            if (!singleDateInput || singleDateInput === null || singleDateInput === '' || !isValidDate(singleDateInput)) {
+            if (!singleDateInput || singleDateInput === null) {
                 setErrorWithTimeout($('#singleDateInput'), "Enter Date");
+                return false;
+            }
+            const regDate = new Date(singleDateInput);
+            console.log(regDate);
+            if (currentNewDate >= regDate) {
+                setErrorWithTimeout($('#singleDateInput'), "Invalid date");
                 return false;
             }
             break;
@@ -41,6 +51,11 @@ function onSubmission() {
             }
             if (startDate === endDate) {
                 setErrorWithTimeout($('#startDate, #endDate'), "Two dates cannot be the same");
+                return false;
+            }
+            const startNewDate = new Date(startDate);
+            if (currentNewDate >= startNewDate) {
+                setErrorWithTimeout($('#singleDateInput'), "Invalid date");
                 return false;
             }
             break;
@@ -87,7 +102,7 @@ function submitDetails() {
 
             alertErrors();
             return false;
-            
+
         case (setName.length > 60):
             setErrorWithTimeout($('#set-name'), "Name is too long!");
             return false;
@@ -139,14 +154,18 @@ function submitDetails() {
 }
 
 function validateBooking() {
-    const start = document.form.start.value;
-    const end = document.form.end.value;
+    const selectedOption = document.getElementById('options').value;
     const available = document.form.available.value;
     const quantity = document.form.quantity.value;
     const payment = document.form.payment.value;
-    const singleDate = document.form.singleDate.value;
-    const selectedOption = document.getElementById('options').value;
 
+    const end = document.form.end.value;
+    const start = document.form.start.value;
+    const singleDate = document.form.singleDate.value;
+    const currentDate = new Date();
+
+    console.log(currentDate);
+    
     switch (selectedOption) {
         case 'reg':
             if (singleDate === '' || singleDate === null) {
@@ -156,8 +175,15 @@ function validateBooking() {
                 alertErrors();
                 return false;
             }
+            const regDate = new Date(singleDate);
+            if (currentDate >= regDate) {
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html("The selected date should be in the future");
+                alertErrors();
+                return false;
+            }
             break;
-
+    
         case 'stay':
             if (start === '' || start === null || end === '' || end === null) {
                 $('#start').removeClass('border-gray-300').addClass('border-red-600');
@@ -175,8 +201,15 @@ function validateBooking() {
                 alertErrors();
                 return false;
             }
+            const startDate = new Date(start);
+            if (currentDate >= startDate) {
+                $('#alert-box').removeClass('invisible').addClass('visible opacity-100');
+                $('#alert-text').html("The start date should be in the future");
+                alertErrors();
+                return false;
+            }
             break;
-
+    
         default:
             if (selectedOption !== 'reg' && selectedOption !== 'stay') {
                 $('#endDate').removeClass('border-gray-300').addClass('border-red-600');
@@ -211,6 +244,7 @@ function validateBooking() {
         alertErrors();
         return false;
     }
+    return true;
 }
 
 function validateSignup() {
@@ -285,11 +319,6 @@ function validateLogin() {
         return false;
     }
 }
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     document.getElementById('singleDate').style.display = 'none';
-//     document.getElementById('twoDates').style.display = 'none';
-// });
 
 function changeInputs() {
     let options = document.getElementById('options');

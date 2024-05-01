@@ -74,7 +74,7 @@ body {
 }
 
 .header {
-    background-image: url("https://scontent.fceb1-1.fna.fbcdn.net/v/t39.30808-6/429977792_813148190829758_7953653014836507216_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFeAigm8K_WaRt7hoANuYU8xluWQT3zwtTGW5ZBPfPC1EMvwHBNyCdmkjTvIWTTnti_gdpZInjpTBUCUWFuBpnc&_nc_ohc=GJRvx_8v7RsAX9uy-aZ&_nc_ht=scontent.fceb1-1.fna&oh=00_AfDZcCfWLSnF9CJbuXrSEY72oc-rfafnUQ8iF8qHQT5PSQ&oe=660D7552");
+    background-image: url("../images/resto.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -341,7 +341,7 @@ nav {
 }
 
 .footer {
-    background-image: url("https://scontent.fceb1-2.fna.fbcdn.net/v/t39.30808-6/430075913_813148294163081_3947651403526788231_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEG7SCLWR_FLadV0K07Kl42HHXp4l8ldOEcdeniXyV04ZCtafAhtSdkgGD1RxgFJwL_YQgspoSl1y9lrTg3_Mc3&_nc_ohc=PPpRwXIK000AX9YadIl&_nc_ht=scontent.fceb1-2.fna&oh=00_AfCZiPSThwGjzIWVqBvwg3q9QW-zzq1kMXWAO3yqq2suEw&oe=660D78E9");
+    background-color: #42200b;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -1,10 +1,18 @@
 <?php
 session_start();
+if (strlen($_SESSION['user_id'] == 0)) {
+    header('location: ../database/logout.php');
+} else {
 include('user-header.php');
 include('../data/user-marked-items.php');
 ?>
+<title>Items checkout</title>
 <!-- ajax cdn -->
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+<script language="javascript" type="text/javascript">
+    window.history.forward();
+</script>
 
 <!-- container -->
 <div class="placed-item-container">
@@ -127,12 +135,7 @@ include('../data/user-marked-items.php');
 
                             <li class="flex items-center flex-row justify-between">
                                 <div>
-                                    <span class="text-xs font-medium leading-tight text-black-500 dark:text-gray-400 ms-3 get_primary_info" 
-                                    data-get_id="<?php echo $itemIds[$i]; ?>" 
-                                    data-get_quantity="<?php echo $quantities[$i]; ?>" 
-                                    data-get_user_id="<?php echo $userIds[$i]; ?>" 
-                                    data-get_item_price="<?php echo $prices[$i] ?>" 
-                                    data-get_name="<?php echo $names[$i]; ?>">
+                                    <span class="text-xs font-medium leading-tight text-black-500 dark:text-gray-400 ms-3 get_primary_info" data-get_id="<?php echo $itemIds[$i]; ?>" data-get_quantity="<?php echo $quantities[$i]; ?>" data-get_user_id="<?php echo $userIds[$i]; ?>" data-get_item_price="<?php echo $prices[$i] ?>" data-get_name="<?php echo $names[$i]; ?>">
                                         <?php echo $names[$i]; ?>
                                     </span>
                                 </div>
@@ -152,13 +155,8 @@ include('../data/user-marked-items.php');
                     <?php for ($i = 2; $i < count($checkboxValues); $i++) : ?>
                         <li class="flex items-center flex-row justify-between">
                             <div>
-                                <span class="text-xs font-medium leading-tight text-black-500 dark:text-gray-400 ms-3 get_primary_info" 
-                                data-get_id="<?php echo $itemIds[$i]; ?>" 
-                                data-get_quantity="<?php echo $quantities[$i]; ?>" 
-                                data-get_user_id="<?php echo $userIds[$i]; ?>" 
-                                data-get_item_price="<?php echo $prices[$i]; ?>" 
-                                data-get_name="<?php echo $names[$i]; ?>">
-                                <?php echo $names[$i]; ?></span>
+                                <span class="text-xs font-medium leading-tight text-black-500 dark:text-gray-400 ms-3 get_primary_info" data-get_id="<?php echo $itemIds[$i]; ?>" data-get_quantity="<?php echo $quantities[$i]; ?>" data-get_user_id="<?php echo $userIds[$i]; ?>" data-get_item_price="<?php echo $prices[$i]; ?>" data-get_name="<?php echo $names[$i]; ?>">
+                                    <?php echo $names[$i]; ?></span>
                             </div>
                             <div>
                                 <span class="text-xs font-medium leading-tight text-red-500 dark:text-red-400 ms-3"><?php echo number_format($prices[$i]) ?></span>
@@ -188,7 +186,7 @@ include('../data/user-marked-items.php');
                         </div>
 
                         <div>
-                            <img src="../GCash_logo.svg.png" alt="" class=" object-contain w-24">
+                            <img src="../images/GCash_logo.svg.png" alt="" class=" object-contain w-24">
                         </div>
                     </li>
 
@@ -267,3 +265,4 @@ include('../data/user-marked-items.php');
 </script>
 
 <?php include('user-footer.php') ?>
+    <?php } ?>

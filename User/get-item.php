@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (strlen($_SESSION['user_id'] == 0)) {
+    header('location: ../database/logout.php');
+} else {
 include('user-header.php');
 include('navigation.php');
 include('../data/user-checkout.php');
@@ -13,8 +16,9 @@ include('../data/user-checkout.php');
 </div>
 
 <body>
-    <main style="padding-inline: 5rem">
-        <section class="py-8 bg-white md:py-16 dark:bg-gray-900 antialiased">
+    <main id="item--main">
+
+        <section class="py-8 bg-white md:py-16 dark:bg-gray-900 antialiased border border-gray-300 rounded-lg">
             <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
                     <div class="shrink-0 max-w-md lg:max-w-lg mx-auto">
@@ -31,29 +35,23 @@ include('../data/user-checkout.php');
                             </p>
 
                             <div class="flex items-center gap-2 mt-2 sm:mt-0">
-                                <div class="flex items-center gap-1">
-                                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                    </svg>
+                                <div class="mt-2 flex items-center gap-2 sm:mt-0">
+                                    <div class="flex items-center gap-0.5">
+                                        <?php
+                                        for ($i = 1; $i <= 5; $i++) {
+                                            $fillClass = ($i <= $averageRating) ? 'text-yellow-300' : 'text-gray-300';
+                                        ?>
+                                            <svg class="h-4 w-4 <?= $fillClass ?>" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                        <?php
+                                        }
+                                        ?>
+                                    </div>
+                                    <p class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400">(<?= number_format($averageRating, 1) ?>)</p>
+                                    <a href="#" class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white"> <?= array_sum($ratingCounts) ?> Reviews </a>
                                 </div>
-                                <p class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400">
-                                    (5.0)
-                                </p>
-                                <a href="#" class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white">
-                                    345 Reviews
-                                </a>
+
                             </div>
                         </div>
 
@@ -74,42 +72,34 @@ include('../data/user-checkout.php');
                         <hr class="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
 
                         <p class="mb-6 text-gray-500 dark:text-gray-400">
-                            Studio quality three mic array for crystal clear calls and voice
-                            recordings. Six-speaker sound system for a remarkably robust and
-                            high-quality audio experience. Up to 256GB of ultrafast SSD storage.
+                        <?php echo $row["i_desc"]; ?>"
                         </p>
 
-                        <p class="text-gray-500 dark:text-gray-400">
-                            Two Thunderbolt USB 4 ports and up to two USB 3 ports. Ultrafast
-                            Wi-Fi 6 and Bluetooth 5.0 wireless. Color matched Magic Mouse with
-                            Magic Keyboard or Magic Keyboard with Touch ID.
-                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
+        <section class="bg-white py-8 antialiased dark:bg-gray-900 md:py-16  border border-gray-300 rounded-lg">
             <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-
                 <div class="flex items-center gap-2">
                     <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Reviews</h2>
                     <div class="mt-2 flex items-center gap-2 sm:mt-0">
-                    <div class="flex items-center gap-0.5">
-                        <?php
-                        for ($i = 1; $i <= 5; $i++) {
-                            $fillClass = ($i <= $averageRating) ? 'text-yellow-300' : 'text-gray-300';
-                        ?>
-                            <svg class="h-4 w-4 <?= $fillClass ?>" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                            </svg>
-                        <?php
-                        }
-                        ?>
+                        <div class="flex items-center gap-0.5">
+                            <?php
+                            for ($i = 1; $i <= 5; $i++) {
+                                $fillClass = ($i <= $averageRating) ? 'text-yellow-300' : 'text-gray-300';
+                            ?>
+                                <svg class="h-4 w-4 <?= $fillClass ?>" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                </svg>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <p class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400">(<?= number_format($averageRating, 1) ?>)</p>
+                        <a href="#" class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white"> <?= array_sum($ratingCounts) ?> Reviews </a>
                     </div>
-                    <p class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400">(<?= number_format($averageRating, 1) ?>)</p>
-                    <a href="#" class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white"> <?= array_sum($ratingCounts) ?> Reviews </a>
-                </div>
                 </div>
 
                 <div class="my-6 gap-8 sm:flex sm:items-start md:my-8">
@@ -118,11 +108,9 @@ include('../data/user-checkout.php');
                     </div>
 
                     <div class="mt-6 min-w-0 flex-1 space-y-3 sm:mt-0">
-
-
                         <?php
                         foreach ($ratingCounts as $rating => $count) {
-                            $percentage = ($count / array_sum($ratingCounts)) * 100;
+                            $percentage = (array_sum($ratingCounts) != 0) ? ($count / array_sum($ratingCounts)) * 100 : 0;
                         ?>
                             <div class="flex items-center gap-2">
                                 <p class="w-2 shrink-0 text-start text-sm font-medium leading-none text-gray-900 dark:text-white"><?= $rating ?></p>
@@ -141,6 +129,16 @@ include('../data/user-checkout.php');
                 </div>
             </div>
 
+
+
+
+            <!-- <div class="mt-6 text-center">
+                    <button type="button" class="mb-2 me-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">View more reviews</button>
+                </div> -->
+            </div>
+        </section>
+
+        <section class=" border border-gray-300 rounded-lg bg-white">
             <div class="mt-6 divide-y divide-gray-200 dark:divide-gray-700" style="margin-top: 40px; padding-inline: 1rem">
                 <?php foreach ($client_rating as $rating_row) { ?>
                     <div class="gap-3 pb-6 sm:flex sm:items-start" style="padding-top: 20px">
@@ -167,7 +165,7 @@ include('../data/user-checkout.php');
                         <div class="mt-4 min-w-0 flex-1 space-y-4 sm:mt-0">
                             <p class="text-base font-normal text-gray-500 dark:text-gray-400"><?= $rating_row['comments']; ?></p>
 
-                            <div class="flex items-center gap-4">
+                            <!-- <div class="flex items-center gap-4">
                                 <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Was it helpful to you?</p>
                                 <div class="flex items-center">
                                     <input id="reviews-radio-1" type="radio" value="" name="reviews-radio" class="h-4 w-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600" />
@@ -177,15 +175,10 @@ include('../data/user-checkout.php');
                                     <input id="reviews-radio-2" type="radio" value="" name="reviews-radio" class="h-4 w-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600" />
                                     <label for="reviews-radio-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">No: 0 </label>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 <?php } ?>
-            </div>
-
-            <!-- <div class="mt-6 text-center">
-                    <button type="button" class="mb-2 me-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">View more reviews</button>
-                </div> -->
             </div>
         </section>
 
@@ -272,7 +265,6 @@ include('../data/user-checkout.php');
         </div>
     </div>
 
-
     <!-- Main modal -->
     <div id="updateProductModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
         <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
@@ -291,7 +283,7 @@ include('../data/user-checkout.php');
                     </button>
                 </div>
                 <!-- Modal body -->
-                <form id="myForm" name="form" onsubmit="return validateBooking(this)" method="post" action="placed-item.php?user_id=<?php echo $_SESSION['user_id']; ?>">
+                <form class="mt-4 space-y-4 lg:mt-5 md:space-y-5" id="myForm" name="form" onsubmit="return validateBooking(event)" method="post" action="placed-item.php?user_id=<?php echo $_SESSION['user_id']; ?>">
 
                     <input type="hidden" value="<?php echo $row['i_id'] ?>" name="item_id" class="item_id">
                     <input type="hidden" value="<?php echo $row['i_name'] ?>" name="item_name" class="item_name">
@@ -383,179 +375,7 @@ include('../data/user-checkout.php');
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-    <!-- <div class="master-container">
-        <div class="checkout-container">
-            <div class="checkout-item-img">
-                <img class="" height="598" width="400" src="../Admin/Items/<?php echo $row["i_img"]; ?>" alt="...">
-                <br>
-                <p class="product-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, placeat ea fuga assumenda similique aut incidunt debitis dolorum reiciendis sed velit ratione suscipit quia natus saepe. Nam ullam minima temporibus.<?php echo $row["i_desc"]; ?></p>
-            </div>
-
-            <form id="myForm" name="form" onsubmit="return validateBooking(this)" method="post" action="placed-item.php?user_id=<?php echo $_SESSION['user_id']; ?>">
-
-                <input type="hidden" value="<?php echo $row['i_id'] ?>" name="item_id" class="item_id">
-                <input type="hidden" value="<?php echo $row['i_name'] ?>" name="item_name" class="item_name">
-                <input type="hidden" value="<?php echo $_SESSION['user_id'] ?>" name="users_id">
-                <input type="hidden" value="<?php echo $row['i_price'] ?>" name="price">
-                <input type="hidden" value="<?php echo $row['i_quantity'] ?>" name="available">
-
-                <div class="checkout-body-section">
-                    <div class="w-full max-w-sm p-4 form-div-checkout">
-                        <form id="myForm" name="form" onsubmit="return validateBooking(this)" method="post" action="placed-item.php?user_id=<?php echo $_SESSION['user_id']; ?>">
-
-                            <input type="hidden" value="<?php echo $row['i_id'] ?>" name="item_id" class="item_id">
-                            <input type="hidden" value="<?php echo $row['i_name'] ?>" name="item_name" class="item_name">
-                            <input type="hidden" value="<?php echo $_SESSION['user_id'] ?>" name="users_id">
-                            <input type="hidden" value="<?php echo $row['i_price'] ?>" name="price">
-                            <input type="hidden" value="<?php echo $row['i_quantity'] ?>" name="available">
-
-                            <div class="tags-wrapper">
-                                <h5 class=" text-gray-700 font-medium text-base mb-2"><?php echo $row['i_name'] ?></h5>
-                                <ul class="flex flex-col-reverse gap-8">
-                                    <li>
-                                        Available | <span class=" text-blue-600 font-medium"><?php echo $row['i_quantity'] ?></span>
-                                    </li>
-                                    <?php foreach ($data as $rating_row) { ?>
-                                        <li>
-                                            Ratings | <span class=" text-blue-600 font-medium"><?php echo $rating_row['total_ratings'] ?></span>
-                                        </li>
-                                        <li>
-                                            Availed | <span class=" text-blue-600 font-medium"><?php echo $rating_row['clients'] ?></span>
-                                        </li>
-                                    <?php } ?>
-                                </ul>
-                                <section>
-                                    <span class=" text-red-500 font-semibold text-4xl mb-6">₱<?php echo number_format($row['i_price']) ?></span>
-                                </section>
-                            </div>
-
-
-                            <label for="options" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select type of booking</label>
-                            <select id="options" name="dateOptions" onchange="changeInputs()" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option value="reg" selected>Regular</option>
-                                <option value="stay">Stay</option>
-                            </select>
-
-                            <br>
-                            <div class="relative max-w-sm" id="singleDate">
-                                <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                                    </svg>
-                                </div>
-                                <input name="regular_date" id="singleDate" datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 singleDate" placeholder="Select date">
-                            </div>
-
-                            <div date-rangepicker class="flex items-center " id="twoDates">
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                                        </svg>
-                                    </div>
-
-                                    <input id="start" name="start" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select start">
-                                </div>
-                                <span class="mx-4 text-orange-600">to</span>
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                                        </svg>
-                                    </div>
-
-                                    <input id="end" name="end" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select end">
-                                </div>
-                            </div>
-
-                            <br>
-                            <label for="quantity-input" class="block mb-2 text-sm text-gray-900 dark:text-white font-semibold">Quantity:</label>
-                            <div class="relative flex items-center max-w-[8rem]">
-                                <button type="button" id="decrement-button" data-input-counter-decrement="quantity" class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 p-3 h-9 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none text-center">
-                                    <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
-                                    </svg>
-                                </button>
-
-                                <input name="quantity" type="text" id="quantity" data-input-counter data-input-counter-min="1" data-input-counter-max="50" aria-describedby="helper-text-explanation" class="bg-gray-50 border-x-0 border-gray-300 h-9 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-0.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="999" value="1">
-
-                                <button type="button" id="increment-button" data-input-counter-increment="quantity" class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 p-3 h-9 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
-                                    <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <br>
-                            <label for="" class="block mb-2 text-sm font-semibold text-gray-900 dark:text-white">Select an payment</label>
-                            <select id="payment" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="payment">
-                                <option selected value="counter">Over the counter</option>
-                                <option value="Gcash">Gcash</option>
-                            </select>
-
-                            <br>
-                            <button id="addtoCart" type="submit" class=" text-blue-700 bg-blue-200  hover:bg-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 addtoCart" name="addcart"><i class="fa-solid fa-cart-plus pr-4"></i>Add to cart</button>
-
-                            <button type="submit" class="left-0 ml-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium  text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 " name="get-preffered-item">Get</button>
-
-                        </form>
-
-                        <button type="submit" data-modal-target="rate-item-modal" data-modal-toggle="rate-item-modal">Add</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-    </div> -->
-
-    <!-- <div class="bg-white border border-gray-200 items-comments">
-        <section>
-            <?php foreach ($rating as $rating_row) { ?>
-                <div class="relative group overflow-hidden py-4 border-b-2 border-gray-200 dark:border-gray-800" style="margin-block: 20px; width: 50%; padding-inline: 2rem; height: auto; width: auto; margin-inline: 20px">
-
-                    <div class="relative rate-box-data">
-
-                        <div class="mt-6 rounded-b-[--card-border-radius]">
-                            <p><?= $rating_row['client_username']; ?></p>
-                            <p>
-                                <?php for ($i = 1; $i <= 5; $i++) { ?>
-                                    <i class="fa-regular fa-star <?= $i <= $rating_row['rating_data'] ? 'text-yellow-300 fa-solid' : '' ?>" id="submit--<?= $i ?>" data-rating-star="<?= $i ?>" style="font-size: 9px; margin-top: -20px;"></i>
-                                <?php } ?>
-                            </p>
-                            <p style="font-size: 9px; margin-bottom: 20px">
-                                <?= $rating_row['date_posted']; ?>
-                            </p>
-
-                            <span class="text-gray-500 dark:text-gray-300 text-sm ">Quality: </span>
-                            <span class="text-sm"><?= $rating_row['comments']; ?></span>
-                            <br>
-                            <span class="text-gray-500 dark:text-gray-300 text-sm ">Service: </span>
-                            <span class="text-sm"><?= $rating_row['comments']; ?></span>
-                            <br>
-                            <p class="text-gray-700 dark:text-gray-300"><?= $rating_row['comments']; ?></p>
-                        </div>
-
-                        <div class="flex gap-3 -mb-8 py-4">
-                            <a href="#" class="group rounded-xl disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 flex gap-1.5 items-center text-sm h-8 px-3.5 justify-center">
-                                <i class="fa-regular fa-thumbs-up" style="font-size: 15px; color: grey;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
-        </section>
-    </div> -->
-
-    <?php
+    <?php } 
     include('user-footer.php');
     include('load-modals.php');
     ?>
@@ -595,7 +415,6 @@ include('../data/user-checkout.php');
                     }
                 });
             });
-
 
             //! check out
             $('#checkoutItem').on('click', function() {

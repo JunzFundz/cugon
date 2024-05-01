@@ -1,9 +1,15 @@
 <?php
 session_start();
+if (strlen($_SESSION['user_id'] == 0)) {
+    header('location: ../database/logout.php');
+} else {
 include('user-header.php');
 include('../data/user-checkout.php');
 ?>
-
+<title>Place item</title>
+<script type="text/javascript">
+    window.history.forward();
+</script>
 <!-- container -->
 <div class="placed-item-container">
 
@@ -200,7 +206,7 @@ include('../data/user-checkout.php');
 
                             <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                
+
                             </svg>
                             <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Confirm Request?</h3>
                             <button data-modal-hide="popup-modal" onclick="return submitDetails(this)" type="submit" id="placedSingleBooking" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
@@ -215,8 +221,6 @@ include('../data/user-checkout.php');
             <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center placedSingleBooking">Placed Booking</button>
         </div>
     </div>
-
-    
 
     <script>
         $(document).ready(function() {
@@ -244,4 +248,5 @@ include('../data/user-checkout.php');
     </script>
 
 </div>
-<?php include('user-footer.php') ?>
+<?php include('user-footer.php') ?>    
+<?php } ?>

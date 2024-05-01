@@ -5,10 +5,15 @@ include('../class/Transactions.php');
 
 if (isset($_POST['check_records'])) {
 
-        $userID = $_POST['userID'];
+        $userID =  filter_var($_POST['userID'], FILTER_SANITIZE_NUMBER_INT);
+        $tNumber = filter_var($_POST['t_number'], FILTER_SANITIZE_NUMBER_INT);
+
+        if (is_null($userID) || is_null($tNumber)) {
+                die('Missing userID or tNumber.');
+        }
 
         $records = new Transactions();
-        $result = $records->userRecords($userID);
+        $result = $records->userRecords($userID, $tNumber);
 
         if ($result && $result->num_rows > 0) {
                 $groupedRecords = [];
@@ -22,11 +27,10 @@ if (isset($_POST['check_records'])) {
                         $currentDate = date_create();
 
                         if ($rows['reg_date'] === '0000-00-00' || $rows['reg_date'] == '') {
-
                                 if ($currentDate->format('Y-m-d') == $date1->format('Y-m-d')) {
                                         print "The start date is today and end in " . $date2->format('Y-m-d');
                                 } else if ($currentDate->format('Y-m-d') > $date2->format('Y-m-d')) {
-                                        echo"Session expired";
+                                        echo "Session expired";
                                 } else {
                                         print "It will start on " . $date1->format('M d ') . " and ends in " . $date2->format('d D, Y');
                                 }
@@ -34,7 +38,7 @@ if (isset($_POST['check_records'])) {
                                 if ($currentDate->format('Y-m-d') == $regDate->format('Y-m-d')) {
                                         print "The start date is today.";
                                 } else if ($currentDate->format('Y-m-d') > $regDate->format('Y-m-d')) {
-                                        echo"Session expired";
+                                        echo "Session expired";
                                 } else {
                                         print "Will start on " . $regDate->format('M d, Y');
                                 }
@@ -94,11 +98,6 @@ if (isset($_POST['check_records'])) {
                                                         </tr>
                                                 </tbody>
                                         </table>
-                                        <!-- <h6 style="font-size: small; color: grey; float:right">Subtotal: ₱<?= number_format($totalSubtotal) ?></h6><br>
-                                        <h6 style="font-size: small; color: grey; float:right">Total: ₱<?= number_format($totaldays * $totalSubtotal) ?></h6><br>
-                                        <h6 style="font-size: medium; color: red; float:right"><?= $rows['status'] ?></h6> -->
-
-                                        <a href="receipt.php?user_id=<?= $rows['user_id'] ?>">Receipt</a>
                                 </div>
                         </div>
                         <br>

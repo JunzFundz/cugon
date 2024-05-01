@@ -2,11 +2,12 @@
 
 include('../class/Transactions.php');
 
-if (isset($_GET['user_id'])) {
-    $userID = $_GET['user_id'];
+if (isset($_GET['user_id'])  && isset($_GET['transaction_number'])) {
+    $userID = filter_var($_GET['user_id'], FILTER_SANITIZE_NUMBER_INT);
+    $tNumber = filter_var($_GET['transaction_number'], FILTER_SANITIZE_NUMBER_INT);
 
     $records = new Transactions();
-    $result = $records->printReceipt($userID);
+    $result = $records->printReceipt($userID, $tNumber);
 }
 ?>
 <link rel="stylesheet" href="../src/print.css">
@@ -18,14 +19,11 @@ if (isset($_GET['user_id'])) {
         <div class="col-lg-12">
             <div class="card">
                 <?php
-    if ($result['num_rows'] > 0) {
-        $data = $result['data'];
 
-        foreach ($data as $rows) {
-                ?>
+        foreach ($result as $rows) { ?>
                         <div class="card-body">
                             <div class="invoice-title">
-                                <h4 class="float-end"><span class="badge bg-success font-size-12 ms-2">Paid</span></h4>
+                                <h4 class="float-end"><span class="badge bg-danger font-size-12 ms-2">Paid</span></h4>
                                 <div class="mb-4">
                                     <h2 class="mb-1 text-muted">Cugon Bamboo Resort</h2>
                                 </div>
@@ -35,7 +33,6 @@ if (isset($_GET['user_id'])) {
                                     <p><i class="uil uil-phone me-1"></i> 012-345-6789</p>
                                 </div>
                             </div>
-
                             <hr class="my-4">
 
                             <div class="row">
@@ -83,27 +80,15 @@ if (isset($_GET['user_id'])) {
                                                 <th style="font-size: small; font-weight:600;">Total</th>
                                             </tr>
                                         </thead>
-                                        <?php
-                                        $resNumbers = explode(',', $rows['res_numbers']);
-                                        $items = explode(',', $rows['item_names']);
-                                        $prices = explode(',', $rows['item_prices']);
-                                        $quantity = explode(',', $rows['quantity']);
-                                        $totalSubtotal = 0;
-                                        for ($i = 0; $i < count($resNumbers); $i++) {
-                                            $subtotal = $quantity[$i] * $prices[$i];
-                                            $totalSubtotal += $subtotal;
-
-                                        ?>
                                             <tbody>
                                                 <tr>
-                                                    <td style="font-size: small; color: grey;"><?= $resNumbers[$i] ?></td>
-                                                    <td style="font-size: small; color: grey;"><?= $items[$i] ?></td>
-                                                    <td style="font-size: small; color: grey;"><?= $prices[$i] ?></td>
-                                                    <td style="font-size: small; color: grey;"><?= $quantity[$i] ?></td>
-                                                    <td style="font-size: small; color: grey;"><?= $subtotal?></td>
+                                                    <td style="font-size: small; color: grey;"><?= $rows['i_name'] ?></td>
+                                                    <td style="font-size: small; color: grey;"><?= $rows['res_number'] ?></td>
+                                                    <td style="font-size: small; color: grey;"><?= $rows['i_price'] ?></td>
+                                                    <td style="font-size: small; color: grey;"><?= $rows['quantity'] ?></td>
+                                                    <td style="font-size: small; color: grey;"></td>
                                                 </tr>
                                             </tbody>
-                                        <?php } ?>
                                     </table>
                                 </div>
 
@@ -117,7 +102,6 @@ if (isset($_GET['user_id'])) {
                         </div>
                 <?php
                     }
-                }
                 ?>
             </div>
         </div><!-- end col -->

@@ -1,5 +1,12 @@
 <?php
 include('../data/data-booking.php');
+require_once('../database/Connection.php');
+$db = new Dbh();
+$conn = $db->connect();
+
+$stmt = $conn->query("SELECT  * FROM orders WHERE status = 'Waiting'");
+
+$count = 1;
 ?>
 
 <style>
@@ -314,154 +321,155 @@ include('../data/data-booking.php');
     }
 </style>
 
-<div class="container">
+<ul class="nav nav-fill nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="fill-tab-0" data-bs-toggle="tab" href="#fill-tabpanel-0" role="tab" aria-controls="fill-tabpanel-0" aria-selected="true"> Requests </a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="fill-tab-1" data-bs-toggle="tab" href="#fill-tabpanel-1" role="tab" aria-controls="fill-tabpanel-1" aria-selected="false"> Transactions </a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="fill-tab-2" data-bs-toggle="tab" href="#fill-tabpanel-2" role="tab" aria-controls="fill-tabpanel-2" aria-selected="false"> Food orders </a>
+    </li>
+</ul>
 
-    <div style="display:flex; gap:2rem; height: 95dvh">
-        <!-- left content -->
-        <div class="block left--content" style="width: 70%; overflow: auto;">
-            <div class="alert alert-primary" style="position:sticky; top:0; z-index:2; width: 100%;" role="alert">
-                <div class="d-flex gap-4">
-                    <span>
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <g fill="rgb(12, 102, 228)" fill-rule="evenodd">
-                                <path d="M10.935 6v4.738L6.997 19h10.005l-3.938-8.262V6h-2.129zm7.873 12.14A2 2 0 0117.002 21H6.997a2 2 0 01-1.805-2.86l3.743-7.854V4h6.13v6.286l3.743 7.853z" fill-rule="nonzero"></path>
-                                <path d="M9 13h6l3 7H6z"></path>
-                                <rect x="8" y="3" width="8" height="2" rx="1"></rect>
-                            </g>
-                        </svg></span>
-                    <div class="d-flex flex-column gap-2">
-                        <h6 class="mb-0">Requests</h6>
-                        <p class="mb-0"> </p>
-                    </div>
-                </div>
-            </div>
+<div class="tab-content pt-5" id="tab-content">
 
-            <?php if ($result) {
-                foreach ($result as $rows) { ?>
+    <div class="tab-pane active" id="fill-tabpanel-0" role="tabpanel" aria-labelledby="fill-tab-0">
+        <div class="">
 
-                    <div class="col-lg-4" style="width: 100%;">
-                        <div class="card card-margin">
-                            <div class="card-header no-border">
-                                <h5 class="card-title">
-                                    <?= date_format(date_create($rows['created_at']), 'H:m A'); ?>
-                                </h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="widget-49">
+            <div style="display:flex; gap:2rem; height: 95dvh">
+                <!-- left content -->
+                <div class="block left--content" style="width: 70%; overflow: auto;">
 
-                                    <div class="widget-49-title-wrapper">
-                                        <div class="widget-49-date-primary">
-                                            <span class="widget-49-date-day"><?= date_format(date_create($rows['created_at']), 'd'); ?></span>
-                                            <span class="widget-49-date-month"><?= date_format(date_create($rows['created_at']), 'M '); ?></span>
-                                        </div>
-                                        <div class="widget-49-meeting-info">
-                                            <span class="widget-49-pro-title"><?= $rows['email']; ?></span>
-                                            <span class="widget-49-meeting-time"><?= $rows['phone']; ?></span>
-                                            <span class="widget-49-meeting-time">
-                                                <?php
-                                                $date_booked = '';
+                    <?php if ($result) {
+                        foreach ($result as $rows) { ?>
 
-                                                if ($rows['reg_date'] === '0000-00-00' || $rows['reg_date'] == '') {
-                                                    $date_booked = date_format(date_create($rows['start']), 'M d') . '-' . date_format(date_create($rows['end']), 'd Y');
-                                                    print $date_booked;
-                                                } else {
-                                                    $date_booked = date_format(date_create($rows['reg_date']), 'M d, Y');
-                                                    print $date_booked;
-                                                }
-                                                ?>
-                                            </span>
+                            <div class="col-lg-4" style="width: 100%;">
+                                <div class="card card-margin">
+                                    <div class="card-header no-border">
+                                        <h5 class="card-title">
+                                            <?= date_format(date_create($rows['created_at']), 'H:m A'); ?>
+                                        </h5>
+                                    </div>
+                                    <div class="card-body pt-0">
+                                        <div class="widget-49">
+
+                                            <div class="widget-49-title-wrapper">
+                                                <div class="widget-49-date-primary">
+                                                    <span class="widget-49-date-day"><?= date_format(date_create($rows['created_at']), 'd'); ?></span>
+                                                    <span class="widget-49-date-month"><?= date_format(date_create($rows['created_at']), 'M '); ?></span>
+                                                </div>
+                                                <div class="widget-49-meeting-info">
+                                                    <span class="widget-49-pro-title"><?= $rows['email']; ?></span>
+                                                    <span class="widget-49-meeting-time"><?= $rows['phone']; ?></span>
+                                                    <span class="widget-49-meeting-time">
+                                                        <?php
+                                                        $date_booked = '';
+
+                                                        if ($rows['reg_date'] === '0000-00-00' || $rows['reg_date'] == '') {
+                                                            $date_booked = date_format(date_create($rows['start']), 'M d') . '-' . date_format(date_create($rows['end']), 'd Y');
+                                                            print $date_booked;
+                                                        } else {
+                                                            $date_booked = date_format(date_create($rows['reg_date']), 'M d, Y');
+                                                            print $date_booked;
+                                                        }
+                                                        ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="widget-49-meeting-action" style="float: right;">
+
+                                                <button class="btn--view viewButton" data-user_id="<?= $rows['user_id']; ?>" data-res_id="<?= $rows['res_id']; ?>" data-item_id="<?= $rows['item_id']; ?>">
+                                                    View
+                                                </button>
+
+                                                <button class="btn--approve get-item-id approval-request" data-user_id="<?= $rows['user_id']; ?>" data-res_id="<?= $rows['res_id']; ?>" data-item_id="<?= $rows['item_id']; ?>" data-item_name="<?= $rows['item_name']; ?>" data-res_num="<?= $rows['res_number']; ?>" data-total_amount="<?= $rows['total']; ?>" data-quantity="<?= $rows['quantity']; ?>" data-date="<?php echo $date_booked; ?>">Approve
+                                                </button>
+
+                                                <button data-bs-toggle="modal" data-bs-target="#decline-request" type="button" class="btn btn-sm btn-flash-border-primary declineButton btn--decline" data-user_id="<?= $rows['user_id']; ?>" data-res_id="<?= $rows['res_id']; ?>" data-res_num="<?= $rows['res_number']; ?>">
+                                                    Decline
+                                                </button>
+
+                                            </div>
+
                                         </div>
                                     </div>
-
-                                    <div class="widget-49-meeting-action" style="float: right;">
-
-                                        <button class="btn--view viewButton" data-user_id="<?= $rows['user_id']; ?>" data-res_id="<?= $rows['res_id']; ?>" data-item_id="<?= $rows['item_id']; ?>">
-                                            View
-                                        </button>
-
-                                        <button class="btn--approve get-item-id approval-request" data-user_id="<?= $rows['user_id']; ?>" 
-                                        data-res_id="<?= $rows['res_id']; ?>" 
-                                        data-item_id="<?= $rows['item_id']; ?>" 
-                                        data-item_name="<?= $rows['item_name']; ?>" 
-                                        data-res_num="<?= $rows['res_number']; ?>" 
-                                        data-total_amount="<?= $rows['total']; ?>"
-                                        data-quantity="<?= $rows['quantity']; ?>"
-                                        data-date="<?php echo $date_booked; ?>">Approve
-                                        </button>
-
-                                        <button class="btn--decline" data-bs-toggle="modal" data-bs-target="#decline-request" type="button" class="btn btn-sm btn-flash-border-primary declineButton" data-user_id="<?= $rows['user_id']; ?>" data-res_id="<?= $rows['res_id']; ?>" data-res_num="<?= $rows['res_number']; ?>">
-                                            Decline
-                                        </button>
-
-                                    </div>
-
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-            <?php }
-            } else {
-                echo "<tr><td colspan='7'>No Data Found.</td></tr>";
-            } ?>
-        </div>
-        <!-- end left content -->
+                    <?php }
+                    } else {
+                        echo "<tr><td colspan='7'>No Data Found.</td></tr>";
+                    } ?>
+                </div>
+                <!-- end left content -->
 
-        <!-- right content -->
-        <div class="block right--content" style="width: 30%; overflow: auto; height: 95dvh">
+                <!-- right content -->
+                <div class="block right--content" style="width: 30%; overflow: auto; height: 95dvh">
 
-            <?php if ($statusRequest) {
-                foreach ($statusRequest as $rows) { ?>
-                    <div class="card--past">
-                        <div class="textBox">
-                            <div class="textContent">
-                                <span class="span"><?= $rows['email']; ?></span>
+                    <?php if ($statusRequest) {
+                        foreach ($statusRequest as $rows) { ?>
+                            <div class="card--past">
+                                <div class="textBox">
+                                    <div class="textContent">
+                                        <span class="span"><?= $rows['email']; ?></span>
+                                    </div>
+                                    <p class="p"><?= $rows['phone']; ?></p>
+                                    <span class="span"><?= $rows['status']; ?></span>
+                                    <div>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="p"><?= $rows['phone']; ?></p>
-                            <span class="span"><?= $rows['status']; ?></span>
-                            <div>
-                            </div>
-                        </div>
-                    </div>
-            <?php }
-            } else {
-                echo "<tr><td colspan='7'>No Data Found.</td></tr>";
-            } ?>
+                    <?php }
+                    } else {
+                        echo "<tr><td colspan='7'>No Data Found.</td></tr>";
+                    } ?>
+                </div>
+            </div>
         </div>
-        <!-- end right content -->
+    </div>
+
+    <div class="tab-pane" id="fill-tabpanel-1" role="tabpanel" aria-labelledby="fill-tab-1">
+        <?php include('transactions.php') ?>
+    </div>
+
+    <div class="tab-pane" id="fill-tabpanel-2" role="tabpane2" aria-labelledby="fill-tab-2">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Clients Name</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Serves</th>
+                    <th scope="col">Room</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($stmt as $row) { ?>
+                    <tr>
+                        <th scope="row"><?= $count++ ?></th>
+                        <td><?= htmlspecialchars($row['price']) ?></td>
+                        <td><?= htmlspecialchars($row['food_name']) ?></td>
+                        <td><?= htmlspecialchars($row['user_name']) ?></td>
+                        <td><?= htmlspecialchars($row['user_number']) ?></td>
+                        <td><?= htmlspecialchars($row['serves']) ?></td>
+                        <td><?= htmlspecialchars($row['room']) ?></td>
+                        <td><?= htmlspecialchars($row['msg']) ?></td>
+                        <td><?= htmlspecialchars($row['order_date']) ?></td>
+                        <td>
+                            <button type="button" class="btn btn-discovery set-delivered" data-order-id="<?= htmlspecialchars($row['order_id']) ?>" data-user-id="<?= htmlspecialchars($row['user_id']) ?>">Delivered</button>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
     </div>
 </div>
-
-<?php
-include('load-modals.php');
-?>
-
-<script>
-    $(document).ready(function(content) {
-        $('#myTable').DataTable();
-
-        $('.decline-btn').on('click', function() {
-            const user_id = $(this).data('user_id');
-            const res_id = $(this).data('res_id');
-            const res_number = $(this).data('res_num');
-            const reason = $('input[name="flexRadioDefault"]:checked').next('label').text();
-
-            console.log(user_id)
-            $.ajax({
-                url: '../data/admin-decline-request.php',
-                type: 'post',
-                data: {
-                    'decline_request': true,
-                    'id': user_id,
-                    'res_id': res_id,
-                    'res_number': res_number,
-                    'reason': reason
-                },
-                success: function() {
-                    alert("Request Declined");
-                    location.reload();
-                }
-            })
-        })
-    })
-</script>

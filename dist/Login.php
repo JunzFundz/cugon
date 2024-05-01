@@ -119,6 +119,5 @@ require('../config.php');
     </div>
 </div>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 <script src="../assets/signup.js"></script>

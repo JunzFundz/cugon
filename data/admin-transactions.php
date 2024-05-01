@@ -3,7 +3,7 @@
 require('../class/Transactions.php');
 
 $see_all = new Transactions();
-$result = $see_all->get_users_transactions();
+$result_get = $see_all->get_users_transactions();
 
 
 if (isset($_POST['time_in'])) {

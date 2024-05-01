@@ -4,8 +4,8 @@ require_once('../class/Login.php');
 
 if (isset($_POST['login-user'])) {
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $password = trim($_POST['password']);
 
     $login = new Login();
     $result = $login->login($password, $email);

@@ -12,6 +12,43 @@ body {
     }
 }
 
+.history-- {
+    width: 100%;
+    padding-right: auto;
+    padding-block: 1%;
+    padding-left: 5%;
+    background-color: #7090ac9b;
+    position: sticky;
+    top: 0;
+}
+
+.rate-- {
+    width: 100%;
+    padding-right: auto;
+    padding-block: 1%;
+    padding-left: 5%;
+    background-color: #70ac8e9b;
+    position: sticky;
+    top: 0;
+}
+
+:root {
+    --padding-inline: 10rem;
+    --padding-block: 0.4em;
+}
+
+.loading--screen {
+    background-color: #ffffff88;
+}
+
+#item--main {
+    padding-inline: var(--padding-inline);
+
+    section {
+        margin-block: var(--padding-block);
+    }
+}
+
 /* search */
 .search-results {
     width: 20rem;
@@ -163,7 +200,7 @@ body {
 }
 
 .user-right-section {
-    grid-column: 10/12;
+    grid-column: 10/13;
     height: 80vh;
 }
 
@@ -202,7 +239,8 @@ body {
     height: auto;
     width: 100%;
 }
-#transaction--body{
+
+#transaction--body {
     margin: 2rem auto 0 auto;
 }
 
@@ -220,6 +258,7 @@ body {
     margin: 5px;
     display: inline-block;
 }
+
 .new-checkout {
     margin-right: -20px;
 }
@@ -232,7 +271,7 @@ body {
 .image-prod {
     object-fit: contain;
     aspect-ratio: 3/2;
-    width: 200%;
+    width: 100%;
 }
 
 .cart {
@@ -432,7 +471,7 @@ body {
     flex-direction: column;
     margin-bottom: 15px;
 
-    .item-name--{
+    .item-name-- {
         padding-left: 0.8rem;
         padding-block: 0.8rem;
         border-bottom: 2px solid rgb(226, 226, 226);
@@ -554,9 +593,8 @@ body {
     margin: 40px;
 }
 
-
 /*! alertbox */
-.custom-icon-class .swal2-icon svg {
+/* .custom-icon-class .swal2-icon svg {
     width: 10px;
     height: 10px;
 }
@@ -568,7 +606,7 @@ body {
 
 .custom-title {
     font-size: 15px;
-}
+} */
 
 /*! custom */
 #alert-box {
@@ -579,7 +617,7 @@ body {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100vh;
-    background-color: #ffffff89;
+    background-color: #7d95e260;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -588,11 +626,13 @@ body {
 }
 
 #alert-text {
-    background-color: rgba(0, 0, 0, 0.764);
-    padding: 50px 50px;
-    border-radius: 3px;
+    /* background-color: rgba(0, 0, 0, 0.764); */
+    margin-top: 10px;
+    margin-bottom: -15px;
+    padding: 5px 10px;
+    /* border-radius: 3px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 500; */
 }
 
 /*! search bar */

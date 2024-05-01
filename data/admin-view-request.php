@@ -3,10 +3,12 @@
 require('../class/Booking.php');
 
 
+        //security to my output
+
 if (isset($_POST['getUserRequest'])) {
-        $userID = $_POST['userID'];
-        $resID = $_POST['resID'];
-        $itemID = $_POST['itemID'];
+        $userID = filter_input(INPUT_POST, 'userID', FILTER_VALIDATE_INT);
+        $resID = filter_input(INPUT_POST, 'resID', FILTER_VALIDATE_INT);
+        $itemID = filter_input(INPUT_POST, 'itemID', FILTER_VALIDATE_INT);
 
         $booking = new Booking();
         $result = $booking->viewRequest($userID, $resID, $itemID);
@@ -24,8 +26,7 @@ if (isset($_POST['getUserRequest'])) {
                                 $dates = $date1->format('M d ') . " to " . $date2->format('d D, Y');
                         } else {
                                 $dates = $regDate->format('M d, Y');
-                        }
-?>
+                        } ?>
 
                         <div style="margin: 20px;">
                                 <div class="row">
@@ -72,8 +73,7 @@ if (isset($_POST['getUserRequest'])) {
                         </div>
 
                         <br>
-<?php
-                }
+<?php }
         } else {
                 echo "No records found.";
         }

@@ -1,5 +1,5 @@
 <?php
-require('../database/Connection.php');
+require_once('../database/Connection.php');
 require '../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -51,25 +51,28 @@ class Transactions extends Dbh
         }
     }
 
-    public function userAlltran($userId)
+    public function userAllTransactions($userId)
     {
-        $sql = "SELECT *
-        FROM res_tb
-        INNER JOIN users ON res_tb.user_id = users.user_id 
-        INNER JOIN items ON res_tb.item_id = items.i_id 
-        WHERE users.user_id= '$userId' AND res_tb.status IN ('Approved', 'Cancelled', 'Declined')";
-
-        $result = $this->connect()->query($sql);
-
+        $sql = " SELECT res_tb.*, users.*, items.*
+            FROM res_tb
+            INNER JOIN users ON res_tb.user_id = users.user_id
+            INNER JOIN items ON res_tb.item_id = items.i_id
+            WHERE users.user_id =?";
+    
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
         if ($result && $result->num_rows > 0) {
             $transactions = array();
-
+    
             while ($row = $result->fetch_assoc()) {
                 $date1 = date_create($row['start']);
                 $date2 = date_create($row['end']);
                 $interval = date_diff($date1, $date2);
                 $days = $interval->days * 24;
-
+    
                 $row['duration_hours'] = $days;
                 $transactions[] = $row;
             }
@@ -103,41 +106,35 @@ class Transactions extends Dbh
         $mail->send();
     }
 
-    public function userRecords($userID)
-    {
-        $sql = "SELECT res.*, us.*
+    public function userRecords($userID, $tNumber) {
+        $stmt = $this->connect()->prepare("SELECT *
                 FROM res_tb res
-                INNER JOIN users us ON res.user_id = us.user_id
-                WHERE res.user_id =? AND res.status = 'Approved'";
+                INNER JOIN users us
+                INNER JOIN transactions tr 
+                ON res.user_id = tr.user_id
+                WHERE us.user_id = ? AND res.status = 'Approved' AND tr.transaction_number = ?");
 
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->bind_param("i", $userID);
+        $stmt->bind_param("ii", $userID, $tNumber);
         $stmt->execute();
         $result = $stmt->get_result();
 
         return $result;
     }
 
-    public function printReceipt($userID)
+    public function printReceipt($userID, $tNumber)
     {
-        $sql = $this->connect()->prepare("SELECT transactions.*, users.*, items.*, res_tb.quantity 
+        $sql = $this->connect()->prepare("SELECT transactions.transaction_number, users.*, items.*, res_tb.quantity, res_tb.res_number
         FROM transactions
         INNER JOIN users ON transactions.user_id = users.user_id
         INNER JOIN items ON transactions.item_id = items.i_id
         INNER JOIN res_tb ON transactions.reservation_number = res_tb.res_number
-        WHERE transactions.status='Paid' AND transactions.user_id=?");
+        WHERE transactions.status='Paid' AND transactions.user_id=? AND transactions.transaction_number=?");
     
-        $sql->bind_param("i", $userID);
+        $sql->bind_param("ii", $userID, $tNumber);
         $sql->execute();
-    
         $result = $sql->get_result();
-        $data = [];
-    
-        while ($row = $result->fetch_assoc()) {
-            $data[] = $row;
-        }
-    
-        return ['data' => $data, 'num_rows' => count($data)];
+
+        return $result;
     }
 
     public function startIn($user, $t_number, $r_number)

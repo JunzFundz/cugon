@@ -26,7 +26,7 @@
     <div class="flexitems-center mx-auto max-w-screen-xl p-4">
         <ul class="nav-top-section flex flexitems-center mx-auto justify-between">
             <li class="">
-                <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <a href="home" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="../images/logo.jpg" class="logo-img" alt="Cugon logo" />
                     <span class="logo-text self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Cugon Bamboo Resort</span>
                 </a>
@@ -61,6 +61,7 @@
                 <div class="nav-menu flex items-center space-x-6 rtl:space-x-reverse">
                     <div class="flex flex-row svg-buttons lower-nav---" data-user_id="<?php echo $user_id; ?>">
                         <div class="nav----">
+
                             <a id="cart-nav-btn" href="cart.php?user_id=<?php echo $user_id; ?>" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <span class="sr-only">Cart</span>
@@ -68,11 +69,18 @@
                                 <div id="cart-badge" class="cart--display invisible absolute inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full  dark:border-gray-900"></div>
                             </a>
 
-                            <a id="not-nav-btn" data-modal-target="notif-modal" data-modal-toggle="notif-modal" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none user-notification" data-user_id="<?php echo $user_id; ?>">
+                            <a id="not-nav-btn" data-dropdown-toggle="notification-dropdown" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none user-notification" data-user_id="<?php echo $user_id; ?>">
                                 <i class="fa-solid fa-bell"></i>
                                 <span class="sr-only">Notification</span>
                                 <div id="notification-badge" class="absolute inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900"></div>
                             </a>
+
+                            <!-- <button type="button" data-user_id="<?php echo $user_id; ?>" data-dropdown-toggle="notification-dropdown" class="p-2 mr-1 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 user-notification">
+                                <span class="sr-only">View notifications</span>
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 20">
+                                    <path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57.946.946 0 0 0 8 3.464V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z" />
+                                </svg>
+                            </button> -->
 
                             <a id="map-nav-btn" data-modal-target="map-modal" data-modal-toggle="map-modal" href="#" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none user-notification" type="a">
                                 <i class="fa-solid fa-map-location-dot"></i>
@@ -91,29 +99,24 @@
                     <div id="email-hover" class="email-hover hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="email-hover">
                             <li>
-                                <a href="profile.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+                                <a href="profile.php?user_id=<?php echo $user_id ?>&&email=<?php echo $_SESSION['email']; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
                             </li>
                             <li>
-                                <a href="Transactions.php?userId=<?php echo $user_id; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Transactions</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                                <a href="Transactions.php?userId=<?php echo $user_id; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bookings</a>
                             </li>
                             <li>
                                 <a href="../database/logout.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
                             </li>
                         </ul>
                     </div>
+
                     <div id="prof-hover" class="hover-nav hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="prof-hover">
                             <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+                                <a href="profile.php?user_id=<?php echo $user_id ?>&&email=<?php echo $_SESSION['email']; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
                             </li>
                             <li>
-                                <a href="Transactions.php?userId=<?php echo $user_id; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Transactions</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                                <a href="Transactions.php?userId=<?php echo $user_id; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bookings</a>
                             </li>
                             <li>
                                 <a href="../database/logout.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
@@ -140,9 +143,9 @@
                         <div id="cart-badgeii" class="absolute invisible inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full  dark:border-gray-900"></div>
                     </a>
                 </li>
-                
+
                 <li>
-                    <a id="not-nav-btn" data-modal-target="notif-modal" data-modal-toggle="notif-modal" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none user-notification" data-user_id="<?php echo $user_id; ?>">
+                    <a id="not-nav-btn" data-dropdown-toggle="notification-dropdown2" class="cursor-pointer relative inline-flex text-lg items-center p-3 font-medium text-center text-gray-600 rounded-lg focus:outline-none user-notification" data-user_id="<?php echo $user_id; ?>">
                         <i class="fa-solid fa-bell"></i>
                         <span class="sr-only">Notification</span>
                         <div class="absolute inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900"></div>
@@ -201,31 +204,21 @@
 </nav>
 
 <!-- Notif modal -->
-<div id="notif-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full notif-modal">
-    <div class="relative p-4 w-full max-w-2xl max-h-full modal-notif-cos">
-        <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 modal-notif--">
-            <!-- Modal header -->
-            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                <h5 class="font-semibold text-gray-900 dark:text-white">
-                    Notifications
-                </h5>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="notif-modal">
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                </button>
-            </div>
-            <!-- Modal body -->
-            <div class="p-4 md:p-5 space-y-4 notif-modal-body">
+<div class="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700" id="notification-dropdown">
+    <div class="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        Notifications
+    </div>
+    <div class="notif-body" style="height: 60vh; overflow: auto">
 
-            </div>
-            <!-- Modal footer -->
-            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                <h6>Powerd by Flowbite Tailwind CSS</h6>
-            </div>
-        </div>
+    </div>
+</div>
+
+<div class="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700" id="notification-dropdown2">
+    <div class="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        Notifications
+    </div>
+    <div class="notif-body" style="height: 60vh; overflow: auto">
+
     </div>
 </div>
 

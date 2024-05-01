@@ -30,7 +30,6 @@ class Login extends Dbh
         $mail->Body = 'Hello ' . $email . ',<br><br>Please confirm your email by clicking the confirm button.<br><br>
         <a href="http://localhost/cugon/dist/new-password?email=' . $email . '" type="button" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Teal to Lime</a>
         <br>';
-
         $mail->send();
     }
 
@@ -49,7 +48,7 @@ class Login extends Dbh
                     $_SESSION['user_id'] = $row["user_id"];
                     $_SESSION['email'] = $row["email"];
 
-                    $redirect = ($_SESSION['user_id'] === 321) ? '../Admin/welcome.php' : '../User/Items.php';
+                    $redirect = ($_SESSION['user_id'] === 321) ? '../Admin/admin.php' : '../User/items.php';
 
                     return [
                         'success' => true,

@@ -17,11 +17,8 @@
                         <input type="text" id="" name="i_name" class="form-control" placeholder="Name" required>
                     </div>
 
-                    <select class="form-select form-select-sm" aria-label="Small select example" id="" name="i_type" required>
+                    <select class="form-select form-select-sm" aria-label="Small select example" id="i_type" name="i_type" required>
                         <option selected>Choose type</option>
-                        <option value="Rooms">Rooms</option>
-                        <option value="Cottages">Cottages</option>
-                        <option value="Foods">Foods</option>
                     </select>
 
                     <div class="mb-3 mt-7">
@@ -55,3 +52,31 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#add-modal').on('show.bs.modal', function(event) {
+            var modal = $(this);
+
+            $.ajax({
+                url: '../data/admin-fetch-type.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success) {
+                        var options = '';
+                        $.each(response.types, function(index, value) {
+                            options += '<option value="' + value.type + '">' + value.type + '</option>';
+                        });
+                        $('#i_type').html('<option selected>Choose type</option>' + options);
+                    } else {
+                        alert('Error fetching data');
+                    }
+                },
+                error: function() {
+                    alert('Error fetching data');
+                }
+            });
+        });
+    });
+</script>

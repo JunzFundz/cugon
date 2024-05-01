@@ -15,24 +15,24 @@ if (isset($_GET['i_id'])) {
     $ratings = $ratingdata['ratings'];
     $ratingCounts = $ratingdata['counts'];
 
-    function calculateAverageRating($ratingCounts) {
+    function calculateAverageRating($ratingCounts)
+    {
         $totalRating = 0;
         $totalReviews = 0;
-    
+
         foreach ($ratingCounts as $rating => $count) {
             $totalRating += $rating * $count;
             $totalReviews += $count;
         }
-    
+
         if ($totalReviews == 0) {
             return 0;
         }
-    
+
         return $totalRating / $totalReviews;
     }
 
     $averageRating = calculateAverageRating($ratingCounts);
-    
 }
 
 if (isset($_POST['get-preffered-item'])) {
@@ -43,21 +43,32 @@ if (isset($_POST['get-preffered-item'])) {
     $available = $_POST['available'];
     $payment = $_POST['payment'];
 
+    date_default_timezone_set('Asia/Manila');
+    $date = new DateTime();
+    $get_date = $date->format('Y-m-d');
+
     if ($dateOptions == 'reg') {
-        
-        $regular_date = date("Y-m-d", strtotime($_POST['regular_date']));
+        $regular_date = filter_input(INPUT_POST, 'regular_date', FILTER_SANITIZE_SPECIAL_CHARS);
+        $date = date("Y-m-d", strtotime($regular_date));
+
+        if ($get_date >= $regular_date) {
+            return false;
+        }
+
         $price = $_POST['price'];
         $quantity = $_POST['quantity'];
 
         $totaldays = 1;
         $totalcost = $price * $quantity;
 
-    }else if ($dateOptions == 'stay') {
+        return true;
+    } else if ($dateOptions == 'stay') {
 
         $start = $_POST['start'];
         $end = $_POST['end'];
         $price = $_POST['price'];
         $quantity = $_POST['quantity'];
+
 
         $date1 = date_create($start);
         $date2 = date_create($end);

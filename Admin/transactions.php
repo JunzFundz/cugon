@@ -1,5 +1,4 @@
 <?php
-session_start();
 require('../data/admin-transactions.php');
 ?>
 
@@ -41,8 +40,8 @@ require('../data/admin-transactions.php');
             </tr>
         </thead>
         <tbody>
-            <?php if ($result) { ?>
-                <?php while ($row = $result->fetch_assoc()) { ?>
+            <?php if ($result_get) { ?>
+                <?php while ($row = $result_get->fetch_assoc()) { ?>
                     <tr data-activity="<?= $row['activity'] ?>">
                         <td>
                             <button type="button" class="btn position-relative view--time" tabindex="0" 
@@ -89,9 +88,9 @@ require('../data/admin-transactions.php');
                             </span>
                         </td>
                         <td>
-                            <button class="btn btn-default get-records" type="button" data-user-id="<?= $row['user_id'] ?>"><i class="bi bi-eye"></i></button>
+                            <button class="btn btn-default get-records" type="button" data-user-id="<?= $row['user_id'] ?>" data-t_number="<?= $row['transaction_number'] ?>"><i class="bi bi-eye"></i></button>
 
-                            <a href="receipt.php?user_id=<?= $row['user_id']; ?>" class="btn btn-default" type="button" data-user-id="<?= $row['user_id'] ?>"><i class="bi bi-receipt"></i></a>
+                            <a href="receipt.php?user_id=<?= $row['user_id']; ?> && transaction_number=<?= $row['transaction_number']; ?>"  class="btn btn-default" type="button" data-user-id="<?= $row['user_id'] ?>"><i class="bi bi-receipt"></i></a>
 
                             <div class="dropdown">
                                 <button class="btn btn-default" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots-vertical"></i></button>
@@ -118,61 +117,5 @@ require('../data/admin-transactions.php');
 </div>
 
 <script>
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-    })
 
-    $(document).ready(function() {
-
-        $('#myTable').DataTable();
-
-        $(document).on('click', '.get-records', function(e) {
-            e.preventDefault();
-            var userID = $(this).data('user-id');
-            $.ajax({
-                url: '../data/admin-view-records.php',
-                type: 'post',
-                data: {
-                    'check_records': true,
-                    'userID': userID,
-                },
-                success: function(response) {
-                    $('.modal-body').html(response);
-                    $('#show-records').modal('show');
-                },
-                error: function(xhr) {
-                    console.error(xhr.responseText);
-                    alert('Error: getting data');
-                }
-            });
-        });
-
-        $('#dashboard-ii').on('click', function(event) {
-            event.preventDefault();
-            $('.main').load('dashboard.php');
-        });
-
-        function filterContent(activity) {
-            $('#change--content table tbody tr').each(function() {
-                var rowActivity = $(this).find('.view--time').data('activity');
-
-                if (activity === 'All' || activity === rowActivity) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
-            });
-        }
-
-        $('.dropdown-menu a.dropdown-item').click(function(e) {
-            e.preventDefault();
-
-            var selectedOption = $(this).text();
-            $('.dropdown-toggle').text(selectedOption);
-
-            filterContent(selectedOption);
-        })
-        filterContent('All');
-    });
 </script>

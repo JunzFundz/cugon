@@ -19,6 +19,10 @@
             <form class="p-4 md:p-5" method="post">
                 <div class="grid gap-4 mb-4 grid-cols-2">
 
+                <input type="hidden" id="user_id">
+                <input type="hidden" id="res_id">
+                <input type="hidden" id="item_id">
+
                     <div class="col-span-2 text-center cursor-pointer">
                         <i class="fa-regular fa-star item--rating" id="submit--item--rating1" data-item-star="1"></i>
                         <i class="fa-regular fa-star item--rating" id="submit--item--rating2" data-item-star="2"></i>
@@ -52,8 +56,6 @@
 
                 </div>
                 <button id="submit--item--rating" 
-                data-user_id="<?php echo $_SESSION['user_id'] ?>"
-                data-item_id="<?php echo $row['i_id'] ?>"
                 type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 submit--item--rating">
                     Add rate
                 </button>

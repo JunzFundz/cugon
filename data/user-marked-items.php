@@ -1,15 +1,14 @@
 <?php
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['item_checkboxes'])) {
 
-        $checkboxValues = $_POST['item_checkboxes'];
-        $itemIds = $_POST['item_ids'];
-        $userIds = $_POST['user_ids'];
-        $prices = $_POST['prices'];
-        $quantities = $_POST['quantities'];
-        $names = $_POST['names'];
+        $checkboxValues = filter_input(INPUT_POST, 'item_checkboxes', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY);
+        $itemIds = filter_input(INPUT_POST, 'item_ids', FILTER_SANITIZE_NUMBER_INT, FILTER_REQUIRE_ARRAY);
+        $userIds = filter_input(INPUT_POST, 'user_ids', FILTER_SANITIZE_NUMBER_INT, FILTER_REQUIRE_ARRAY);
+        $prices = filter_input(INPUT_POST, 'prices', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_REQUIRE_ARRAY);
+        $quantities = filter_input(INPUT_POST, 'quantities', FILTER_SANITIZE_NUMBER_INT, FILTER_REQUIRE_ARRAY);
+        $names = filter_input(INPUT_POST, 'names', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY);
 
         $subtotal = 0;
 
@@ -22,18 +21,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $subtotal += $price * $quantity;
         } 
 
-        $dateOptions = $_POST['dateOptions'];
-        $payment = $_POST['payment'];
+        $dateOptions = filter_input(INPUT_POST, 'dateOptions', FILTER_SANITIZE_SPECIAL_CHARS);
+        $payment = filter_input(INPUT_POST, 'payment', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if ($dateOptions == 'reg') {
             
-            $regular_date = $_POST['regular_date'];
+            $regular_date = filter_input(INPUT_POST, 'regular_date', FILTER_SANITIZE_SPECIAL_CHARS);
             $totaldays = 1;
             $totalwithdays = $subtotal * $totaldays;
 
         } else{
-            $start = $_POST['start'];
-            $end = $_POST['end'];
+            $start = filter_input(INPUT_POST, 'start', FILTER_SANITIZE_SPECIAL_CHARS);
+            $end = filter_input(INPUT_POST, 'end', FILTER_SANITIZE_SPECIAL_CHARS);
 
             $date1 = date_create($start);
             $date2 = date_create($end);
