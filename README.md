@@ -7,8 +7,11 @@
 ![image](https://github.com/user-attachments/assets/b60b4bd0-9163-4ab5-9524-2182da227bce)
 
 Different Sizes
+
 Tablet
+
 ![image](https://github.com/user-attachments/assets/b570e5e8-6097-41bd-a85e-a04b770644ef)
 
 Phones
+
 ![image](https://github.com/user-attachments/assets/82cfa6da-2913-4179-a44d-b25176b716da)
